@@ -1,11 +1,11 @@
-        /* General Styles */
+ /* General Styles */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f3f6fa;
-            color: #2b3e50;
+            background-color: #f4f4f4;
+            color: #333;
         }
 
         .container {
@@ -16,12 +16,11 @@
 
         /* Navbar Styles */
         .navbar {
-            background-color: #003a63;
+            background-color: #333;
             padding: 15px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: relative;
         }
 
         .navbar .logo {
@@ -29,13 +28,6 @@
             font-size: 1.5em;
             text-decoration: none;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar .logo img {
-            height: 40px;
-            margin-right: 10px;
         }
 
         .nav-links {
@@ -45,29 +37,26 @@
         }
 
         .nav-links a {
-            color: #87c7ff;
+            color: #00bcd4;
             text-decoration: none;
             font-weight: 400;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #60a9ff;
+            color: #ff4081;
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 flex-direction: column;
-                background-color: #003a63;
+                background-color: #333;
                 position: absolute;
                 top: 100%;
                 right: 0;
-                width: calc(100% - 40px);
+                width: 200px;
                 padding: 20px;
-                border-radius: 8px;
-                text-align: left;
-                overflow: hidden;
             }
 
             .nav-links.show {
@@ -79,13 +68,6 @@
                 cursor: pointer;
                 color: #ffffff;
                 font-size: 1.5em;
-                margin-left: auto;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .navbar .menu-toggle {
-                display: none;
             }
         }
 
@@ -113,7 +95,7 @@
         }
 
         .cta {
-            background-color: #60a9ff;
+            background-color: #ff4081;
             color: #ffffff;
             padding: 15px 30px;
             text-decoration: none;
@@ -123,20 +105,20 @@
         }
 
         .cta:hover {
-            background-color: #2b85e0;
+            background-color: #f50057;
         }
 
         /* Section Styles */
         .light-section {
-            background-color: #e0f2ff;
+            background-color: #f5f5f5;
             padding: 60px 20px;
         }
 
         .dark-section {
-            background-color: #002a4e;
+            background-color: #333;
             color: #ffffff;
             padding: 60px 20px;
-            border-top: 4px solid #60a9ff;
+            border-top: 4px solid #00bcd4;
         }
 
         h2 {
@@ -160,18 +142,18 @@
         }
 
         ul li a {
-            color: #60a9ff;
+            color: #ff4081;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         ul li a:hover {
-            color: #2b85e0;
+            color: #f50057;
         }
 
         /* Research Tools Section Styles */
         .framework-section {
-            background-color: #d9ecff;
+            background-color: #f9f9f9;
             padding: 60px 20px;
             text-align: center;
         }
@@ -187,6 +169,7 @@
         .framework {
             max-width: 150px;
             width: 150px;
+            height: 150px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -194,10 +177,8 @@
         }
 
         .framework img {
-            width: auto;
-            height: auto;
             max-width: 100%;
-            max-height: 70px;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -216,7 +197,7 @@
 
         /* Footer Styles */
         footer {
-            background-color: #00203f;
+            background-color: #222;
             color: #cccccc;
             text-align: center;
             padding: 20px 0;
@@ -243,8 +224,8 @@
             }
 
             .framework {
-                width: 100%;
-                max-width: 120px;
+                width: 120px;
+                height: 120px;
             }
 
             h2 {

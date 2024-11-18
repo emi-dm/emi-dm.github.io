@@ -5,151 +5,203 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Imaging and Deep Learning Research</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
-            background-color: #f0f4f8;
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
             color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            background-color: #004080;
+            color: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
-            background-color: #004080;
-            position: relative;
-            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+        }
+
+        .navbar .logo {
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .navbar .menu-toggle {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 20px;
+            gap: 1.5rem;
         }
 
         .nav-links a {
-            color: #a0d2ff;
+            color: #00bcd4;
             text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #ffffff;
+            color: #ff4081;
         }
 
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            color: #ffffff;
-            font-size: 1.5em;
-            z-index: 3;
+        #hero-carousel {
             position: relative;
+            overflow: hidden;
+            height: 80vh;
+            color: #fff;
+        }
+
+        .carousel-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh;
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        #hero-carousel .slick-prev, #hero-carousel .slick-next {
+            z-index: 2;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #hero-carousel .slick-prev {
+            left: 20px;
+        }
+
+        #hero-carousel .slick-next {
+            right: 20px;
+        }
+
+        #hero-carousel .slick-prev:hover, #hero-carousel .slick-next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        #hero-carousel .slick-prev:before, #hero-carousel .slick-next:before {
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .light-section {
+            background-color: #f9f9f9;
+        }
+
+        .dark-section {
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer {
+            background-color: #222;
+            color: #cccccc;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        footer a {
+            color: #00bcd4;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ff4081;
         }
 
         @media (max-width: 768px) {
+            .navbar .menu-toggle {
+                display: block;
+            }
+
             .nav-links {
                 display: none;
                 flex-direction: column;
-                background-color: #004080;
                 position: absolute;
                 top: 100%;
                 left: 0;
-                width: 200px;
-                padding: 20px;
-                border-radius: 8px;
-                text-align: left;
-                overflow: hidden;
-                z-index: 1;
+                width: 100%;
+                background-color: #004080;
+                padding: 1rem;
+                border-radius: 0 0 8px 8px;
             }
 
             .nav-links.show {
                 display: flex;
             }
-
-            .menu-toggle {
-                display: block;
-            }
-        }
-
-        #hero {
-            background: linear-gradient(to bottom, rgba(0, 48, 87, 0.7), rgba(0, 48, 87, 0.7)), url('media/placeholder.jpg') no-repeat center center/cover;
-            color: #f0f8ff;
-        }
-
-        .cta {
-            background-color: #1e90ff;
-            color: #ffffff;
-        }
-
-        .cta:hover {
-            background-color: #1c7ed6;
-        }
-
-        .light-section {
-            background-color: #d9e8f5;
-        }
-
-        .dark-section {
-            background-color: #003366;
-            color: #ffffff;
-        }
-
-        .framework-section {
-            background-color: #e6f2ff;
-        }
-
-        footer {
-            background-color: #002244;
-            color: #a0a0a0;
-        }
-
-        .social-icons a img {
-            filter: grayscale(100%);
-            transition: filter 0.3s;
-        }
-
-        .social-icons a img:hover {
-            filter: grayscale(0%);
         }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="container">
-                <a href="https://i3lab.unex.es/es/" class="logo">
-                    <img src="media/i3logo.png" alt="Research Group Logo">
-                    Emilio Delgado Muñoz - Researcher
-                </a>
-                <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#tools">Tools</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </div>
+            <a href="#" class="logo"><img src="media/i3logo.png" alt="Research Group Logo" style="height: 40px; margin-right: 10px;">Emilio Delgado Muñoz - Researcher</a>
+            <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
 
-    <section id="hero" data-aos="fade-up">
-        <div class="container">
-            <h1>Exploring Deep Learning in Medical Imaging</h1>
-            <p>Innovating healthcare through advanced image analysis and AI-driven solutions.</p>
-            <a href="#research" class="cta">Learn More</a>
+    <section id="hero-carousel">
+        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 48, 87, 0.7), rgba(0, 48, 87, 0.7)), url('media/placeholder.jpg') no-repeat center center/cover; height: 80vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
+            <div style="text-align: center;">
+                <h1>Exploring Deep Learning in Medical Imaging</h1>
+                <a href="#research" class="cta">Learn More</a>
+            </div>
         </div>
+        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 48, 87, 0), rgba(0, 48, 87, 0)), url('media/holder1.png') no-repeat center center/cover;"></div>
+        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 48, 87, 0), rgba(0, 48, 87, 0)), url('media/holder2.png') no-repeat center center/cover;"></div>
     </section>
 
-    <section id="about" class="light-section" data-aos="fade-up">
+    <section id="about" class="section light-section">
         <div class="container">
             <h2>About Me</h2>
-            <img src="media/me.jpeg" alt="My Picture" class="personal-image">
-            <p style="text-align: justify;">I am a researcher specializing in Deep Learning applied to medical imaging, focused on developing and applying advanced machine learning algorithms to enhance the diagnosis and treatment of various medical conditions through comprehensive image analysis. My work spans multiple imaging modalities, including MRI, CT, ultrasound, and X-ray, and employs a range of techniques, such as convolutional neural networks, transformers, and other innovative deep learning frameworks.
-
-                Rather than being confined to specific models or methods, my research explores the integration of different approaches to improve the quality, efficiency, and robustness of medical image processing. This includes addressing challenges like adapting to variations in imaging data across institutions or making better use of unlabeled data through self-supervised learning. I am dedicated to advancing the field by developing AI-driven solutions that have the potential to transform clinical workflows, empower healthcare professionals, and ultimately contribute to improved patient care.</p>
+            <p>I am a researcher specializing in Deep Learning applied to medical imaging, focused on developing and applying advanced machine learning algorithms to enhance the diagnosis and treatment of medical conditions through comprehensive image analysis...</p>
         </div>
     </section>
 
-    <section id="research" class="dark-section" data-aos="fade-up">
+    <section id="research" class="section dark-section">
         <div class="container">
             <h2>Research Interests</h2>
             <ul>
@@ -158,12 +210,11 @@
                 <li>Computer-Aided Diagnosis</li>
                 <li>Generative Models in Medical Imaging</li>
                 <li>Transformer Architectures for Image Processing</li>
-                </li>
             </ul>
         </div>
     </section>
 
-    <section id="publications" class="light-section" data-aos="fade-up">
+    <section id="publications" class="section light-section">
         <div class="container">
             <h2>Publications</h2>
             <p>Below are some selected publications showcasing my work:</p>
@@ -174,7 +225,7 @@
         </div>
     </section>
 
-    <section id="tools" class="framework-section" data-aos="fade-up">
+    <section id="tools" class="section dark-section">
         <div class="container">
             <h2>Tools and Frameworks</h2>
             <p>In my research, I use several powerful tools and frameworks to develop deep learning models:</p>
@@ -195,7 +246,7 @@
         </div>
     </section>
 
-    <section id="education" class="light-section" data-aos="fade-up">
+    <section id="education" class="section light-section">
         <div class="container">
             <h2>Education</h2>
             <ul>
@@ -206,7 +257,7 @@
         </div>
     </section>
 
-    <section id="contact" class="dark-section" data-aos="fade-up">
+    <section id="contact" class="section dark-section">
         <div class="container">
             <h2>Contact</h2>
             <p>Feel free to reach out if you are interested in collaborating or discussing research opportunities:</p>
@@ -215,16 +266,12 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 i3 AI Medical Imaging Lab. All rights reserved.</p>
-            <div class="social-icons">
-                <a href="https://x.com/SrEdm00"><img src="media/icon-twitter.png" alt="Twitter"></a>
-                <a href="www.linkedin.com/in/emilio-delgado-muñoz-418663233"><img src="media/icon-linkedin.png" alt="LinkedIn"s></a>
-            </div>
-        </div>
+        <p>&copy; 2024 i3 AI Medical Imaging Lab. All rights reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
         AOS.init();
 
@@ -233,12 +280,17 @@
             navLinks.classList.toggle('show');
         }
 
-        document.querySelectorAll('.menu-toggle, .nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                const navLinks = document.querySelector('.nav-links');
-                if (navLinks.classList.contains('show') && link !== document.querySelector('.menu-toggle')) {
-                    navLinks.classList.remove('show');
-                }
+        $(document).ready(function(){
+            $('#hero-carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                fade: true,
+                cssEase: 'linear',
+                autoplay: true,
+                autoplaySpeed: 3000,
+                prevArrow: '<button type="button" class="slick-prev">&#10094;</button>',
+                nextArrow: '<button type="button" class="slick-next">&#10095;</button>'
             });
         });
     </script>
