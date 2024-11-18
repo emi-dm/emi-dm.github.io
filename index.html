@@ -21,72 +21,79 @@
         header {
             position: sticky;
             top: 0;
-            background-color: #004080;
-            color: #fff;
+            background-color: #1f2937;
+            color: #ffffff;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .navbar {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem;
+            padding: 1rem 2rem;
         }
 
         .navbar .logo {
             font-weight: 700;
-            color: #fff;
+            color: #ffffff;
             text-decoration: none;
             display: flex;
             align-items: center;
+            transition: color 0.3s;
+        }
+
+        .navbar .logo:hover {
+            color: #10b981;
         }
 
         .navbar .menu-toggle {
             display: none;
             font-size: 2rem;
             cursor: pointer;
+            color: #ffffff;
         }
 
         .nav-links {
             list-style: none;
             display: flex;
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
-            color: #00bcd4;
+            color: #d1d5db;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #ff4081;
+            color: #10b981;
         }
 
         #hero-carousel {
             position: relative;
             overflow: hidden;
-            height: 80vh;
-            color: #fff;
+            height: 90vh;
+            color: #ffffff;
         }
 
         .carousel-item {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh;
+            height: 90vh;
             background-size: cover;
             background-position: center;
             text-align: center;
+            transition: transform 0.5s ease-in-out;
         }
 
         #hero-carousel .slick-prev, #hero-carousel .slick-next {
             z-index: 2;
             width: 50px;
             height: 50px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(31, 41, 55, 0.7);
             border-radius: 50%;
             display: flex !important;
             justify-content: center;
@@ -105,43 +112,116 @@
         }
 
         #hero-carousel .slick-prev:hover, #hero-carousel .slick-next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
+            background-color: rgba(31, 41, 55, 0.9);
         }
 
         #hero-carousel .slick-prev:before, #hero-carousel .slick-next:before {
-            color: #fff;
+            color: #ffffff;
             font-size: 20px;
         }
 
+        .cta {
+            background-color: #10b981;
+            color: #ffffff;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 50px;
+            margin-top: 2rem;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .cta:hover {
+            background-color: #059669;
+            transform: scale(1.05);
+        }
+
         .section {
-            padding: 4rem 0;
+            padding: 6rem 2rem;
             text-align: center;
         }
 
         .light-section {
-            background-color: #f9f9f9;
+            background-color: #f9fafb;
         }
 
         .dark-section {
-            background-color: #333;
-            color: #fff;
+            background-color: #1f2937;
+            color: #ffffff;
         }
 
         footer {
-            background-color: #222;
-            color: #cccccc;
-            padding: 2rem;
+            background-color: #111827;
+            color: #9ca3af;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         footer a {
-            color: #00bcd4;
+            color: #10b981;
             text-decoration: none;
             transition: color 0.3s;
         }
 
         footer a:hover {
-            color: #ff4081;
+            color: #d1d5db;
+        }
+
+        .frameworks {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .framework {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .framework:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .framework img {
+            max-width: 100px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 1rem;
+        }
+
+        .modern-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .modern-list li {
+            background: #f3f4f6;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .modern-list li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .modern-list a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .modern-list a:hover {
+            color: #10b981;
         }
 
         @media (max-width: 768px) {
@@ -156,7 +236,7 @@
                 top: 100%;
                 left: 0;
                 width: 100%;
-                background-color: #004080;
+                background-color: #1f2937;
                 padding: 1rem;
                 border-radius: 0 0 8px 8px;
             }
@@ -173,35 +253,39 @@
             <a href="#" class="logo"><img src="media/i3logo.png" alt="Research Group Logo" style="height: 40px; margin-right: 10px;">Emilio Delgado Muñoz - Researcher</a>
             <div class="menu-toggle" onclick="toggleMenu()">☰</div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
                 <li><a href="#research">Research</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#tools">Tools</a></li>
                 <li><a href="#education">Education</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+            <div class="social-links" style="display: flex; gap: 1rem;">
+                <a href="https://x.com/SrEdm00" target="_blank"><img src="media/x-icon.png" alt="Twitter Logo" style="height: 30px;"></a>
+                <a href="https://github.com/emi-dm" target="_blank"><img src="media/github-icon.png" alt="GitHub Logo" style="height: 30px;"></a>
+            </div>
             </ul>
         </nav>
     </header>
 
     <section id="hero-carousel">
-        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 48, 87, 0.7), rgba(0, 48, 87, 0.7)), url('media/placeholder.jpg') no-repeat center center/cover; height: 80vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
-            <div style="text-align: center;">
+        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('media/placeholder.jpg') no-repeat center center/cover; height: 90vh; display: flex; justify-content: center; align-items: center; flex-direction: column;">
                 <h1>Exploring Deep Learning in Medical Imaging</h1>
                 <a href="#research" class="cta">Learn More</a>
             </div>
         </div>
-        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 48, 87, 0), rgba(0, 48, 87, 0)), url('media/holder1.png') no-repeat center center/cover;"></div>
-        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 48, 87, 0), rgba(0, 48, 87, 0)), url('media/holder2.png') no-repeat center center/cover;"></div>
+        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('media/holder1.png') no-repeat center center/cover;"></div>
+        <div class="carousel-item" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('media/holder2.png') no-repeat center center/cover;"></div>
     </section>
 
-    <section id="about" class="section light-section">
+    <section id="about" class="section light-section" data-aos="fade-up">
         <div class="container">
+            <img src="media/me.jpeg" alt="My Photo" style="width: 200px; height: auto; border-radius: 50%; margin-bottom: 1rem;">
             <h2>About Me</h2>
-            <p>I am a researcher specializing in Deep Learning applied to medical imaging, focused on developing and applying advanced machine learning algorithms to enhance the diagnosis and treatment of medical conditions through comprehensive image analysis...</p>
+            <p>I am a researcher specializing in Deep Learning applied to medical imaging, focused on developing and applying advanced machine learning algorithms to enhance the diagnosis and treatment of medical conditions through comprehensive image analysis. My work revolves around utilizing artificial intelligence to detect patterns, segment medical images, and support decision-making in clinical environments. I am passionate about leveraging state-of-the-art techniques like convolutional neural networks (CNNs), transformer architectures, and generative models to push the boundaries of what is possible in medical imaging. With a strong background in both computer science and medical applications, I aim to bridge the gap between technology and healthcare, ultimately contributing to more accurate and efficient diagnostic tools. I enjoy collaborating with other researchers and healthcare professionals to bring innovative solutions to real-world medical challenges, ensuring that my research has a meaningful impact on patient outcomes and healthcare systems.</p>
         </div>
     </section>
 
-    <section id="research" class="section dark-section">
+    <section id="research" class="section dark-section" data-aos="fade-up">
         <div class="container">
             <h2>Research Interests</h2>
             <ul>
@@ -214,39 +298,31 @@
         </div>
     </section>
 
-    <section id="publications" class="section light-section">
+    <section id="publications" class="section light-section" data-aos="fade-up">
         <div class="container">
             <h2>Publications</h2>
             <p>Below are some selected publications showcasing my work:</p>
-            <ul>
-                <li><a href="https://doi.org/10.1109/ACCESS.2024.3353142">No More Training: SAM’s Zero-Shot Transfer Capabilities for Cost-Efficient Medical Image Segmentation</a></li>
+            <ul class="modern-list">
                 <li><a href="https://doi.org/10.1049/ipr2.13232">Advancing precision in medical image segmentation: A performance analysis of loss functions for COVID-19 lung infection segmentation in computed tomography images</a></li>
+                <li><a href="https://doi.org/10.1109/ACCESS.2024.3353142">No More Training: SAM’s Zero-Shot Transfer Capabilities for Cost-Efficient Medical Image Segmentation</a></li>
             </ul>
         </div>
     </section>
 
-    <section id="tools" class="section dark-section">
+    <section id="tools" class="section dark-section" data-aos="fade-up">
         <div class="container">
             <h2>Tools and Frameworks</h2>
             <p>In my research, I use several powerful tools and frameworks to develop deep learning models:</p>
             <div class="frameworks">
-                <div class="framework">
-                    <a href="https://monai.io/"><img src="media/monai-logo.png" alt="MONAI logo"></a>
-                    <p>MONAI</p>
-                </div>
-                <div class="framework">
-                    <a href="https://pytorch.org/"><img src="media/pytorch-logo.png" alt="PyTorch logo"></a>
-                    <p>PyTorch</p>
-                </div>
-                <div class="framework">
-                    <a href="https://keras.io/"><img src="media/keras-logo.png" alt="Keras logo"></a>
-                    <p>Keras</p>
-                </div>
+                <div class="framework" style="display: flex; justify-content: center; align-items: center;"> <a href="https://pytorch.org" target="_blank"><img src="media/pytorch-logo.png" alt="PyTorch Logo" style="width: 100px; height: auto; object-fit: contain;"></a> </div>
+                <div class="framework" style="display: flex; justify-content: center; align-items: center;"> <a href="https://monai.io" target="_blank"><img src="media/monai-logo.png" alt="MONAI Logo" style="width: 100px; height: auto; object-fit: contain;"></a> </div>
+                <div class="framework" style="display: flex; justify-content: center; align-items: center;"> <a href="https://www.tensorflow.org/" target="_blank"><img src="media/tf-logo.svg" alt="Keras Logo" style="width: 100px; height: auto; object-fit: contain;"></a> </div>
+                <div class="framework" style="display: flex; justify-content: center; align-items: center;"> <a href="https://keras.io" target="_blank"><img src="media/keras-logo.png" alt="Keras Logo" style="width: 100px; height: auto; object-fit: contain;"></a> </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="section light-section">
+    <section id="education" class="section light-section" data-aos="fade-up">
         <div class="container">
             <h2>Education</h2>
             <ul>
@@ -257,11 +333,11 @@
         </div>
     </section>
 
-    <section id="contact" class="section dark-section">
+    <section id="contact" class="section dark-section" data-aos="fade-up">
         <div class="container">
             <h2>Contact</h2>
             <p>Feel free to reach out if you are interested in collaborating or discussing research opportunities:</p>
-            <p>Email: <a href="mailto:edm@unex.es" style="color: #a0d2ff;">edm@unex.es</a></p>
+            <p>Email: <a href="mailto:edm@unex.es" style="color: #10b981;">edm@unex.es</a></p>
         </div>
     </section>
 
@@ -273,7 +349,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
 
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
