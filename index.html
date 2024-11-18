@@ -4,47 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medical Imaging and Deep Learning Research</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        /* General Styles */
         body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background-color: #f4f4f4;
+            background-color: #f0f4f8;
             color: #333;
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Navbar Styles */
         .navbar {
             background-color: #004080;
-            padding: 15px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
             position: relative;
-        }
-
-        .navbar .logo {
-            color: #ffffff;
-            font-size: 1.5em;
-            text-decoration: none;
-            font-weight: 700;
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar .logo img {
-            height: 40px;
-            margin-right: 10px;
+            z-index: 2;
         }
 
         .nav-links {
@@ -54,14 +26,21 @@
         }
 
         .nav-links a {
-            color: #66b2ff;
+            color: #a0d2ff;
             text-decoration: none;
-            font-weight: 400;
-            transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #3399ff;
+            color: #ffffff;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: #ffffff;
+            font-size: 1.5em;
+            z-index: 3;
+            position: relative;
         }
 
         @media (max-width: 768px) {
@@ -71,194 +50,63 @@
                 background-color: #004080;
                 position: absolute;
                 top: 100%;
-                right: 0;
-                width: calc(100% - 40px);
+                left: 0;
+                width: 200px;
                 padding: 20px;
                 border-radius: 8px;
                 text-align: left;
                 overflow: hidden;
+                z-index: 1;
             }
 
             .nav-links.show {
                 display: flex;
             }
 
-            .navbar .menu-toggle {
+            .menu-toggle {
                 display: block;
-                cursor: pointer;
-                color: #ffffff;
-                font-size: 1.5em;
-                margin-left: auto;
             }
         }
 
-        @media (min-width: 769px) {
-            .navbar .menu-toggle {
-                display: none;
-            }
-        }
-
-        /* Hero Section Styles */
         #hero {
-            background: url('media/hero-image.jpg') no-repeat center center/cover;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px;
-        }
-
-        #hero h1 {
-            font-size: 3em;
-            font-weight: 700;
-            margin-bottom: 20px;
-        }
-
-        #hero p {
-            font-size: 1.2em;
-            margin-bottom: 30px;
+            background: linear-gradient(to bottom, rgba(0, 48, 87, 0.7), rgba(0, 48, 87, 0.7)), url('media/placeholder.jpg') no-repeat center center/cover;
+            color: #f0f8ff;
         }
 
         .cta {
-            background-color: #3399ff;
+            background-color: #1e90ff;
             color: #ffffff;
-            padding: 15px 30px;
-            text-decoration: none;
-            font-weight: 700;
-            border-radius: 5px;
-            transition: background-color 0.3s;
         }
 
         .cta:hover {
-            background-color: #0073e6;
+            background-color: #1c7ed6;
         }
 
-        /* Section Styles */
         .light-section {
-            background-color: #e6f2ff;
-            padding: 60px 20px;
+            background-color: #d9e8f5;
         }
 
         .dark-section {
             background-color: #003366;
             color: #ffffff;
-            padding: 60px 20px;
-            border-top: 4px solid #66b2ff;
         }
 
-        h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1em;
-            line-height: 1.6;
-        }
-
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        ul li {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-        }
-
-        ul li a {
-            color: #3399ff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        ul li a:hover {
-            color: #0073e6;
-        }
-
-        /* Research Tools Section Styles */
         .framework-section {
-            background-color: #f0f8ff;
-            padding: 60px 20px;
-            text-align: center;
+            background-color: #e6f2ff;
         }
 
-        .frameworks {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 40px;
-        }
-
-        .framework {
-            max-width: 150px;
-            width: 150px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            transition: transform 0.3s;
-        }
-
-        .framework img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: 70px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
-        .framework:hover {
-            transform: scale(1.1);
-        }
-
-        /* Personal Image Section Styles */
-        #about .personal-image {
-            max-width: 200px;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
-        }
-
-        /* Footer Styles */
         footer {
-            background-color: #00264d;
-            color: #cccccc;
-            text-align: center;
-            padding: 20px 0;
+            background-color: #002244;
+            color: #a0a0a0;
         }
 
-        footer p {
-            margin: 0;
-            font-size: 0.9em;
+        .social-icons a img {
+            filter: grayscale(100%);
+            transition: filter 0.3s;
         }
 
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            #hero h1 {
-                font-size: 2em;
-            }
-
-            #hero p {
-                font-size: 1em;
-            }
-
-            .frameworks {
-                flex-direction: column;
-                gap: 20px;
-            }
-
-            .framework {
-                width: 100%;
-                max-width: 120px;
-            }
-
-            h2 {
-                font-size: 2em;
-            }
+        .social-icons a img:hover {
+            filter: grayscale(0%);
         }
     </style>
 </head>
@@ -266,9 +114,9 @@
     <header>
         <nav class="navbar">
             <div class="container">
-                <a href="#" class="logo">
+                <a href="https://i3lab.unex.es/es/" class="logo">
                     <img src="media/i3logo.png" alt="Research Group Logo">
-                    Emilio Delgado - i3 AI Medical Imaging Lab
+                    Emilio Delgado Muñoz - Researcher
                 </a>
                 <div class="menu-toggle" onclick="toggleMenu()">☰</div>
                 <ul class="nav-links">
@@ -276,13 +124,14 @@
                     <li><a href="#research">Research</a></li>
                     <li><a href="#publications">Publications</a></li>
                     <li><a href="#tools">Tools</a></li>
+                    <li><a href="#education">Education</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <section id="hero" style="background: url('media/placeholder.jpg') no-repeat center center/cover;">
+    <section id="hero" data-aos="fade-up">
         <div class="container">
             <h1>Exploring Deep Learning in Medical Imaging</h1>
             <p>Innovating healthcare through advanced image analysis and AI-driven solutions.</p>
@@ -290,39 +139,42 @@
         </div>
     </section>
 
-    <section id="about" class="light-section">
+    <section id="about" class="light-section" data-aos="fade-up">
         <div class="container">
             <h2>About Me</h2>
-            <img src="media/personal-image.jpg" alt="My Picture" class="personal-image">
-            <p>I'm a researcher specializing in Deep Learning applied to medical imaging. My work focuses on developing and applying state-of-the-art machine learning algorithms to improve the diagnosis and treatment of medical conditions through image analysis. I am particularly interested in leveraging technologies like convolutional neural networks and transformers to enhance the quality and efficiency of medical image processing. You can learn more about my research and publications on my <a href="https://scholar.google.es/citations?user=eIBVkQEAAAAJ&hl=es&authuser=1" target="_blank">Google Scholar profile</a>.</p>
+            <img src="media/me.jpeg" alt="My Picture" class="personal-image">
+            <p style="text-align: justify;">I am a researcher specializing in Deep Learning applied to medical imaging, focused on developing and applying advanced machine learning algorithms to enhance the diagnosis and treatment of various medical conditions through comprehensive image analysis. My work spans multiple imaging modalities, including MRI, CT, ultrasound, and X-ray, and employs a range of techniques, such as convolutional neural networks, transformers, and other innovative deep learning frameworks.
+
+                Rather than being confined to specific models or methods, my research explores the integration of different approaches to improve the quality, efficiency, and robustness of medical image processing. This includes addressing challenges like adapting to variations in imaging data across institutions or making better use of unlabeled data through self-supervised learning. I am dedicated to advancing the field by developing AI-driven solutions that have the potential to transform clinical workflows, empower healthcare professionals, and ultimately contribute to improved patient care.</p>
         </div>
     </section>
 
-    <section id="research" class="dark-section">
+    <section id="research" class="dark-section" data-aos="fade-up">
         <div class="container">
             <h2>Research Interests</h2>
             <ul>
+                <li>Deep Learning for Medical Image Analysis</li>
                 <li>Deep Learning for Medical Image Segmentation</li>
                 <li>Computer-Aided Diagnosis</li>
                 <li>Generative Models in Medical Imaging</li>
-                <li>Transformer Architectures for Image Classification</li>
+                <li>Transformer Architectures for Image Processing</li>
+                </li>
             </ul>
         </div>
     </section>
 
-    <section id="publications" class="light-section">
+    <section id="publications" class="light-section" data-aos="fade-up">
         <div class="container">
             <h2>Publications</h2>
             <p>Below are some selected publications showcasing my work:</p>
             <ul>
-                <li><a href="#">Title of Publication 1 - Journal of Medical Imaging</a></li>
-                <li><a href="#">Title of Publication 2 - International Conference on Machine Learning</a></li>
-                <li><a href="#">Title of Publication 3 - IEEE Transactions on Medical Imaging</a></li>
+                <li><a href="https://doi.org/10.1109/ACCESS.2024.3353142">No More Training: SAM’s Zero-Shot Transfer Capabilities for Cost-Efficient Medical Image Segmentation</a></li>
+                <li><a href="https://doi.org/10.1049/ipr2.13232">Advancing precision in medical image segmentation: A performance analysis of loss functions for COVID-19 lung infection segmentation in computed tomography images</a></li>
             </ul>
         </div>
     </section>
 
-    <section id="tools" class="framework-section">
+    <section id="tools" class="framework-section" data-aos="fade-up">
         <div class="container">
             <h2>Tools and Frameworks</h2>
             <p>In my research, I use several powerful tools and frameworks to develop deep learning models:</p>
@@ -343,25 +195,52 @@
         </div>
     </section>
 
-    <section id="contact" class="dark-section">
+    <section id="education" class="light-section" data-aos="fade-up">
+        <div class="container">
+            <h2>Education</h2>
+            <ul>
+                <li><b>Bachelor in Software Engineering, 2022</b><br>Universidad de Extremadura</li>
+                <li><b>Artificial Intelligence Master Degree, 2023</b><br>UNIR</li>
+                <li><b>Advanced University Course in Data Analysis, 2023</b><br>UNIR</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="dark-section" data-aos="fade-up">
         <div class="container">
             <h2>Contact</h2>
             <p>Feel free to reach out if you are interested in collaborating or discussing research opportunities:</p>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+            <p>Email: <a href="mailto:edm@unex.es" style="color: #a0d2ff;">edm@unex.es</a></p>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <p>&copy; 2024 i3 AI Medical Imaging Lab. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://x.com/SrEdm00"><img src="media/icon-twitter.png" alt="Twitter"></a>
+                <a href="www.linkedin.com/in/emilio-delgado-muñoz-418663233"><img src="media/icon-linkedin.png" alt="LinkedIn"s></a>
+            </div>
         </div>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
+        AOS.init();
+
         function toggleMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.classList.toggle('show');
         }
+
+        document.querySelectorAll('.menu-toggle, .nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                const navLinks = document.querySelector('.nav-links');
+                if (navLinks.classList.contains('show') && link !== document.querySelector('.menu-toggle')) {
+                    navLinks.classList.remove('show');
+                }
+            });
+        });
     </script>
 </body>
 </html>
