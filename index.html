@@ -59,9 +59,13 @@
         </div>
     </section>
 
-    <section id="about" class="section light-section fade-in" data-aos="fade-up">
+    <section id="about" class="section light-section fade-in asymmetric-right" data-aos="fade-up">
+        <div class="decorative-line"></div>
         <div class="container">
-            <img src="media/me.jpeg" alt="Emilio Delgado Muñoz" class="profile-image">
+            <div class="profile-container">
+                <img src="media/me.jpeg" alt="Emilio Delgado Muñoz" class="profile-image">
+                <div class="profile-backdrop"></div>
+            </div>
             <h2>About Me</h2>
             <p>I am a researcher specializing in Deep Learning applied to medical imaging, focused on developing and applying advanced machine learning algorithms to enhance the diagnosis and treatment of medical conditions through comprehensive image analysis. My work revolves around utilizing artificial intelligence to detect patterns, segment medical images, and support decision-making in clinical environments.</p>
             <p>I am passionate about leveraging state-of-the-art techniques like convolutional neural networks (CNNs), transformer architectures, and generative models to push the boundaries of what is possible in medical imaging. With a strong background in both computer science and medical applications, I aim to bridge the gap between technology and healthcare, ultimately contributing to more accurate and efficient diagnostic tools.</p>
@@ -69,7 +73,12 @@
         </div>
     </section>
 
-    <section id="research" class="section dark-section fade-in" data-aos="fade-up">
+    <section id="research" class="section dark-section fade-in asymmetric-left" data-aos="fade-up">
+        <div class="decorative-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
         <div class="container">
             <h2>Research Interests</h2>
             <ul>
@@ -82,7 +91,8 @@
         </div>
     </section>
 
-    <section id="publications" class="section light-section fade-in" data-aos="fade-up">
+    <section id="publications" class="section light-section fade-in asymmetric-right" data-aos="fade-up">
+        <div class="decorative-line"></div>
         <div class="container">
             <h2>Publications</h2>
             <p>Below are some selected publications showcasing my work:</p>
@@ -93,7 +103,12 @@
         </div>
     </section>
 
-    <section id="tools" class="section dark-section fade-in" data-aos="fade-up">
+    <section id="tools" class="section dark-section fade-in asymmetric-left" data-aos="fade-up">
+        <div class="decorative-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
         <div class="container">
             <h2>Tools and Frameworks</h2>
             <p>In my research, I use several powerful tools and frameworks to develop deep learning models:</p>
@@ -117,7 +132,8 @@
         </div>
     </section>
 
-    <section id="education" class="section light-section fade-in" data-aos="fade-up">
+    <section id="education" class="section light-section fade-in asymmetric-right" data-aos="fade-up">
+        <div class="decorative-line"></div>
         <div class="container">
             <h2>Education</h2>
             <ul>
@@ -128,11 +144,37 @@
         </div>
     </section>
 
-    <section id="contact" class="section dark-section fade-in" data-aos="fade-up">
+    <section id="contact" class="section dark-section fade-in asymmetric-left" data-aos="fade-up">
+        <div class="decorative-dots">
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+            <span></span><span></span><span></span>
+        </div>
         <div class="container">
             <h2>Contact</h2>
             <p>Feel free to reach out if you are interested in collaborating or discussing research opportunities:</p>
-            <p>Email: <a href="mailto:edm@unex.es" style="color: #00bcd4; text-decoration: none; font-weight: 500;">edm@unex.es</a></p>
+            
+            <div class="contact-info">
+                <div class="contact-detail">
+                    <strong>Email:</strong> <a href="mailto:edm@unex.es" class="email-link">edm@unex.es</a>
+                </div>
+                <div class="contact-detail">
+                    <strong>Location:</strong> <span>i3Lab, Avenida de la Universidad S/N, Escuela Politécnica, Cáceres, 10004</span>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.0066895747845!2d-6.334495724732334!3d39.47753141669965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd15e01e26ace00b%3A0xbf85aca3b3a8cea8!2sEscuela%20Polit%C3%A9cnica%2C%20Av.%20de%20la%20Universidad%2C%20s%2Fn%2C%2010003%20C%C3%A1ceres!5e0!3m2!1sen!2ses!4v1718105493682!5m2!1sen!2ses" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 8px; margin: 20px 0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            
         </div>
     </section>
 
@@ -226,7 +268,99 @@
                 }
             });
         });
+
+        // Add this at the beginning of your script section to ensure header is visible from the start
+        document.addEventListener('DOMContentLoaded', function() {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            document.querySelector('#hero-carousel').style.marginTop = headerHeight + 'px';
+        });
+
+        // Form submission handling
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const formStatus = document.getElementById('form-status');
+            const submitBtn = document.querySelector('.submit-btn');
+            const btnText = document.querySelector('.btn-text');
+            const btnIcon = document.querySelector('.btn-icon');
+            
+            // Show loading state
+            btnText.textContent = 'Sending...';
+            btnIcon.innerHTML = '<div class="loading-spinner"></div>';
+            submitBtn.disabled = true;
+            
+            // Simulate form submission (replace with actual submission logic)
+            setTimeout(() => {
+                formStatus.textContent = 'Thank you! Your message has been sent.';
+                formStatus.classList.add('success');
+                
+                // Reset form
+                document.getElementById('contact-form').reset();
+                
+                // Reset button
+                setTimeout(() => {
+                    btnText.textContent = 'Send Message';
+                    btnIcon.innerHTML = '→';
+                    submitBtn.disabled = false;
+                    
+                    // Clear status after 5 seconds
+                    setTimeout(() => {
+                        formStatus.textContent = '';
+                        formStatus.classList.remove('success');
+                    }, 5000);
+                }, 1500);
+            }, 1500);
+        });
+        
+        // Enhanced scroll animation
+        const scrollElements = document.querySelectorAll('.fade-in');
+
+        const elementInView = (el, percentageScroll = 100) => {
+            const elementTop = el.getBoundingClientRect().top;
+            const elementHeight = el.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            return (
+                elementTop <= windowHeight - (elementHeight * (percentageScroll/100))
+            );
+        };
+
+        const displayScrollElement = (element) => {
+            element.classList.add('scrolled');
+        };
+
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el, 25)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+
+        // Add scroll event listener with throttling for performance
+        let throttleTimer;
+        const throttle = (callback, time) => {
+            if (throttleTimer) return;
+            
+            throttleTimer = setTimeout(() => {
+                callback();
+                throttleTimer = null;
+            }, time);
+        };
+
+        window.addEventListener('scroll', () => {
+            throttle(handleScrollAnimation, 250);
+        });
+
+        // Run once to detect elements already in view on page load
+        handleScrollAnimation();
+        
+        // Add scroll reveal effects to form fields
+        const formElements = document.querySelectorAll('.form-group');
+        formElements.forEach((el, index) => {
+            el.style.transitionDelay = `${index * 100}ms`;
+            el.classList.add('reveal');
+        });
     </script>
-</body>ript src="script.js"></script>
-</html>
+    <script src="script.js"></script>
+</body>
 </html>
