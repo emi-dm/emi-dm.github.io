@@ -451,4 +451,159 @@ document.addEventListener('DOMContentLoaded', () => {
   
   window.addEventListener('scroll', updateScrollIndicator, { passive: true });
   updateScrollIndicator(); // Initial check
+
+  // Add tilt effect to carousel slides
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  
+  carouselItems.forEach(item => {
+    item.addEventListener('mousemove', (e) => {
+      // Only apply effect if screen width is larger than 1024px
+      if (window.innerWidth < 1024) return;
+      
+      const rect = item.getBoundingClientRect();
+      const x = e.clientX - rect.left; // x position within the element
+      const y = e.clientY - rect.top;  // y position within the element
+      
+      const xTilt = ((x / rect.width) - 0.5) * 10; // -5 to 5 degree tilt
+      const yTilt = ((y / rect.height) - 0.5) * -10; // 5 to -5 degree tilt
+      
+      // Apply subtle tilt effect to the content
+      const content = item.querySelector('.carousel-content');
+      if (content) {
+        content.style.transform = `perspective(1000px) rotateX(${yTilt}deg) rotateY(${xTilt}deg) scale3d(1.02, 1.02, 1.02)`;
+      }
+      
+      // Move decoration element for parallax effect
+      const decoration = item.querySelector('.slide-decoration');
+      if (decoration) {
+        const moveX = ((x / rect.width) - 0.5) * 30; // -15 to 15px movement
+        const moveY = ((y / rect.height) - 0.5) * 30; // -15 to 15px movement
+        decoration.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      }
+    });
+    
+    // Reset transformations when mouse leaves
+    item.addEventListener('mouseleave', () => {
+      const content = item.querySelector('.carousel-content');
+      if (content) {
+        content.style.transform = '';
+      }
+      
+      const decoration = item.querySelector('.slide-decoration');
+      if (decoration) {
+        decoration.style.transform = '';
+      }
+    });
+  });
+  
+  // Add particle effects to carousel
+  function enhanceCarousel() {
+    const carousel = document.querySelector('.modern-carousel');
+    if (!carousel) return;
+    
+    // Create canvas for particles
+    const canvas = document.createElement('canvas');
+    canvas.classList.add('carousel-particles');
+    canvas.style.position = 'absolute';
+    canvas.style.top = '0';
+    canvas.style.left = '0';
+    canvas.style.width = '100%';
+    canvas.style.height = '100%';
+    canvas.style.pointerEvents = 'none';
+    canvas.style.zIndex = '1';
+    carousel.appendChild(canvas);
+    
+    const ctx = canvas.getContext('2d');
+    
+    // Set canvas size
+    function setCanvasSize() {
+      canvas.width = carousel.offsetWidth;
+      canvas.height = carousel.offsetHeight;
+    }
+    
+    setCanvasSize();
+    window.addEventListener('resize', setCanvasSize);
+    
+    // Create particles
+    const particlesArray = [];
+    const numberOfParticles = 40;
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random() * 0.5 + 0.2;
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.size > 0.2) this.size -= 0.01;
+        
+        // Reset particle if it's gone out of bounds or too small
+        if (this.x < 0 || this.x > canvas.width || 
+            this.y < 0 || this.y > canvas.height || 
+            this.size <= 0.2) {
+          this.x = Math.random() * canvas.width;
+          this.y = Math.random() * canvas.height;
+          this.size = Math.random() * 3 + 1;
+          this.opacity = Math.random() * 0.5 + 0.2;
+        }
+      }
+      
+      draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    function init() {
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+      }
+      
+      requestAnimationFrame(animate);
+    }
+    
+    init();
+    animate();
+  }
+  
+  enhanceCarousel();
+
+  // Fix carousel height issues
+  function fixCarouselHeight() {
+    const carousel = document.querySelector('.modern-carousel');
+    if (!carousel) return;
+    
+    const items = carousel.querySelectorAll('.carousel-item');
+    items.forEach(item => {
+      item.style.height = '100vh';
+    });
+    
+    // Fix slick slider height
+    const slickList = carousel.querySelector('.slick-list');
+    const slickTrack = carousel.querySelector('.slick-track');
+    
+    if (slickList) slickList.style.height = '100%';
+    if (slickTrack) slickTrack.style.height = '100%';
+  }
+  
+  window.addEventListener('load', fixCarouselHeight);
+  window.addEventListener('resize', fixCarouselHeight);
 });

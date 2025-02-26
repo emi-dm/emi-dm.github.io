@@ -38,26 +38,59 @@
         </nav>
     </header>
 
-    <section id="hero-carousel">
-        <div class="carousel-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('media/placeholder.jpg') no-repeat center center/cover;">
-            <div class="carousel-content">
-                <h1>Leveraging Deep Learning in Medical Imaging</h1>
-                <a href="#research" class="cta">Learn More</a>
+<section id="hero-carousel" class="modern-carousel">
+    <div class="carousel-item" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('media/placeholder.jpg') no-repeat center center/cover;">
+        <div class="carousel-content">
+            <span class="slide-number">01</span>
+            <div class="carousel-text">
+                <h1 class="animate-text">Leveraging Deep Learning in Medical Imaging</h1>
+                <p class="animate-text">Developing cutting-edge AI solutions for improved diagnosis and treatment</p>
+                <a href="#research" class="cta animate-text">Learn More</a>
             </div>
+            <div class="slide-decoration"></div>
         </div>
-        <div class="carousel-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('media/holder1.png') no-repeat center center/cover;">
-            <div class="carousel-content">
-                <h1>Advancing Healthcare with AI</h1>
-                <a href="#publications" class="cta">View Research</a>
+    </div>
+    <div class="carousel-item" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('media/holder1.png') no-repeat center center/cover;">
+        <div class="carousel-content">
+            <span class="slide-number">02</span>
+            <div class="carousel-text">
+                <h1 class="animate-text">Advancing Healthcare with AI</h1>
+                <p class="animate-text">Bridging the gap between artificial intelligence and clinical practice</p>
+                <a href="#publications" class="cta animate-text">View Research</a>
             </div>
+            <div class="slide-decoration"></div>
         </div>
-        <div class="carousel-item" style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('media/holder2.png') no-repeat center center/cover;">
-            <div class="carousel-content">
-                <h1>Innovation in Medical Image Analysis</h1>
-                <a href="#contact" class="cta">Get In Touch</a>
+    </div>
+    <div class="carousel-item" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('media/holder2.png') no-repeat center center/cover;">
+        <div class="carousel-content">
+            <span class="slide-number">03</span>
+            <div class="carousel-text">
+                <h1 class="animate-text">Innovation in Medical Image Analysis</h1>
+                <p class="animate-text">Creating next-generation tools for medical professionals</p>
+                <a href="#contact" class="cta animate-text">Get In Touch</a>
             </div>
+            <div class="slide-decoration"></div>
         </div>
-    </section>
+    </div>
+    
+    <div class="carousel-controls">
+        <div class="carousel-progress">
+            <div class="progress-bar"></div>
+        </div>
+        <div class="carousel-arrows">
+            <button class="carousel-prev" aria-label="Previous slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="carousel-next" aria-label="Next slide">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 6L15 12L9 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+</section>
 
     <section id="about" class="section light-section fade-in asymmetric-right" data-aos="fade-up">
         <div class="decorative-line"></div>
@@ -216,27 +249,84 @@
             });
         });
 
-        // Initialize carousel with modern settings
+        // Initialize modern carousel with enhanced settings
         $(document).ready(function(){
-            $('#hero-carousel').slick({
-                dots: true,
+            const $carousel = $('#hero-carousel');
+            const $progressBar = $('.carousel-progress .progress-bar');
+            let slideCount;
+            
+            // Fix height before initialization to prevent jump
+            $carousel.find('.carousel-item').css('height', '100vh');
+            
+            $carousel.on('init', function(event, slick){
+                slideCount = slick.slideCount;
+                setProgressBar(0);
+                
+                // Add initial classes to first slide texts for animation
+                $('.slick-current').find('.animate-text').addClass('animate-in');
+            });
+            
+            $carousel.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+                setProgressBar(nextSlide);
+                
+                // Remove animation classes from all slides
+                $('.animate-text').removeClass('animate-in');
+                
+                // Add animation classes to next slide with delay
+                setTimeout(function() {
+                    $('.slick-slide[data-slick-index="' + nextSlide + '"]').find('.animate-text').addClass('animate-in');
+                }, 300);
+            });
+            
+            $carousel.slick({
+                dots: false,
                 infinite: true,
                 speed: 800,
                 fade: true,
-                cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
+                cssEase: 'cubic-bezier(0.25, 1, 0.35, 1)',
                 autoplay: true,
                 autoplaySpeed: 6000,
-                pauseOnHover: false,
-                adaptiveHeight: true,
-                arrows: false,
+                pauseOnHover: true,
+                adaptiveHeight: false,
+                arrows: true,
+                prevArrow: $('.carousel-prev'),
+                nextArrow: $('.carousel-next'),
+                draggable: true,
+                swipe: true,
+                lazyLoad: 'ondemand',
                 responsive: [
                     {
                         breakpoint: 768,
                         settings: {
-                            arrows: false
+                            draggable: true
                         }
                     }
                 ]
+            });
+            
+            function setProgressBar(currentSlide){
+                const percentage = (currentSlide / (slideCount - 1)) * 100;
+                $progressBar.css('width', percentage + '%');
+            }
+            
+            // Pause autoplay when scrolled past
+            $(window).on('scroll', function() {
+                const $carousel = $('#hero-carousel');
+                if ($carousel.length) {
+                    const carouselBottom = $carousel.offset().top + $carousel.outerHeight();
+                    const scrollPosition = $(window).scrollTop() + $(window).height();
+                    
+                    if (scrollPosition < carouselBottom) {
+                        $carousel.slick('slickPlay');
+                    } else {
+                        $carousel.slick('slickPause');
+                    }
+                }
+            });
+
+            // Fix the height issue for all slides
+            $(window).on('resize', function() {
+                $('.carousel-item').css('height', '100vh');
             });
         });
 

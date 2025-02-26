@@ -1145,3 +1145,272 @@ a, button, .framework, .modern-list li, #research li {
 .dark-theme .form-status.error {
   background-color: rgba(220, 53, 69, 0.1);
 }
+
+/* Modern carousel styling */
+.modern-carousel {
+  height: 100vh;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  padding-top: 60px; /* Adjust based on header height */
+}
+
+.modern-carousel::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25vh;
+  background: linear-gradient(to top, var(--bg), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.modern-carousel .carousel-item {
+  height: 100vh;
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: left;
+  background-blend-mode: multiply;
+  transition: all 0.8s ease;
+  padding-left: 10%;
+}
+
+.modern-carousel .carousel-content {
+  max-width: 700px;
+  padding: 1rem;
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: flex-start;
+}
+
+.slide-number {
+  font-size: 4rem;
+  font-weight: 700;
+  opacity: 0.2;
+  line-height: 1;
+  margin-right: 1.5rem;
+  font-family: "Poppins", sans-serif;
+  display: block;
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  letter-spacing: -2px;
+}
+
+.carousel-text {
+  flex: 1;
+}
+
+.modern-carousel h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  letter-spacing: -1px;
+  line-height: 1.1;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+  transition-delay: 0.3s;
+}
+
+.modern-carousel p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+  max-width: 500px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+  transition-delay: 0.5s;
+}
+
+.modern-carousel .cta {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s, transform 0.8s;
+  transition-delay: 0.7s;
+}
+
+/* Animation for text elements */
+.animate-text.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-decoration {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  top: -100px;
+  right: -100px;
+  z-index: -1;
+  opacity: 0.3;
+}
+
+.slide-decoration::before {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  top: 75px;
+  left: 75px;
+}
+
+/* Carousel controls */
+.carousel-controls {
+  position: absolute;
+  bottom: 60px;
+  right: 10%;
+  display: flex;
+  align-items: center;
+  z-index: 5;
+  gap: 2rem;
+}
+
+.carousel-arrows {
+  display: flex;
+  gap: 1rem;
+}
+
+.carousel-prev,
+.carousel-next {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+  background: var(--primary);
+  transform: scale(1.05);
+}
+
+.carousel-progress {
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+  width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  position: absolute;
+  height: 100%;
+  width: 0;
+  left: 0;
+  top: 0;
+  background: var(--primary);
+  transition: width 0.3s ease;
+}
+
+/* Make slick dots more modern */
+.slick-dots {
+  bottom: 30px;
+  right: 30px;
+  width: auto;
+  text-align: right;
+}
+
+.slick-dots li {
+  margin: 0 4px;
+}
+
+.slick-dots li button:before {
+  color: white;
+  opacity: 0.5;
+  font-size: 8px;
+}
+
+.slick-dots li.slick-active button:before {
+  color: white;
+  opacity: 1;
+}
+
+/* Responsive carousel */
+@media (max-width: 768px) {
+  .modern-carousel .carousel-item {
+    padding-left: 5%;
+  }
+  
+  .modern-carousel h1 {
+    font-size: 2.2rem;
+  }
+  
+  .modern-carousel p {
+    font-size: 1rem;
+  }
+  
+  .slide-number {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+  }
+  
+  .carousel-controls {
+    right: 5%;
+    bottom: 30px;
+  }
+  
+  .carousel-progress {
+    width: 60px;
+  }
+  
+  .slide-decoration {
+    display: none;
+  }
+}
+
+/* Fix for carousel height consistency */
+.modern-carousel .slick-list,
+.modern-carousel .slick-track {
+  height: 100% !important;
+}
+
+.modern-carousel .slick-slide {
+  height: 100vh;
+  visibility: hidden; /* Hide all slides by default */
+}
+
+.modern-carousel .slick-slide.slick-active {
+  visibility: visible; /* Only show active slide */
+}
+
+/* Ensure consistent carousel item height */
+.modern-carousel .carousel-item {
+  height: 100vh !important; /* Force consistent height */
+  min-height: 600px; /* Set a minimum height for very small screens */
+  transition: opacity 0.8s ease;
+  position: relative;
+}
+
+/* Ensure vertical centering of content regardless of slide height */
+.modern-carousel .carousel-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  max-width: 700px;
+  left: 10%;
+}
+
+@media (max-width: 768px) {
+  .modern-carousel .carousel-content {
+    left: 5%;
+  }
+}
