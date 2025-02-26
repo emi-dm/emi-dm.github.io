@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Favicon Generator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    button {
+      padding: 10px 15px;
+      background: #7c3aed;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #preview {
+      margin-top: 20px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      display: none;
+    }
+    canvas {
+      border: 1px solid #eee;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Simple Favicon Generator</h1>
+    <p>Upload an image to generate various favicon sizes for your website.</p>
+    
+    <div class="form-group">
+      <label for="imageUpload">Upload Image (PNG recommended):</label>
+      <input type="file" id="imageUpload" accept="image/*">
+    </div>
+    
+    <div class="form-group">
+      <label for="backgroundColor">Background Color (for transparent images):</label>
+      <input type="color" id="backgroundColor" value="#ffffff">
+    </div>
+    
+    <button id="generateBtn">Generate Favicons</button>
+    
+    <div id="preview">
+      <h2>Preview:</h2>
+      <div id="canvasContainer"></div>
+      <h3>Download Links:</h3>
+      <div id="downloadLinks"></div>
+    </div>
+  </div>
+  
+  <script>
+    document.getElementById('generateBtn').addEventListener('click', function() {
+      const fileInput = document.getElementById('imageUpload');
+      const bgColor = document.getElementById('backgroundColor').value;
+      
+      if (!fileInput.files.length) {
+        alert('Please select an image file.');
+        return;
+      }
+      
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        const img = new Image();
+        img.onload = function() {
+          generateFavicons(img, bgColor);
+        };
+        img.src = e.target.result;
+      };
+      
+      reader.readAsDataURL(file);
+    });
+    
+    function generateFavicons(sourceImg, bgColor) {
+      const sizes = [16, 32, 48, 64, 128, 192, 512];
+      const canvasContainer = document.getElementById('canvasContainer');
+      const downloadLinks = document.getElementById('downloadLinks');
+      
+      canvasContainer.innerHTML = '';
+      downloadLinks.innerHTML = '';
+      
+      sizes.forEach(size => {
+        const canvas = document.createElement('canvas');
+        canvas.width = size;
+        canvas.height = size;
+        const ctx = canvas.getContext('2d');
+        
+        // Fill background if specified
+        ctx.fillStyle = bgColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // Draw image centered and scaled to fit
+        const scale = Math.min(canvas.width / sourceImg.width, canvas.height / sourceImg.height);
+        const x = (canvas.width / 2) - (sourceImg.width / 2) * scale;
+        const y = (canvas.height / 2) - (sourceImg.height / 2) * scale;
+        ctx.drawImage(sourceImg, x, y, sourceImg.width * scale, sourceImg.height * scale);
+        
+        // Add to preview
+        canvasContainer.appendChild(canvas);
+        
+        // Create download link
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL('image/png');
+        link.download = `favicon-${size}x${size}.png`;
+        link.textContent = `Download ${size}x${size} PNG`;
+        link.style.display = 'block';
+        link.style.margin = '5px 0';
+        downloadLinks.appendChild(link);
+      });
+      
+      // Show the preview section
+      document.getElementById('preview').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
