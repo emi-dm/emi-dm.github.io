@@ -9,9 +9,9 @@
 # Basic Site Settings
 locale                   : "en-US"
 site_theme               : "default"
-title                    : "Your Name / Site Title"
+title                    : "Emilio Delgado Muñoz"
 title_separator          : "-"
-name                     : &name "Your Name"
+name                     : &name "Emilio Delgado Muñoz"
 description              : &description "personal description"
 url                      : https://academicpages.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,31 +22,30 @@ repository               : "academicpages/academicpages.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
-  employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+  avatar           : "/images/emilio-delgado.jpg"
+  name             : "Emilio Delgado"
+  bio              : "Researcher at the University of Extremadura, specializing in Machine Learning and Deep Learning for healthcare. His work focuses on applying advanced AI techniques to process and analyze large-scale clinical and medical imaging data, aiming to improve healthcare outcomes and quality of life. Passionate about optimizing deep learning algorithms for medical applications, Emilio is committed to innovation, accuracy, and data privacy in AI-driven healthcare solutions."
+  location         : "University of Extremadura, Spain"
+  employer         : "University of Extremadura"
+  uri              : "https://i3lab.unex.es/author/emilio-delgado/"
+  email            : "emidelgado@unex.es" 
 
   # Academic websites
   academia         : # URL
   arxiv            : # URL - Update with the correct link to your profile
-  googlescholar    : "https://scholar.google.com/citations?user=PS_CX0AAAAAJ"
+  googlescholar    : "https://scholar.google.es/citations?hl=es&user=eIBVkQEAAAAJ"
   impactstory      : # URL
-  orcid            : "http://orcid.org/yourorcidurl"
+  orcid            : "https://orcid.org/0000-0002-1234-5678"
   semantic         : # URL
   pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  researchgate     : # URL
+  researchgate     : "https://www.researchgate.net/profile/Emilio-Delgado-6"
   scopus           : # URL
 
   # Repositories and software development
   bitbucket        : # Username - Update with your username on the site
   codepen          : # Username
   dribbble         : # Username
-  github           : "academicpages"
+  github           : "emi-dm"
   kaggle           : # Username  
   stackoverflow    : # User number or user number and name (i.e., use "1" or "1/jeff-atwood")    
 
@@ -60,7 +59,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : "emilio-delgado"
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username

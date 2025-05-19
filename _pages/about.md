@@ -1,49 +1,94 @@
 ---
 permalink: /
-title: "Academic Pages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "Emilio Delgado"
 author_profile: true
-redirect_from: 
+redirect_from:
   - /about/
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [Academic Pages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the repository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this template](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads!
+I am Emilio Delgado, currently a PhD student in the Department of Computer and Telematic Systems Engineering at the University of Extremadura. My research is carried out in collaboration with the Jesús Usón Minimally Invasive Surgery Centre, a leading institution. I am passionate about working at the intersection of computer science, telematics, and engineering, with a special focus on optimizing energy efficiency in buildings and improving quality of life through advanced technological solutions.
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, Academic Pages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+## Academic Background and Affiliations
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over - just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+I am currently pursuing my PhD at the University of Extremadura, where I actively contribute to research in my field. The collaboration with the Jesús Usón Minimally Invasive Surgery Centre reflects my interest in applying knowledge to real-world problems, especially in the field of medical technology.
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this template](https://github.com/academicpages/academicpages.github.io) by clicking the "Use this template" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+My academic background includes:
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+*   **University of Extremadura**
+    *   PhD in Artificial Intelligence
+    *   *Period:* September 2023 - September 2026
+*   **UNIR - International University of La Rioja**
+    *   Master's in Artificial Intelligence
+    *   *Period:* October 2022 - July 2023
+    *   *Average grade:* 9.49
+    *   *Description:* The master's allowed me to explore fundamental areas of AI: computer vision, machine learning techniques, natural language processing (NLP), statistics, and Python programming. I also delved into the ethical aspects of AI and carried out practical projects, from expert systems to computer vision models. The master's thesis focused on medical image processing.
+    *   *Skills:* Time series, AIOps, Python, data analysis, R, data structures, PyTorch, predictive models, machine learning, NLP, Google Cloud, Keras, MLOps, AWS, analytical skills, statistics, research.
+*   **UNIR - International University of La Rioja**
+    *   Advanced Course in Data Analyst and Data Visualization
+    *   *Period:* October 2022 - July 2023
+    *   *Average grade:* 8.35
+    *   *Skills:* Mathematical models, time series, AIOps, statistical models, data analysis, R, data structures, predictive models, D3.js, NLP, Tableau, PowerBI, statistics.
+*   **University of Extremadura**
+    *   Bachelor's in Software Engineering
+    *   *Period:* 2018 - 2022
+    *   *Average grade:* 8.33
+    *   *Skills:* Time series, Python, problem solving, C, Java, data structures, metamodeling, NoSQL, collaborative work, artificial intelligence, JavaScript, SQL, C++.
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+## Research Interests
 
-**Markdown generator**
+My research interests are varied and cover several key areas:
+*   Medical image processing: I research advanced techniques for the analysis of medical images, including:
+    *   Segmentation: Automatic identification and delineation of structures in images (CT, MRI, US).
+    *   Synthetic data generation: Creation of artificial datasets to train AI models, especially useful when real data is scarce.
+    *   Adaptability to different problems and medical imaging modalities.
+*   Human anatomy modeling: Currently focused on detailed heart models, with the possibility of expanding to other structures.
 
-The repository includes [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the Academic Pages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+## Publications
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
+Some of my recent publications (from my Google Scholar profile) are:
+*   Prompt Once, Segment Everything: Leveraging SAM 2 Potential for Infinite Medical Image Segmentation with a Single Prompt (Year: 2025)
+*   No More Training: SAM's Zero-Shot Transfer Capabilities for Cost-Efficient Medical Image Segmentation (Year: 2024)
+*   Advancing precision in medical image segmentation: A performance analysis of loss functions for COVID‐19 lung infection segmentation in computed tomography images (Year: 2024)
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+## Talks and Presentations
 
-For more info
-------
-More info about configuring Academic Pages can be found in [the guide](https://academicpages.github.io/markdown/), the [growing wiki](https://github.com/academicpages/academicpages.github.io/wiki), and you can always [ask a question on GitHub](https://github.com/academicpages/academicpages.github.io/discussions). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+(Coming soon: information about presentations at academic or professional events.)
+
+## Teaching Activity
+
+(In this section I will add details about my participation in teaching, tutoring, or project supervision.)
+
+## Volunteering Experience
+
+I have participated in the following volunteering activities:
+*   **Guest Researcher**
+    *   University of Extremadura
+    *   *Period:* September 2023 - 1 month
+    *   *Area:* Art and culture
+    *   *Details:* Generative art with AI workshop as part of the European Researchers' Night.
+*   **Staff**
+    *   DevopsDays Cáceres
+    *   *Period:* October 2024 - 1 month (Note: the year may be an error, probably 2023 or recent if the event has already taken place)
+    *   *Area:* Science and technology
+    *   *Details:* Participation as staff at DevopsDays Cáceres.
+
+## Interests
+
+Beyond academia, I nurture passions that fuel both my creativity and curiosity:
+
+*   **Tech Explorer:** I thrive on diving into new technologies, programming languages, and unconventional methodologies—always seeking that "aha!" moment when a fresh tool unlocks a new solution.
+*   **Vibe Coding Enthusiast:** For me, coding is more than syntax—it's about crafting an environment where music, mood, and flow converge to spark innovation and joy. I believe the right vibe can turn any coding session into a creative jam.
+*   **Vertical Adventurer:** Whether scaling a climbing wall or shooting hoops on the basketball court, I find inspiration and balance in movement, challenge, and teamwork.
+*   **Guitar Storyteller:** My guitar is my companion for unwinding and self-expression, letting melodies and riffs tell stories words sometimes can't.
+
+## Projects
+
+These are some of the projects I have participated in or am involved with:
+*   Tricuspid valve modeling: Project focused on creating models of the tricuspid valve.
+*   Atrial fibrillation modeling: Project focused on models related to atrial fibrillation.
+(I will be able to add more information about these and other projects, including objectives, methodologies, and results.)
+
+## Future Lines
+
+(In this section I will include research areas or projects that I plan to explore in the future.)
