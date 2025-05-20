@@ -8,7 +8,8 @@ author_profile: true
 ## Contact
 - **Location:** Cáceres, Spain
 - **Email:** edm@unex.es
-- **LinkedIn:** [emilio-delgado](https://www.linkedin.com/in/emilio-delgado)
+- **LinkedIn:** [emilio-delgado-muñoz](https://www.linkedin.com/in/emilio-delgado-muñoz-418663233)
+- **ORCID:** [0000-0002-9144-0698](https://orcid.org/0000-0002-9144-0698)
 - **Web:** [i3lab.unex.es/people](https://i3lab.unex.es/people)
 
 ## Summary
