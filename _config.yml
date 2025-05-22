@@ -22,7 +22,7 @@ repository               : "emi-dm/emi-dm.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "/images/emilio-delgado.jpg"
+  avatar           : "/images/me.png"
   name             : "Emilio Delgado"
   bio              : "Researcher at the University of Extremadura, specializing in Machine Learning and Deep Learning for healthcare. His work focuses on applying advanced AI techniques to process and analyze large-scale clinical and medical imaging data, aiming to improve healthcare outcomes and quality of life. Passionate about optimizing deep learning algorithms for medical applications, Emilio is committed to innovation, accuracy, and data privacy in AI-driven healthcare solutions."
   location         : "University of Extremadura, Spain"
