@@ -1,0 +1,226 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Install Dependencies",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["install"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Install Ruby gems and Jekyll dependencies"
+        },
+        {
+            "label": "Serve Site Locally",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["exec", "jekyll", "serve", "--livereload", "--host", "localhost", "--port", "4000"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [
+                {
+                    "pattern": [
+                        {
+                            "regexp": ".*",
+                            "file": 1,
+                            "location": 2,
+                            "message": 3
+                        }
+                    ],
+                    "background": {
+                        "activeOnStart": true,
+                        "beginsPattern": "Configuration file:",
+                        "endsPattern": "Server running\\.\\.\\. press ctrl\\-c to stop\\."
+                    }
+                }
+            ],
+            "detail": "Start Jekyll development server with live reload at localhost:4000"
+        },
+        {
+            "label": "Build Site",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["exec", "jekyll", "build"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Build the Jekyll site for production"
+        },
+        {
+            "label": "Clean Build",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["exec", "jekyll", "clean"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Clean Jekyll build artifacts"
+        },
+        {
+            "label": "Docker: Build and Serve",
+            "type": "shell",
+            "command": "docker",
+            "args": ["compose", "up", "--build"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "isBackground": true,
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Build and serve the site using Docker (localhost:4000)"
+        },
+        {
+            "label": "Docker: Stop Services",
+            "type": "shell",
+            "command": "docker",
+            "args": ["compose", "down"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Stop Docker compose services"
+        },
+        {
+            "label": "Generate Publications from TSV",
+            "type": "shell",
+            "command": "python3",
+            "args": ["publications.py"],
+            "options": {
+                "cwd": "${workspaceFolder}/markdown_generator"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Generate publication markdown files from TSV data"
+        },
+        {
+            "label": "Generate Talks from TSV",
+            "type": "shell",
+            "command": "python3",
+            "args": ["talks.py"],
+            "options": {
+                "cwd": "${workspaceFolder}/markdown_generator"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Generate talks markdown files from TSV data"
+        },
+        {
+            "label": "Update Bundle",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["update"],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Update Ruby gems to latest versions"
+        },
+        {
+            "label": "Check Jekyll Version",
+            "type": "shell",
+            "command": "bundle",
+            "args": ["exec", "jekyll", "--version"],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared",
+                "showReuseMessage": true,
+                "clear": false
+            },
+            "problemMatcher": [],
+            "detail": "Display Jekyll version information"
+        }
+    ]
+}

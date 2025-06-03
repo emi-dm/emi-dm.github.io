@@ -10,11 +10,195 @@
 <link rel="manifest" href="{{ base_path }}/images/manifest.json"/>
 <link rel="icon" href="/images/favicon.ico"/>
 <meta name="theme-color" content="#ffffff"/>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<!-- Academicons -->
 <link rel="stylesheet" href="{{ base_path }}/assets/css/academicons.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
 
 <!-- Support for MatJax -->
 <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- Custom CSS for text justification -->
+<style>
+/* Justify text in main content areas */
+.page__content p,
+.page__content .archive__item-excerpt,
+.archive__item-excerpt,
+.author__bio,
+article p,
+.single .page__content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Justify text in publications and talks */
+.archive__item-teaser + .archive__item-body p,
+.archive__item-body .archive__item-excerpt {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Justify CV content */
+.cv-template p,
+#cv-content p {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+/* Keep titles and headers left-aligned */
+h1, h2, h3, h4, h5, h6,
+.page__title,
+.archive__item-title,
+.author__name {
+  text-align: left !important;
+}
+
+/* Keep navigation and sidebar elements left-aligned */
+.sidebar,
+.navigation,
+.masthead,
+.author__urls {
+  text-align: left !important;
+}
+
+/* Keep buttons and form elements left-aligned */
+.btn,
+input,
+textarea,
+select {
+  text-align: left !important;
+}
+
+/* Add more spacing between sidebar and main content */
+@media (min-width: 64em) {
+  .sidebar {
+    width: calc(200px - 1em);
+    margin-right: 2em;
+    padding-right: 1em;
+  }
+  
+  .archive {
+    width: calc(100% - 200px - 3em);
+    padding-left: 2em;
+    margin-left: 0.5em;
+  }
+  
+  .page__content {
+    margin-left: 2em;
+    padding-left: 0.5em;
+  }
+  
+  .page__inner-wrap {
+    margin-left: 0.5em;
+  }
+}
+
+@media (min-width: 80em) {
+  .sidebar {
+    width: calc(300px - 1em);
+    margin-right: 2.5em;
+    padding-right: 1.5em;
+  }
+  
+  .archive {
+    width: calc(100% - 300px - 4em);
+    padding-left: 2.5em;
+    margin-left: 0.75em;
+  }
+  
+  .page__content {
+    margin-left: 2.5em;
+    padding-left: 0.75em;
+  }
+  
+  .page__inner-wrap {
+    margin-left: 0.75em;
+  }
+}
+
+/* Reduce excessive spacing in archive pages */
+.archive .archive__item {
+  margin-bottom: 1em; /* Further reduced from 1.5em */
+  padding-bottom: 0.5em; /* Added for tighter spacing */
+}
+
+.archive .archive__item-title {
+  margin-bottom: 0.25em; /* Further reduced */
+  line-height: 1.2; /* Tighter line height */
+}
+
+.archive .archive__item-excerpt {
+  margin-bottom: 0.5em; /* Further reduced */
+}
+
+/* Compact spacing for publication and talk lists */
+.archive .archive__item + .archive__item {
+  margin-top: 0.5em; /* Further reduced */
+}
+
+/* Remove excessive padding from archive pages */
+.archive {
+  padding-top: 0.5em; /* Further reduced */
+}
+
+.archive h1.page__title {
+  margin-bottom: 0.75em; /* Further reduced */
+  margin-top: 0.25em; /* Further reduced */
+}
+
+/* Tighten up spacing for archive items */
+.archive__item-body {
+  padding-left: 0;
+  margin-bottom: 0.5em; /* Further reduced */
+}
+
+/* Reduce spacing between publication categories */
+.archive h2 {
+  margin-top: 1em; /* Further reduced */
+  margin-bottom: 0.5em; /* Further reduced */
+}
+
+/* Compact the archive single items */
+.archive__item-teaser {
+  margin-bottom: 0.25em; /* Further reduced */
+}
+
+/* Reduce whitespace in empty areas */
+.archive .wordwrap {
+  margin-bottom: 1em; /* Further reduced */
+  margin-top: 0.25em; /* Further reduced */
+}
+
+/* Make paragraph spacing in archive items more compact */
+.archive__item p {
+  margin-bottom: 0.5em;
+}
+
+/* Reduce spacing around meta information */
+.archive .page__meta {
+  margin-bottom: 0.25em;
+  margin-top: 0.25em;
+}
+
+/* Additional spacing for single pages only */
+.single .page__content,
+.single .page__inner-wrap {
+  padding-left: 1em;
+}
+
+/* Ensure proper spacing on mobile */
+@media (max-width: 63.9375em) {
+  .page__content,
+  .archive {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
+</style>
 
 <!-- end custom head snippets -->
