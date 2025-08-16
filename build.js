@@ -88,8 +88,8 @@ function renderBlogIndex(posts) {
   let tpl = loadTemplate('blog_index.html');
   const items = posts.map(p => `
     <article class="post-card">
-      <h2><a href="/blog/${p.slug}/">${p.title}</a></h2>
-      <div class="meta">${p.dateDisplay}${p.tags?.length ? ' • ' + p.tags.map(t=>`<a href=\"/blog/tags/${slugify(t)}/\" class=\"chip\">#${t}</a>`).join(' ') : ''}</div>
+  <h2><a href="${BASE}/blog/${p.slug}/">${p.title}</a></h2>
+  <div class="meta">${p.dateDisplay}${p.tags?.length ? ' • ' + p.tags.map(t=>`<a href=\"${BASE}/blog/tags/${slugify(t)}/\" class=\"chip\">#${t}</a>`).join(' ') : ''}</div>
       <p>${p.summary || ''}</p>
     </article>
   `).join('\n');
