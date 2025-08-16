@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Configure Pages
+        uses: actions/configure-pages@v4
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -28,6 +30,10 @@ jobs:
         run: npm install
       - name: Build site
         run: npm run build
+      - name: Inspect built files
+        run: |
+          echo "Listing docs directory:" && ls -la ./docs || true
+          test -f ./docs/index.html && echo "index.html found" || (echo "index.html MISSING" && exit 1)
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
