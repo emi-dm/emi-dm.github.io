@@ -188,6 +188,8 @@ function build() {
 
   // Robots and basic metadata files
   writeFile(path.join(DOCS, 'robots.txt'), 'User-agent: *\nAllow: /');
+  // Prevent Jekyll processing when deploying from a branch
+  writeFile(path.join(DOCS, '.nojekyll'), '');
 }
 
 build();
