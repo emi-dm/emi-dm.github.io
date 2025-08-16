@@ -1,0 +1,37 @@
+{
+  "name": "Emilio Delgado",
+  "role": "Researcher",
+  "affiliation": "University of Extremadura",
+  "avatar": "https://i3lab.unex.es/author/emilio-delgado/avatar_hu02b0f14c9b39372c2237d77f0f3222a0_250360_270x270_fill_q75_lanczos_center.jpg",
+  "bio": "AI researcher at the University of Extremadura focusing on multi-agent systems and Deep Learning. I work at the intersection of AI and software engineering, exploring how intelligent agents can improve collaboration, decision-making, and efficiency across the development lifecycle. I also pursue applied research in healthcare, using robust and interpretable deep learning to unlock insights from clinical data and medical imaging while respecting privacy and ethics.",
+  "interests": [
+    "Multi-Agent Systems",
+    "Retrieval-Augmented Generation",
+    "Deep Learning for Healthcare",
+    "Data Science",
+    "Artificial Neural Networks"
+  ],
+  "education": [
+    { "degree": "B.Sc. in Software Engineering", "institution": "University of Extremadura", "year": "2022" },
+    { "degree": "M.Sc. in Artificial Intelligence", "institution": "UNIR", "year": "2023" },
+    { "degree": "Advanced University Course in Data Analyst", "institution": "UNIR", "year": "2023" }
+  ],
+  "latest": [
+    { "title": "AI-Based System for Assistance in Minimally Invasive Renal Procedures Using Mixed Reality. First Steps", "url": "https://i3lab.unex.es/publication/delgadoibpria-2025/" },
+    { "title": "Prompt Once, Segment Everything: Leveraging SAM 2", "url": "https://i3lab.unex.es/publication/gutierrez-25/" },
+    { "title": "Advancing precision in medical image segmentation", "url": "https://i3lab.unex.es/publication/advancing-precision/" }
+  ],
+  "projects": [
+    { "title": "SAM in Medical Image Segmentation", "url": "https://i3lab.unex.es/project/sam-mis/" },
+    { "title": "MusicGenia", "url": "https://i3lab.unex.es/project/musicgenia/" }
+  ],
+  "publications": [
+    { "title": "No More Training: SAM's Zero-Shot Transfer Capabilities for Cost-Efficient Medical Image Segmentation", "url": "https://i3lab.unex.es/publication/gutierrez-24/" },
+    { "title": "Precision in Medical Segmentation with Compound Loss Functions", "url": "https://i3lab.unex.es/post/25-05-14-advancing-precision-covid-19/" }
+  ],
+  "links": [
+    { "title": "i3 lab", "url": "https://i3lab.unex.es/" },
+    { "title": "Google Scholar", "url": "https://scholar.google.com/" },
+    { "title": "LinkedIn", "url": "https://www.linkedin.com/" }
+  ]
+}

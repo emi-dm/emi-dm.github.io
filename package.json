@@ -1,0 +1,26 @@
+{
+  "name": "personal-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website with a markdown-based blog, built for GitHub Pages (docs/).",
+  "scripts": {
+    "build": "node build.js",
+    "clean": "node -e \"require('fs').rmSync('docs',{recursive:true,force:true})\"",
+    "dev": "npm run build && npx http-server docs -p 5173 -c-1"
+  },
+  "keywords": [
+    "github-pages",
+    "static-site",
+    "markdown",
+    "blog"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "date-fns": "^3.6.0",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.1.0"
+  }
+}

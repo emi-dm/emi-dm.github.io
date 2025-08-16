@@ -1,0 +1,149 @@
+/*
+	New modern theme with dark mode, fluid animations, and scroll reveals.
+	- CSS variables for theming
+	- Glassy cards, subtle gradients
+	- Reduced motion support
+*/
+
+:root{
+	/* Dark: charcoal base + neon magenta/teal accents */
+	--bg: #0b0f14;
+	--bg-2: #0e131a;
+	--surface: rgba(255,255,255,0.05);
+	--card: rgba(255,255,255,0.07);
+	--ink: #eff6ff;
+	--muted: #98a7bd;
+
+	--primary: #ff4fb7;       /* neon magenta */
+	--primary-10: rgba(255,79,183,0.10);
+	--primary-20: rgba(255,79,183,0.20);
+	--accent: #28e7d4;        /* neon teal */
+	--accent-10: rgba(40,231,212,0.12);
+	--accent-20: rgba(40,231,212,0.20);
+	--success: #22c55e;
+	--warning: #f59e0b;
+	--danger: #ef4444;
+
+	--border: rgba(255,255,255,0.10);
+	--shadow: 0 8px 24px rgba(0,0,0,0.28);
+
+	--radius: 14px;
+	--radius-lg: 18px;
+}
+
+/* Light theme */
+html[data-theme="light"]{
+	/* Light: warm cream + playful violet/teal accents */
+	--bg: #fffaf5;
+	--bg-2: #f6f1ff;
+	--surface: rgba(255,255,255,0.85);
+	--card: rgba(255,255,255,0.96);
+	--ink: #0f172a;
+	--muted: #5a6a80;
+	--primary: #7d5cff;        /* playful violet */
+	--primary-10: rgba(125,92,255,0.10);
+	--primary-20: rgba(125,92,255,0.20);
+	--accent: #10b9a8;         /* fresh teal */
+	--accent-10: rgba(16,185,168,0.12);
+	--accent-20: rgba(16,185,168,0.20);
+	--border: rgba(0,0,0,0.10);
+	--shadow: 0 10px 30px rgba(12,30,70,0.12);
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+	font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+	color: var(--ink);
+	line-height: 1.6;
+	background:
+	radial-gradient(1200px 500px at 50% -220px, var(--primary-10), transparent 60%),
+	radial-gradient(900px 430px at 90% -120px, var(--accent-10), transparent 60%),
+		linear-gradient(180deg, var(--bg), var(--bg-2));
+}
+
+/* Background canvas sits behind everything */
+#bg-canvas{position:fixed;inset:0;z-index:-1;opacity:.55}
+
+.container{max-width:1000px;margin:0 auto;padding:1.25rem}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg, rgba(0,0,0,0.22), rgba(0,0,0,0)) , var(--surface);backdrop-filter: saturate(160%) blur(12px);border-bottom:1px solid var(--border)}
+.nav{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:1rem}
+.nav-links{display:flex;justify-content:center;gap:1rem}
+.nav-actions{display:flex;justify-content:flex-end}
+.nav a{color:var(--ink);text-decoration:none;font-weight:600;opacity:.9}
+.nav a:hover{opacity:1;color:var(--accent)}
+.brand{display:flex;align-items:center;gap:.6rem}
+.logo{display:inline-grid;place-items:center;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border-radius:10px;padding:.4rem .55rem;box-shadow:var(--shadow)}
+.theme-toggle{display:inline-grid;place-items:center;border:1px solid var(--border);background:var(--card);color:var(--ink);border-radius:10px;padding:.38rem;cursor:pointer;transition:transform .2s ease, background .2s ease; box-shadow:var(--shadow)}
+.theme-toggle:hover{transform:translateY(-1px)}
+
+.site-footer{border-top:1px solid var(--border);margin-top:3rem;padding:1rem 0;color:var(--muted);text-align:center}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:.9rem;align-items:center;justify-content:center;margin:2.2rem auto 2.6rem;text-align:center;background:var(--card);border:1px solid var(--border);border-radius:var(--radius-lg);box-shadow:var(--shadow);padding:1.25rem 1.1rem;max-width:880px}
+.hero .avatar{border-radius:50%;border:4px solid var(--primary-20);box-shadow:0 16px 40px rgba(124,92,255,.25);margin:0 auto}
+.hero .subtitle{margin-top:.2rem}
+
+h1,h2,h3{line-height:1.2;margin:0 0 .5rem}
+h1{font-size:2.2rem;text-align:center;background:linear-gradient(90deg,var(--ink), var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:1.35rem;text-align:center}
+.subtitle{color:var(--muted)}
+.lead{font-size:1.08rem;max-width:780px;margin:.25rem auto 0;text-align:center}
+
+/* Cards and grids */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.1rem}
+.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem;box-shadow:var(--shadow)}
+.list{margin:0 auto;padding-left:1.2rem;max-width:720px}
+.list li{margin:.38rem 0}
+
+/* Blog cards */
+.posts{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;justify-content:center}
+.post-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1rem;box-shadow:var(--shadow);
+	transition:transform .25s ease, box-shadow .25s ease, background .25s ease}
+.post-card:hover{transform:translateY(-4px) scale(1.01);box-shadow:0 14px 30px rgba(255,79,183,.18);background:linear-gradient(180deg, var(--primary-10), rgba(0,0,0,0)) , var(--card)}
+.post-header{margin:1rem 0;text-align:center}
+.meta{color:var(--muted);font-size:.92rem}
+.muted{color:var(--muted)}
+.chip{display:inline-block;background:linear-gradient(90deg,var(--primary-10),var(--accent-10));color:var(--primary);border-radius:999px;padding:.12rem .55rem;text-decoration:none;margin-right:.25rem}
+.post-content{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.1rem}
+.post-content img{max-width:100%;height:auto;border-radius:8px;display:block;margin:0.9rem auto}
+/* Optional: center figures and style captions */
+.post-content figure{margin:1.1rem auto;text-align:center}
+.post-content figcaption{color:var(--muted);font-size:.9rem;margin-top:.4rem}
+
+/* Typography and elements */
+code,pre{background:rgba(0,0,0,0.22)}
+a{color:var(--accent)}
+a:hover{text-decoration:none}
+blockquote{margin:1rem auto;padding:.6rem 1rem;border-left:3px solid var(--primary-20);background:var(--primary-10);border-radius:8px;max-width:760px}
+pre{padding:.85rem;border-radius:10px;overflow:auto}
+hr{border:none;height:1px;background:var(--border);margin:1.5rem auto;max-width:760px}
+
+/* Reveal animations */
+.reveal{opacity:0;transform:translateY(14px) scale(.98);filter:saturate(.9);
+	transition:opacity .6s ease, transform .6s ease, filter .6s ease; will-change: transform, opacity}
+.reveal.visible{opacity:1;transform:translateY(0) scale(1);filter:saturate(1)}
+
+/* Staggered reveals for grids */
+.reveal-grid .post-card, .reveal-grid .card{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease}
+.reveal-grid.in-view .post-card, .reveal-grid.in-view .card{opacity:1;transform:none}
+.reveal-grid.in-view .post-card:nth-child(1){transition-delay:.05s}
+.reveal-grid.in-view .post-card:nth-child(2){transition-delay:.12s}
+.reveal-grid.in-view .post-card:nth-child(3){transition-delay:.18s}
+.reveal-grid.in-view .post-card:nth-child(4){transition-delay:.24s}
+.reveal-grid.in-view .post-card:nth-child(5){transition-delay:.30s}
+.reveal-grid.in-view .post-card:nth-child(6){transition-delay:.36s}
+.reveal-grid.in-view .card:nth-child(1){transition-delay:.05s}
+.reveal-grid.in-view .card:nth-child(2){transition-delay:.12s}
+.reveal-grid.in-view .card:nth-child(3){transition-delay:.18s}
+.reveal-grid.in-view .card:nth-child(4){transition-delay:.24s}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation: none !important; transition: none !important; }
+	#bg-canvas{display:none}
+}
+
+/* Small screens: layout already column; nothing special needed */

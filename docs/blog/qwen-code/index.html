@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Qwen Code — Blog</title>
+  <meta name="description" content="Use of Qwen Code in Local Environment." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css" />
+  <script>
+    // Theme bootstrap before paint to avoid flash
+    (function(){
+      try{
+        const saved = localStorage.getItem('theme');
+        if(saved){ document.documentElement.setAttribute('data-theme', saved); }
+      }catch(e){/* ignore */}
+    })();
+  </script>
+</head>
+<body>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <header class="site-header">
+    <nav class="container nav">
+      <div class="brand">
+        <a class="logo" href="/" aria-label="Inicio" title="Inicio">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 3l8 7v10a1 1 0 0 1-1 1h-5v-6H10v6H5a1 1 0 0 1-1-1V10l8-7z" fill="white"/>
+        </svg>
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="/blog/">Blog</a>
+  <a href="https://i3lab.unex.es/author/emilio-delgado/" target="_blank" rel="noopener">Research Team WebPage</a>
+      </div>
+      <div class="nav-actions">
+        <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme" title="Toggle theme">
+          <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.64 13a1 1 0 0 0-1.05-.14A8 8 0 1 1 11.1 3.41a1 1 0 0 0-.14-1A10 10 0 1 0 21.64 13z"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="container reveal">
+  <header class="post-header">
+    <h1>Local Qwen Code</h1>
+    <div class="meta">Published on <time datetime="2025-08-16">2025-08-16</time> · <a class="chip" href="/blog/tags/qwen/">#qwen</a> <a class="chip" href="/blog/tags/cli/">#cli</a> <a class="chip" href="/blog/tags/agents/">#agents</a> <a class="chip" href="/blog/tags/blog/">#blog</a></div>
+  </header>
+  <div class="post-content">
+    <hr>
+<p>🤖⚡ <strong>Local agents, fast responses, no API bills. Qwen3-4B is your new best friend.</strong></p>
+<p>✍️ It’s been a while since I posted here, but I wanted to share something quick and practical.</p>
+<p>🚀 <strong>Want to use the <code>Qwen3-4B-Instruct-2507</code> model locally as if it were OpenAI? It’s easier than you’d think.</strong></p>
+<p>Thanks to tools like <strong>LM Studio</strong> and <strong>Qwen Code CLI</strong>, you can run the model on your machine and call it using an OpenAI-compatible API — no need to change your existing codebase.</p>
+<hr>
+<h1>🧩 <strong>What do you need?</strong></h1>
+<p><img src="media/qwen-code/portada_qwen.png" alt="Main Image"></p>
+<ol>
+<li>
+<p><strong>Install <a href="https://lmstudio.ai">LM Studio</a></strong> and load the model <code>Qwen/Qwen3-4B-Instruct-2507</code>.</p>
+</li>
+<li>
+<p><strong>Start the model server in LM Studio</strong>
+Make sure it’s served at:
+<code>http://127.0.0.1:1234/v1</code></p>
+</li>
+<li>
+<p><strong>Install Qwen Code CLI globally:</strong></p>
+<pre><code class="language-bash">npm install -g @qwen-code/qwen-code@latest
+qwen --version  # Verify installation
+</code></pre>
+</li>
+<li>
+<p><strong>Create a <code>.env</code> file</strong> in your working directory with:</p>
+<pre><code class="language-env">OPENAI_API_KEY=lm-studio
+OPENAI_BASE_URL=http://127.0.0.1:1234/v1
+OPENAI_MODEL=qwen3-4b-instruct-2507
+</code></pre>
+</li>
+</ol>
+<hr>
+<p>💡 <strong>Why is this useful?</strong></p>
+<ul>
+<li>It allows you to interact with the model <strong>directly from your terminal</strong></li>
+<li>Compatible with tools like <code>LangChain</code>, <code>LlamaIndex</code>, or <code>Autogen</code></li>
+<li><strong>No cloud required</strong> — you stay fully offline</li>
+</ul>
+<p>🎮 <strong>And yes — it runs on modest GPUs</strong> (8–12 GB VRAM). Ideal for laptops and local dev setups.</p>
+<hr>
+<p>✅ <strong>Great for:</strong></p>
+<ul>
+<li>🧪 Testing local agents</li>
+<li>🔒 Private, offline workflows</li>
+<li>⚙️ Rapid development without API costs</li>
+</ul>
+<hr>
+<p><img src="media/qwen-code/example_qwencli.png" alt="Example"></p>
+<p>If you’re building agents, exploring LLMs, or just want to keep your workflows local, this setup is a great starting point.</p>
+<p>🛠️ Want example code or more advanced setups (multi-agents, LangGraph, etc.)? Just let me know.</p>
+<p>#Qwen #LLM #OpenSourceAI #LangChain #LMStudio #QwenCode #LocalLLM #SmallGPUs #DeveloperTools</p>
+<hr>
+
+  </div>
+</article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+  <p>© <span id="year"></span> Emilio Delgado · Published on GitHub Pages</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="/assets/bg.js" defer></script>
+  <script src="/assets/ui.js" defer></script>
+</body>
+</html>
