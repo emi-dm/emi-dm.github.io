@@ -1,46 +1,46 @@
 /*
-	Minimalist responsive theme with clean design and smooth animations
-	- CSS variables for theming
-	- Mobile-first approach
-	- Clean typography and spacing
-	- Reduced motion support
+	Minimalist responsive theme V2
+	- CSS variables for easy theming
+	- Mobile-first design
+	- Clean typography and generous spacing
+	- Subtle animations
 */
 
 :root {
-	/* Light theme - clean and minimal */
-	--bg: #ffffff;
-	--bg-secondary: #f8f9fa;
+	/* Light theme - ultra minimal */
+	--bg: #fdfdfd;
+	--bg-secondary: #f1f1f1;
 	--surface: #ffffff;
 	--card: #ffffff;
-	--ink: #1a1a1a;
-	--muted: #6b7280;
-	--border: #e5e7eb;
-	--shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
-	--shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+	--ink: #111111;
+	--muted: #555555;
+	--border: #eeeeee;
+	--shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	--shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.08);
 
-	--primary: #3b82f6;
-	--primary-hover: #2563eb;
-	--accent: #10b981;
-	--success: #22c55e;
-	--warning: #f59e0b;
-	--danger: #ef4444;
+	--primary: #007aff; /* Apple's blue */
+	--primary-hover: #0056b3;
+	--accent: #34c759; /* Apple's green */
+	--success: #34c759;
+	--warning: #ff9500;
+	--danger: #ff3b30;
 
-	--radius: 8px;
-	--radius-lg: 12px;
-	--transition: all 0.2s ease;
+	--radius: 6px;
+	--radius-lg: 10px;
+	--transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Dark theme */
 html[data-theme="dark"] {
-	--bg: #0f172a;
-	--bg-secondary: #1e293b;
-	--surface: #1e293b;
-	--card: #334155;
-	--ink: #f1f5f9;
-	--muted: #94a3b8;
-	--border: #334155;
-	--shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-	--shadow-hover: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(0, 0, 0, 0.2);
+	--bg: #000000;
+	--bg-secondary: #1c1c1e;
+	--surface: #1c1c1e;
+	--card: #2c2c2e;
+	--ink: #ffffff;
+	--muted: #8e8e93;
+	--border: #3a3a3c;
+	--shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+	--shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* Base styles */
@@ -53,9 +53,9 @@ html {
 }
 
 body {
-	font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-	font-size: 16px;
-	line-height: 1.6;
+	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+	font-size: 17px;
+	line-height: 1.7;
 	color: var(--ink);
 	background-color: var(--bg);
 	margin: 0;
@@ -68,17 +68,18 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 600;
 	line-height: 1.3;
-	margin: 0 0 0.5rem 0;
+	margin: 0 0 0.75rem 0;
 	color: var(--ink);
 }
 
 h1 {
-	font-size: 2.25rem;
+	font-size: 2.5rem;
 	font-weight: 700;
+	letter-spacing: -0.5px;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 }
 
 h3 {
@@ -86,7 +87,7 @@ h3 {
 }
 
 p {
-	margin: 0 0 1rem 0;
+	margin: 0 0 1.25rem 0;
 }
 
 a {
@@ -103,9 +104,10 @@ a:hover {
 /* Layout */
 .container {
 	width: 100%;
-	max-width: 1200px;
+	max-width: 960px;
 	margin: 0 auto;
-	padding: 0 1rem;
+	padding: 0 1.5rem;
+	text-align: center;
 }
 
 /* Header */
@@ -113,9 +115,11 @@ a:hover {
 	position: sticky;
 	top: 0;
 	z-index: 50;
-	background-color: var(--surface);
+	background-color: color-mix(in srgb, var(--surface) 80%, transparent);
 	border-bottom: 1px solid var(--border);
-	backdrop-filter: blur(8px);
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	width: 100%;
 }
 
 .nav {
@@ -123,47 +127,59 @@ a:hover {
 	align-items: center;
 	justify-content: space-between;
 	padding: 1rem 0;
-	min-height: 60px;
+	min-height: 64px;
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
 }
 
 .brand {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
+	gap: 0.5rem;
 }
 
 .logo {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
-	background: linear-gradient(135deg, var(--primary), var(--accent));
+	width: 36px;
+	height: 36px;
+	background: var(--primary);
 	color: white;
 	border-radius: var(--radius);
 	font-weight: 600;
+	font-size: 1.2rem;
 	transition: var(--transition);
 }
 
 .logo:hover {
-	transform: scale(1.05);
+	transform: scale(1.08);
+	background: var(--primary-hover);
 }
 
 .nav-links {
 	display: flex;
 	align-items: center;
-	gap: 2rem;
+	gap: 2.5rem;
 }
 
 .nav-links a {
 	font-weight: 500;
-	color: var(--ink);
+	color: var(--muted);
 	padding: 0.5rem 0;
 	transition: var(--transition);
+	border-bottom: 2px solid transparent;
 }
 
 .nav-links a:hover {
-	color: var(--primary);
+	color: var(--ink);
+	text-decoration: none;
+}
+
+.nav-links a.active {
+	color: var(--ink);
+	border-bottom-color: var(--primary);
 }
 
 .nav-actions {
@@ -176,24 +192,26 @@ a:hover {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	width: 40px;
-	height: 40px;
-	background-color: var(--card);
+	width: 36px;
+	height: 36px;
+	background-color: transparent;
 	border: 1px solid var(--border);
 	border-radius: var(--radius);
-	color: var(--ink);
+	color: var(--muted);
 	cursor: pointer;
 	transition: var(--transition);
 }
 
 .theme-toggle:hover {
 	background-color: var(--bg-secondary);
-	transform: scale(1.05);
+	color: var(--ink);
+	transform: scale(1.08);
 }
 
 /* Main content */
 main {
-	min-height: calc(100vh - 120px);
+	min-height: calc(100vh - 128px);
+	padding-top: 2rem;
 }
 
 /* Hero section */
@@ -202,107 +220,142 @@ main {
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	padding: 4rem 1rem 3rem;
-	max-width: 800px;
+	padding: 4rem 1rem 4rem;
+	max-width: 720px;
 	margin: 0 auto;
 }
 
 .hero .avatar {
-	width: 120px;
-	height: 120px;
+	width: 100px;
+	height: 100px;
 	border-radius: 50%;
-	border: 4px solid var(--primary);
-	box-shadow: var(--shadow);
-	margin-bottom: 1.5rem;
+	border: 3px solid var(--surface);
+	box-shadow: 0 0 0 3px var(--primary), var(--shadow);
+	margin-bottom: 2rem;
 	transition: var(--transition);
 }
 
 .hero .avatar:hover {
-	transform: scale(1.05);
-	box-shadow: var(--shadow-hover);
+	transform: scale(1.08);
+	box-shadow: 0 0 0 4px var(--primary), var(--shadow-hover);
 }
 
 .hero h1 {
-	margin-bottom: 0.5rem;
-	background: linear-gradient(135deg, var(--primary), var(--accent));
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-	background-clip: text;
+	margin-bottom: 0.75rem;
 }
 
 .hero .subtitle {
 	color: var(--muted);
-	font-size: 1.125rem;
-	margin-bottom: 1rem;
+	font-size: 1.25rem;
+	margin-bottom: 1.5rem;
+	font-weight: 400;
 }
 
 .hero .lead {
-	font-size: 1.125rem;
-	line-height: 1.7;
+	font-size: 1.1rem;
+	line-height: 1.8;
 	color: var(--muted);
-	max-width: 600px;
+	max-width: 640px;
 }
 
 /* Cards and grid */
 .grid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 1.5rem;
-	margin: 3rem 0;
+	gap: 2rem;
+	margin: 4rem auto;
+	width: 100%;
+	max-width: 800px;
+	justify-items: center;
 }
 
 .card {
 	background-color: var(--card);
-	border: 1px solid var(--border);
-	border-radius: var(--radius-lg);
-	padding: 2rem;
+	border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
 	box-shadow: var(--shadow);
-	transition: var(--transition);
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+	padding: 2.5rem;
+	width: 100%;
+	text-align: left;
 }
 
 .card:hover {
+	transform: translateY(-3px);
 	box-shadow: var(--shadow-hover);
-	transform: translateY(-2px);
+	border-color: color-mix(in srgb, var(--ink) 14%, transparent);
 }
 
 .card h2 {
-	margin-bottom: 1.5rem;
-	padding-bottom: 0.75rem;
-	border-bottom: 2px solid var(--primary);
+	border-bottom: none !important;
+	margin-bottom: 0.75rem !important;
+	padding-bottom: 0.25rem !important;
+	position: relative;
+}
+
+.card h2::after {
+	content: "";
+	display: block;
+	width: 72px;
+	height: 2px;
+	margin: 0.65rem auto 0;
+	background: color-mix(in srgb, var(--primary) 70%, transparent);
+	border-radius: 2px;
 }
 
 .list {
 	list-style: none;
 	padding: 0;
 	margin: 0;
+	text-align: left;
+	gap: 0.25rem;
 }
 
 .list li {
-	padding: 0.5rem 0;
-	border-bottom: 1px solid var(--border);
+	padding: 0.6rem 0.5rem;
+	border: 1px solid transparent;
+	border-bottom: none;
+	border-radius: var(--radius);
 }
 
-.list li:last-child {
-	border-bottom: none;
+.list li + li {
+	margin-top: 0.25rem;
+}
+
+.list li:nth-child(odd) {
+	background: color-mix(in srgb, var(--ink) 5%, transparent);
 }
 
 .list a {
-	display: block;
-	padding: 0.5rem 0;
+	display: inline-block;
+	padding: 0.35rem 0.5rem;
+	border-radius: var(--radius);
+	transition: var(--transition);
+}
+
+.list a::after {
+	content: "→";
+	opacity: 0;
+	margin-left: 0.25rem;
 	transition: var(--transition);
 }
 
 .list a:hover {
-	color: var(--primary);
-	transform: translateX(4px);
+	background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+
+.list a:hover::after {
+	opacity: 1;
+	transform: translateX(2px);
 }
 
 /* Blog posts */
 .posts {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 1.5rem;
-	margin: 3rem 0;
+	gap: 2rem;
+	margin: 4rem auto;
+	width: 100%;
+	max-width: 800px;
 }
 
 .post-card {
@@ -315,6 +368,8 @@ main {
 	text-decoration: none;
 	color: inherit;
 	display: block;
+	width: 100%;
+	text-align: left;
 }
 
 .post-card:hover {
@@ -324,12 +379,14 @@ main {
 }
 
 .post-header {
-	margin-bottom: 1rem;
+	margin-bottom: 0.5rem;
+	text-align: center;
 }
 
 .post-card h3 {
 	margin-bottom: 0.5rem;
 	color: var(--ink);
+	text-align: center;
 	transition: var(--transition);
 }
 
@@ -340,6 +397,8 @@ main {
 .meta {
 	color: var(--muted);
 	font-size: 0.875rem;
+	text-align: center;
+	opacity: 0.85;
 }
 
 .chip {
@@ -432,6 +491,8 @@ main {
 	.card {
 		padding: 2.5rem;
 	}
+
+	.latest-posts .card { grid-column: 1 / -1; }
 }
 
 @media (min-width: 768px) {
@@ -446,10 +507,14 @@ main {
 	.grid {
 		grid-template-columns: repeat(2, 1fr);
 		gap: 2rem;
+		max-width: 900px;
+		justify-items: center;
 	}
 
 	.posts {
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 900px;
+		justify-items: center;
 	}
 
 	.hero {
@@ -472,7 +537,13 @@ main {
 
 @media (min-width: 1024px) {
 	.grid {
+		grid-template-columns: repeat(2, 1fr);
+		max-width: 1000px;
+	}
+
+	.posts {
 		grid-template-columns: repeat(3, 1fr);
+		max-width: 1000px;
 	}
 
 	.hero h1 {
@@ -633,4 +704,158 @@ a:focus-visible {
 		border: 1px solid #ccc !important;
 		box-shadow: none !important;
 	}
+}
+
+/* --- Alignment & emphasis overrides (last wins) --- */
+/* Center all grid-based sections regardless of earlier rules */
+section.container.grid,
+.container.grid,
+.container .grid,
+.grid,
+.posts,
+section.container.posts {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	justify-items: center !important;
+}
+
+/* Keep a generous max-width and ensure centering */
+.grid, .posts { max-width: 1000px !important; width: 100%; }
+
+/* Center content inside cards and lists for a cohesive look */
+.card,
+.card h2,
+.list,
+.list li,
+.list a,
+.post-card,
+.post-header,
+.meta { text-align: center !important; }
+
+/* Stronger separation between list items */
+.list li { padding: 0.6rem 0.5rem; border-bottom: 1px solid var(--border); }
+.list li:last-child { border-bottom: none; }
+
+/* Subtle highlight on hover to distinguish items */
+.list a { display: inline-block; padding: 0.45rem 0.75rem; border-radius: var(--radius); }
+.list a:hover { background-color: color-mix(in srgb, var(--primary) 10%, transparent); transform: translateY(-1px); }
+
+/* Blog list cards centered as well */
+.posts { row-gap: 2rem; }
+.post-card { border: none; border-bottom: 1px solid var(--border); padding: 0 0 1.25rem 0; box-shadow: none; }
+.post-card:last-child { border-bottom: none; }
+
+/* --- Section aesthetics refinements --- */
+/* Tighter vertical rhythm for all section grids */
+.grid, .posts { margin-block: 2.5rem !important; }
+
+/* Card polish: softer borders and hover lift */
+.card {
+	background-color: var(--card);
+	border: 1px solid color-mix(in srgb, var(--ink) 8%, transparent);
+	box-shadow: var(--shadow);
+	transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card:hover {
+	transform: translateY(-3px);
+	box-shadow: var(--shadow-hover);
+	border-color: color-mix(in srgb, var(--ink) 14%, transparent);
+}
+
+/* Headings with centered accent bar */
+.card h2 {
+	border-bottom: none !important;
+	margin-bottom: 0.75rem !important;
+	padding-bottom: 0.25rem !important;
+	position: relative;
+}
+.card h2::after {
+	content: "";
+	display: block;
+	width: 72px;
+	height: 2px;
+	margin: 0.65rem auto 0;
+	background: color-mix(in srgb, var(--primary) 70%, transparent);
+	border-radius: 2px;
+}
+
+/* Lists: clearer separation and gentle emphasis */
+.list { gap: 0.25rem; }
+.list li { 
+	padding: 0.6rem 0.5rem;
+	border: 1px solid transparent;
+	border-bottom: none;
+	border-radius: var(--radius);
+}
+.list li + li { margin-top: 0.25rem; }
+.list li:nth-child(odd) { background: color-mix(in srgb, var(--ink) 5%, transparent); }
+
+.list a {
+	display: inline-block;
+	padding: 0.35rem 0.5rem;
+	border-radius: var(--radius);
+}
+.list a::after {
+	content: "→";
+	opacity: 0;
+	margin-left: 0.25rem;
+	transition: var(--transition);
+}
+.list a:hover {
+	background: color-mix(in srgb, var(--primary) 12%, transparent);
+}
+.list a:hover::after { opacity: 1; transform: translateX(2px); }
+
+/* Blog items spacing */
+.posts { row-gap: 2rem; }
+.post-header { margin-bottom: 0.75rem !important; }
+.meta { opacity: 0.85; }
+
+/* --- Blog page centering --- */
+.blog-page .posts { 
+	margin-left: auto !important; 
+	margin-right: auto !important; 
+	justify-items: center !important; 
+	max-width: 1000px; 
+}
+
+/* --- Rounded cards with subtle white shadow --- */
+.card,
+.post-card {
+	border-radius: 12px !important;
+	border: 1px solid color-mix(in srgb, #ffffff 12%, transparent);
+	box-shadow: 0 6px 18px rgba(255,255,255,0.06), 0 1px 0 rgba(255,255,255,0.08) inset;
+	background-color: color-mix(in srgb, var(--card) 92%, #ffffff 8%);
+}
+
+/* Slightly stronger on hover, but still subtle */
+.card:hover,
+.post-card:hover {
+	box-shadow: 0 10px 26px rgba(255,255,255,0.09), 0 1px 0 rgba(255,255,255,0.1) inset;
+}
+
+/* Center the Latest blog posts section explicitly */
+.latest-posts {
+	max-width: 800px;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	justify-items: center !important;
+}
+.latest-posts .card { width: 100%; }
+
+/* Make 'Latest blog posts' span two columns on wider screens */
+@media (min-width: 640px) {
+	.latest-posts .card { grid-column: 1 / -1; }
+}
+
+/* --- Avatar size overrides (bigger hero image) --- */
+.hero .avatar { width: 140px; height: 140px; }
+@media (max-width: 768px) {
+	.hero .avatar { width: 120px; height: 120px; }
+}
+@media (min-width: 640px) {
+	.hero .avatar { width: 180px; height: 180px; }
+}
+@media (min-width: 1024px) {
+	.hero .avatar { width: 220px; height: 220px; }
 }
