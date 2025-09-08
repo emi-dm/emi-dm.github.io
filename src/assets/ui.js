@@ -1,4 +1,4 @@
-// UI behaviors: theme toggle, scroll reveal
+// UI behaviors: theme toggle, scroll reveal, mobile menu
 (function(){
   // Theme toggle with persistence
   const root = document.documentElement;
@@ -12,6 +12,30 @@
     setTheme(cur === 'dark' ? 'light' : 'dark');
   }
   if(btn){ btn.addEventListener('click', toggle); }
+
+  // Mobile menu toggle
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  if(mobileMenuToggle && mobileMenu){
+    mobileMenuToggle.addEventListener('click', function(){
+      mobileMenu.classList.toggle('active');
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(event){
+      if(!mobileMenuToggle.contains(event.target) && !mobileMenu.contains(event.target)){
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Close mobile menu when clicking on a link
+    mobileMenu.addEventListener('click', function(event){
+      if(event.target.tagName === 'A'){
+        mobileMenu.classList.remove('active');
+      }
+    });
+  }
 
   // Scroll reveal using IntersectionObserver
   const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
