@@ -1,0 +1,316 @@
+:root {
+    /* Dark Theme (Default) */
+    --bg-color: #050505;
+    --card-bg: #111111;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    --accent-primary: #6366f1;
+    /* Indigo */
+    --accent-secondary: #a855f7;
+    /* Purple */
+    --accent-glow: rgba(99, 102, 241, 0.15);
+    --border-color: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.05);
+    --font-main: 'Outfit', sans-serif;
+    --border-radius-lg: 1.5rem;
+}
+
+[data-bs-theme="light"] {
+    --bg-color: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-primary: #212529;
+    --text-secondary: #6c757d;
+    --accent-primary: #4f46e5;
+    /* Slightly darker indigo for contrast */
+    --accent-secondary: #9333ea;
+    --accent-glow: rgba(79, 70, 229, 0.1);
+    --border-color: rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Bootstrap Overrides & Utilities */
+.bg-blur {
+    background: rgba(var(--bg-color-rgb), 0.8);
+    /* Needs RGB var or fallback */
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+[data-bs-theme="dark"] .bg-blur {
+    background: rgba(5, 5, 5, 0.8);
+}
+
+[data-bs-theme="light"] .bg-blur {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.py-6 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.rounded-pill {
+    border-radius: 50rem !important;
+}
+
+.rounded-lg {
+    border-radius: var(--border-radius-lg) !important;
+}
+
+.card {
+    border-radius: var(--border-radius-lg);
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.btn {
+    border-radius: 1rem;
+}
+
+.bg-purple-subtle {
+    background-color: rgba(168, 85, 247, 0.1);
+}
+
+.text-purple-emphasis {
+    color: #d8b4fe;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(to right, var(--accent-primary), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Particle Canvas */
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    pointer-events: none;
+}
+
+/* Cursor Glow Effect */
+.cursor-glow {
+    position: fixed;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: transform 0.1s ease;
+    opacity: 0.6;
+}
+
+/* Hero Image & Orb */
+.hero-image-wrapper {
+    position: relative;
+    display: inline-block;
+    padding: 20px;
+}
+
+.hero-img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.ai-orb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at 30% 30%, var(--accent-primary), transparent 60%),
+        radial-gradient(circle at 70% 70%, var(--accent-secondary), transparent 60%);
+    filter: blur(60px);
+    opacity: 0.5;
+    animation: pulse 8s infinite alternate;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(0.9);
+        opacity: 0.4;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 0.6;
+    }
+}
+
+/* Cards */
+.card {
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 10px 30px -10px var(--accent-glow);
+}
+
+/* Light Mode Specifics */
+[data-bs-theme="light"] .text-light {
+    color: var(--text-primary) !important;
+}
+
+[data-bs-theme="light"] .text-secondary {
+    color: var(--text-secondary) !important;
+}
+
+[data-bs-theme="light"] .bg-dark-subtle {
+    background-color: #f1f5f9 !important;
+}
+
+[data-bs-theme="light"] .border-light-subtle {
+    border-color: var(--border-color) !important;
+}
+
+[data-bs-theme="light"] .bg-black-50 {
+    background-color: #f8f9fa !important;
+    /* Override black background */
+}
+
+[data-bs-theme="light"] .bg-dark {
+    background-color: #ffffff !important;
+}
+
+/* Navbar Light Mode Fixes */
+[data-bs-theme="light"] .navbar-nav .nav-link {
+    color: var(--text-secondary);
+}
+
+[data-bs-theme="light"] .navbar-nav .nav-link:hover,
+[data-bs-theme="light"] .navbar-nav .nav-link:focus {
+    color: var(--text-primary);
+}
+
+[data-bs-theme="light"] .navbar-brand {
+    color: var(--text-primary) !important;
+    /* Force override of gradient if needed or just text */
+}
+
+[data-bs-theme="light"] .navbar-toggler-icon {
+    filter: invert(1) grayscale(100%) brightness(0%);
+}
+
+/* Button Fixes for Light Mode */
+[data-bs-theme="light"] .btn-outline-light {
+    color: var(--text-primary);
+    border-color: var(--text-primary);
+}
+
+[data-bs-theme="light"] .btn-outline-light:hover {
+    background-color: var(--text-primary);
+    color: var(--bg-color);
+}
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hover-light:hover {
+    color: var(--text-primary) !important;
+}
+
+/* Agent Badge */
+.agent-badge {
+    font-family: 'Outfit', sans-serif;
+    /* Use main font since mono was removed */
+    font-size: 0.7rem;
+    color: #22c55e;
+    /* Green */
+    padding: 0.2rem 0.5rem;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+    animation: blink-status 2s infinite;
+    letter-spacing: 1px;
+}
+
+@keyframes blink-status {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.typing-effect::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Skill Badges */
+.skill-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    cursor: default;
+}
+
+.skill-badge:hover {
+    background: rgba(var(--primary-color-rgb), 0.15);
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
+
+[data-bs-theme="light"] .skill-badge {
+    background: rgba(0, 0, 0, 0.05);
+    border-color: rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+[data-bs-theme="light"] .skill-badge:hover {
+    background: rgba(var(--primary-color-rgb), 0.1);
+    border-color: var(--primary-color);
+}

@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emilio Delgado | AI Researcher</title>
+    <meta name="description"
+        content="AI researcher at the University of Extremadura focusing on multi-agent systems and Deep Learning.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <canvas id="particle-canvas"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg fixed-top bg-blur">
+        <div class="container">
+            <a class="navbar-brand fw-bold gradient-text" href="#">EMI.DM <span class="agent-badge">● AGENT
+                    ACTIVE</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto gap-lg-4 align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#interests" data-i18n="nav.interests">Interests</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#publications"
+                            data-i18n="nav.publications">Publications</a></li>
+                    <li class="nav-item d-flex align-items-center">
+                        <button id="lang-toggle" class="btn btn-sm btn-outline-secondary ms-2 font-monospace"
+                            aria-label="Toggle language">EN</button>
+                        <button id="theme-toggle" class="btn btn-link nav-link p-0 ms-2" aria-label="Toggle theme">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-sun-fill theme-icon-light" viewBox="0 0 16 16" style="display: none;">
+                                <path
+                                    d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707z" />
+                            </svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                class="bi bi-moon-fill theme-icon-dark" viewBox="0 0 16 16">
+                                <path
+                                    d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                            </svg>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section
+            class="min-vh-100 d-flex align-items-center justify-content-center pt-5 position-relative overflow-hidden">
+            <div class="cursor-glow"></div>
+            <div class="container z-1 fade-in">
+                <div class="row align-items-center gy-5">
+                    <!-- Left Column: Image + Name -->
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <div class="hero-image-wrapper mb-4 d-inline-block d-lg-block">
+                            <div class="ai-orb"></div>
+                            <img src="me.png" alt="Emilio Delgado" class="hero-img rounded-circle position-relative">
+                        </div>
+                        <h1 class="display-3 fw-bold mb-2">Emilio Delgado</h1>
+                        <h2 class="h4 text-secondary mb-0" data-i18n="hero.role">AI Researcher at i3Lab (UEx)</h2>
+                    </div>
+
+                    <!-- Right Column: Specialized in + Typing + Buttons -->
+                    <div class="col-lg-6 text-center text-lg-start">
+                        <h2 class="h3 text-secondary mb-4">
+                            <span data-i18n="hero.specialized">Specialized in</span>
+                            <br class="d-md-none">
+                            <span class="typing-effect text-primary fw-bold"></span>
+                        </h2>
+
+                        <div class="d-flex gap-3 justify-content-center justify-content-lg-start">
+                            <a href="#projects" class="btn btn-primary px-4 py-2" data-i18n="hero.projects">View
+                                Projects</a>
+                            <a href="https://scholar.google.com/citations?user=eIBVkQEAAAAJ&hl=es" target="_blank"
+                                class="btn btn-outline-light px-4 py-2">Google Scholar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-5">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 gradient-text" data-i18n="about.title">About Me</h2>
+                <div class="row align-items-center gy-5">
+                    <div class="col-lg-6 fade-in">
+                        <p class="lead fs-4 text-secondary mb-4" data-i18n="about.p1">
+                            I work at the intersection of AI and software engineering, exploring how intelligent agents
+                            can improve collaboration, decision-making, and efficiency.
+                        </p>
+                        <p class="text-secondary fs-5 mb-4" data-i18n="about.p2">
+                            Currently, I conduct my research at the University of Extremadura, focusing on Multi-Agent
+                            Systems and Deep Learning applied to healthcare. My work ranges from orchestrating LLMs to
+                            implementing RAG architectures for clinical decision support.
+                        </p>
+                        <p class="text-secondary fs-5" data-i18n="about.p3">
+                            I am fascinated by bridging the gap between academic theory and practical applications,
+                            always striving to build technological solutions with real positive impact on society.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 fade-in">
+                        <h3 class="h5 fw-bold mb-4 text-light" data-i18n="about.skills">Key Skills</h3>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="skill-badge">Multi-Agent
+                                Systems</span>
+                            <span class="skill-badge">Deep
+                                Learning</span>
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">RAG</span>
+                            <span class="skill-badge">LLMs</span>
+                            <span class="skill-badge">Data
+                                Science</span>
+                            <span class="skill-badge">Research</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Interests Section -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4 mt-4">
+                    <div class="col-md-6 fade-in">
+                        <div class="card h-100 bg-dark-subtle border-light-subtle">
+                            <div class="card-body p-4">
+                                <h3 class="h4 mb-4 text-light" data-i18n="education.title">Education</h3>
+                                <ul class="list-unstyled d-flex flex-column gap-3">
+                                    <li class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <strong class="d-block text-light" data-i18n="education.master">M.Sc. in
+                                                Artificial Intelligence</strong>
+                                            <span class="text-secondary">UNIR</span>
+                                        </div>
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis">2023</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <strong class="d-block text-light" data-i18n="education.data">Advanced
+                                                University Course in Data Analyst</strong>
+                                            <span class="text-secondary">UNIR</span>
+                                        </div>
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis">2023</span>
+                                    </li>
+                                    <li class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <strong class="d-block text-light" data-i18n="education.bachelor">B.Sc. in
+                                                Software Engineering</strong>
+                                            <span class="text-secondary" data-i18n="education.university">University of
+                                                Extremadura</span>
+                                        </div>
+                                        <span class="badge bg-secondary-subtle text-secondary-emphasis">2022</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <div class="card h-100 bg-dark-subtle border-light-subtle">
+                            <div class="card-body p-4">
+                                <h3 class="h4 mb-4 text-light" id="interests" data-i18n="interests.title">Interests</h3>
+                                <div class="d-flex flex-wrap gap-2">
+                                    <span
+                                        class="badge bg-primary-subtle text-primary-emphasis fs-6 fw-normal px-3 py-2">Multi-Agent
+                                        Systems</span>
+                                    <span
+                                        class="badge bg-purple-subtle text-purple-emphasis fs-6 fw-normal px-3 py-2">RAG</span>
+                                    <span
+                                        class="badge bg-success-subtle text-success-emphasis fs-6 fw-normal px-3 py-2">Deep
+                                        Learning for Healthcare</span>
+                                    <span class="badge bg-info-subtle text-info-emphasis fs-6 fw-normal px-3 py-2">Data
+                                        Science</span>
+                                    <span
+                                        class="badge bg-warning-subtle text-warning-emphasis fs-6 fw-normal px-3 py-2">Artificial
+                                        Neural Networks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-6 bg-black-50">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center fade-in" data-i18n="projects.title">Projects</h2>
+                <div class="row g-4">
+                    <div class="col-md-6 fade-in">
+                        <a href="https://i3lab.unex.es/project/sam-mis/" target="_blank" class="text-decoration-none">
+                            <div class="card project-card h-100 bg-dark border-light-subtle">
+                                <div class="card-body p-4">
+                                    <h3 class="h4 text-light mb-3">SAM in Medical Image Segmentation</h3>
+                                    <p class="text-secondary mb-0" data-i18n="projects.sam">Research project leveraging
+                                        Segment Anything Model (SAM) for precise medical image analysis.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 fade-in">
+                        <a href="https://i3lab.unex.es/project/musicgenia/" target="_blank"
+                            class="text-decoration-none">
+                            <div class="card project-card h-100 bg-dark border-light-subtle">
+                                <div class="card-body p-4">
+                                    <h3 class="h4 text-light mb-3">MusicGenia</h3>
+                                    <p class="text-secondary mb-0" data-i18n="projects.music">Innovative project
+                                        exploring generative AI in the context of music composition and analysis.</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-6">
+            <div class="container">
+                <h2 class="display-5 fw-bold mb-5 text-center fade-in" data-i18n="publications.title">Recent
+                    Publications</h2>
+                <div class="list-group list-group-flush bg-transparent fade-in">
+                    <a href="https://i3lab.unex.es/publication/delgadoibpria-2025/"
+                        class="list-group-item list-group-item-action bg-transparent border-light-subtle py-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <h5 class="mb-1 text-light">AI-Based System for Assistance in Minimally Invasive Renal
+                                Procedures</h5>
+                            <small class="text-secondary">2025</small>
+                        </div>
+                        <p class="mb-1 text-secondary">Using Mixed Reality. First Steps.</p>
+                    </a>
+                    <a href="https://i3lab.unex.es/publication/gutierrez-25/"
+                        class="list-group-item list-group-item-action bg-transparent border-light-subtle py-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <h5 class="mb-1 text-light">Prompt Once, Segment Everything: Leveraging SAM 2</h5>
+                            <small class="text-secondary">2025</small>
+                        </div>
+                    </a>
+                    <a href="https://i3lab.unex.es/publication/advancing-precision/"
+                        class="list-group-item list-group-item-action bg-transparent border-light-subtle py-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <h5 class="mb-1 text-light">Advancing precision in medical image segmentation</h5>
+                            <small class="text-secondary">2024</small>
+                        </div>
+                    </a>
+                    <a href="https://i3lab.unex.es/publication/gutierrez-24/"
+                        class="list-group-item list-group-item-action bg-transparent border-light-subtle py-4">
+                        <div class="d-flex w-100 justify-content-between align-items-center">
+                            <h5 class="mb-1 text-light">No More Training: SAM's Zero-Shot Transfer Capabilities</h5>
+                            <small class="text-secondary">2024</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-4 border-top border-light-subtle text-center">
+            <div class="container">
+                <div class="d-flex justify-content-center gap-4 mb-3">
+                    <a href="https://i3lab.unex.es/" class="text-secondary text-decoration-none hover-light">i3 Lab</a>
+                    <a href="https://scholar.google.com/" class="text-secondary text-decoration-none hover-light">Google
+                        Scholar</a>
+                    <a href="https://www.linkedin.com/"
+                        class="text-secondary text-decoration-none hover-light">LinkedIn</a>
+                </div>
+                <p class="text-secondary mb-0 small">&copy; 2025 Emilio Delgado. Built with AI.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
