@@ -1,6 +1,8 @@
 ---
 title: "SDD didáctico: Qué es SDD y entender su rol"
-authors: ["emi"]
+authors:
+  - name: "Emi"
+    url: "https://emi-dm.github.io"
 date: 2026-02-04T00:00:00.000Z
 tags: [sdd, especificación, desarrollo, ia, didáctico]
 description: "Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA."
