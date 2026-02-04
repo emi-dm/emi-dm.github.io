@@ -4,10 +4,6 @@ const sidebars = {
             type: 'doc',
             id: 'intro',
         },
-        {
-            type: 'doc',
-            id: 'getting-started',
-        },
     ],
 };
 

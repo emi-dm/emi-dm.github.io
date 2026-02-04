@@ -7,7 +7,7 @@ export default {
   "title": "MiDoc",
   "tagline": "Example Docusaurus site",
   "url": "https://emi-dm.github.io",
-  "baseUrl": "/",
+  "baseUrl": "/es/",
   "onBrokenLinks": "warn",
   "favicon": "img/favicon.ico",
   "organizationName": "emi-dm",

@@ -8,26 +8,26 @@
     <subtitle>MiDoc Blog</subtitle>
     <icon>https://emi-dm.github.io/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[SDD didáctico: Qué es SDD y entender su rol]]></title>
+        <title type="html"><![CDATA[SDD (Didactic): What SDD is and understanding its role]]></title>
         <id>https://emi-dm.github.io/blog/2026/02/04/sdd-didactico</id>
         <link href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico"/>
         <updated>2026-02-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA.]]></summary>
-        <content type="html"><![CDATA[<p><strong>TL;DR:</strong> SDD pone la especificación en el centro: las especificaciones (bien escritas) generan el código mediante agentes IA. Menos malentendidos, más iteración rápida.</p>
+        <summary type="html"><![CDATA[A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.]]></summary>
+        <content type="html"><![CDATA[<p><strong>TL;DR:</strong> SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="definition-of-the-concept">Definition of the concept<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#definition-of-the-concept" class="hash-link" aria-label="Direct link to Definition of the concept" title="Direct link to Definition of the concept" translate="no">​</a></h2>
 <p>Imagina que la especificación es la receta y el código el plato final. En <strong>Specification Driven Development (SDD)</strong> la receta no es una nota pobre al margen; es el manual que usan los chefs (incluyendo los chefs robot—los LLMs) para cocinar la aplicación.</p>
 <p>SDD surge como filosofía en respuesta a los agentes basados en LLMs y al <em>vibe coding</em>: en lugar de escribir primero el código y luego la documentación, la documentación bien redactada y ejecutable pasa a ser la "fuente de la verdad" y guía la generación del código.</p>
 <blockquote>
 <p>Ejemplo rápido: escribes una especificación: "Al pulsar el botón X, enviar notificación Y al usuario con condiciones Z". Un agente puede transformar esa especificación en endpoints, pruebas y despliegue mínimo viable. Simple, repetible y trazable.</p>
 </blockquote>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fuente-de-la-verdad">Fuente de la verdad<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#fuente-de-la-verdad" class="hash-link" aria-label="Direct link to Fuente de la verdad" title="Direct link to Fuente de la verdad" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="source-of-truth">Source of truth<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#source-of-truth" class="hash-link" aria-label="Direct link to Source of truth" title="Direct link to Source of truth" translate="no">​</a></h2>
 <ul>
-<li class=""><strong>Agile / Waterfall</strong>: El código manda. Las specs son apuntes que a menudo se quedan anticuados.</li>
-<li class=""><strong>SDD</strong>: La especificación manda. El código es una expresión temporal de esa especificación: si algo no cuadra, la fuente auténtica a corregir es la spec.</li>
+<li class=""><strong>Agile / Waterfall</strong>: Code rules. Specs often become outdated notes.</li>
+<li class=""><strong>SDD</strong>: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.</li>
 </ul>
 <p>En SDD la especificación funciona como un contrato: cuando la spec y el código difieren, la spec es la verdad hasta que decidimos lo contrario (y lo documentamos).</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="gestión-de-cambios-con-analogía">Gestión de Cambios (con analogía)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#gesti%C3%B3n-de-cambios-con-analog%C3%ADa" class="hash-link" aria-label="Direct link to Gestión de Cambios (con analogía)" title="Direct link to Gestión de Cambios (con analogía)" translate="no">​</a></h2>
-<p>Piensa en los cambios como actualizar una receta, no rehacer el plato a mano cada vez:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="change-management-by-analogy">Change management (by analogy)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#change-management-by-analogy" class="hash-link" aria-label="Direct link to Change management (by analogy)" title="Direct link to Change management (by analogy)" translate="no">​</a></h2>
+<p>Think of changes as updating a recipe, not re-making the dish by hand every time:</p>
 <ul>
 <li class=""><strong>Antes</strong>: un cambio en el requisito provoca un sálvese quien pueda: edición en código, PRs, hotfixes.</li>
 <li class=""><strong>Con SDD</strong>: cambias la spec, regeneras implementaciones y pruebas. Experimentas <em>what-if</em> con poco coste.</li>
@@ -69,19 +69,19 @@
             <uri>https://emi-dm.github.io</uri>
         </author>
         <category label="sdd" term="sdd"/>
-        <category label="especificación" term="especificación"/>
-        <category label="desarrollo" term="desarrollo"/>
-        <category label="ia" term="ia"/>
-        <category label="didáctico" term="didáctico"/>
+        <category label="specification" term="specification"/>
+        <category label="development" term="development"/>
+        <category label="ai" term="ai"/>
+        <category label="didactic" term="didactic"/>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Skills: usar `find-skills` desde VS Code]]></title>
+        <title type="html"><![CDATA[Skills: Using `find-skills` from VS Code]]></title>
         <id>https://emi-dm.github.io/blog/2026/02/04/skills-find-skills</id>
         <link href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills"/>
         <updated>2026-02-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code]]></summary>
-        <content type="html"><![CDATA[<p>En este post explico cómo usar el comando <code>npx skills</code> (el gestor de skills) y cómo integrarlo en tu flujo de trabajo en Visual Studio Code.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-npx-skills">¿Qué es <code>npx skills</code>?<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#qu%C3%A9-es-npx-skills" class="hash-link" aria-label="Direct link to qué-es-npx-skills" title="Direct link to qué-es-npx-skills" translate="no">​</a></h2>
+        <summary type="html"><![CDATA[How to use the 'npx skills' CLI and discover/install skills from VS Code]]></summary>
+        <content type="html"><![CDATA[<p>This post explains how to use the <code>npx skills</code> command (the skills manager) and how to integrate it into your workflow in Visual Studio Code.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-npx-skills">What is <code>npx skills</code>?<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#what-is-npx-skills" class="hash-link" aria-label="Direct link to what-is-npx-skills" title="Direct link to what-is-npx-skills" translate="no">​</a></h2>
 <p><code>npx skills</code> es la CLI del ecosistema de skills: te ayuda a buscar, instalar y actualizar paquetes llamados <em>skills</em> que extienden las capacidades del agente.</p>
 <p>Comandos clave:</p>
 <ul>
@@ -89,7 +89,7 @@
 <li class="">Instalar: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
 <li class="">Actualizar: <code>npx skills update</code></li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uso-rápido-desde-vs-code">Uso rápido desde VS Code<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#uso-r%C3%A1pido-desde-vs-code" class="hash-link" aria-label="Direct link to Uso rápido desde VS Code" title="Direct link to Uso rápido desde VS Code" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-usage-from-vs-code">Quick usage from VS Code<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#quick-usage-from-vs-code" class="hash-link" aria-label="Direct link to Quick usage from VS Code" title="Direct link to Quick usage from VS Code" translate="no">​</a></h2>
 <ol>
 <li class="">Abre el terminal integrado (View → Terminal o `Ctrl+``).</li>
 <li class="">Busca skills relevantes:</li>
@@ -103,21 +103,21 @@
 <li class="">Opcional: instala globalmente y evita escribir <code>npx</code>:</li>
 </ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">npm i -g @skills/cli</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">skills find "react testing"</span><br></span></code></pre></div></div>
-<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejo-práctico">Consejo práctico<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#consejo-pr%C3%A1ctico" class="hash-link" aria-label="Direct link to Consejo práctico" title="Direct link to Consejo práctico" translate="no">​</a></h3>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-tip">Practical tip<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#practical-tip" class="hash-link" aria-label="Direct link to Practical tip" title="Direct link to Practical tip" translate="no">​</a></h3>
 <p>Si quieres trabajar con skills frecuentemente desde VS Code, deja el terminal anclado y usa búsquedas con palabras específicas (p.ej. <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ejemplo-de-flujo">Ejemplo de flujo<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#ejemplo-de-flujo" class="hash-link" aria-label="Direct link to Ejemplo de flujo" title="Direct link to Ejemplo de flujo" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-flow">Example flow<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#example-flow" class="hash-link" aria-label="Direct link to Example flow" title="Direct link to Example flow" translate="no">​</a></h2>
 <ul>
 <li class="">Buscar: <code>npx skills find changelog</code></li>
 <li class="">Instalar: <code>npx skills add composio/changelog-skill</code></li>
 <li class="">Ejecutar la tarea que provee el skill: depende del skill instalado (consulta la documentación en skills.sh).</li>
 </ul>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recursos">Recursos<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#recursos" class="hash-link" aria-label="Direct link to Recursos" title="Direct link to Recursos" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources">Resources<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h2>
 <ul>
 <li class="">Sitio: <a href="https://skills.sh/" target="_blank" rel="noopener noreferrer" class="">https://skills.sh/</a> 🔗</li>
 <li class="">Documentación y ejemplos (usa <code>npx skills find</code> para descubrir skills concretos)</li>
 </ul>
 <hr>
-<p>Si quieres, puedo instalar un skill de ejemplo aquí y mostrar cómo usarlo paso a paso. ¿Qué categoría te interesa (tests, docs, deploy, productividad)?</p>]]></content>
+<p>If you want, I can install a sample skill here and show step-by-step how to use it. Which category interests you (tests, docs, deploy, productivity)?</p>]]></content>
         <author>
             <name>Emi</name>
             <uri>https://emi-dm.github.io</uri>
@@ -125,25 +125,5 @@
         <category label="skills" term="skills"/>
         <category label="find-skills" term="find-skills"/>
         <category label="vscode" term="vscode"/>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Welcome to MiDoc]]></title>
-        <id>https://emi-dm.github.io/blog/2026/02/04/welcome</id>
-        <link href="https://emi-dm.github.io/blog/2026/02/04/welcome"/>
-        <updated>2026-02-04T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[This is the first post of the example blog. Edit blog/2026-02-04-welcome.md to update it.]]></summary>
-        <content type="html"><![CDATA[<p>This is the first post of the example blog. Edit <code>blog/2026-02-04-welcome.md</code> to update it.</p>]]></content>
-        <author>
-            <name>The Team</name>
-        </author>
-        <author>
-            <name>GitHub Copilot</name>
-            <uri>https://github.com</uri>
-        </author>
-        <author>
-            <name>Example</name>
-        </author>
-        <category label="welcome" term="welcome"/>
-        <category label="example" term="example"/>
     </entry>
 </feed>

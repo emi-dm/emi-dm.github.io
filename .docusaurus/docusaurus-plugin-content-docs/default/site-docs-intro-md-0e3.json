@@ -1,22 +1,19 @@
 {
   "id": "intro",
-  "title": "Page removed",
-  "description": "Esta página de ejemplo ha sido eliminada.",
+  "title": "Introduction",
+  "description": "Welcome to the documentation.",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
-  "permalink": "/docs/intro",
+  "permalink": "/es/docs/intro",
   "draft": false,
   "unlisted": false,
   "editUrl": "https://github.com/example/midoc/tree/main/docs/intro.md",
   "tags": [],
   "version": "current",
+  "sidebarPosition": 1,
   "frontMatter": {
-    "title": "Page removed"
+    "sidebar_position": 1
   },
-  "sidebar": "tutorialSidebar",
-  "next": {
-    "title": "Page removed",
-    "permalink": "/docs/getting-started"
-  }
+  "sidebar": "tutorialSidebar"
 }

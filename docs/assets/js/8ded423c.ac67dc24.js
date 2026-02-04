@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmidoc=self.webpackChunkmidoc||[]).push([[480],{578(a){a.exports=JSON.parse('{"tag":{"label":"didactic","permalink":"/blog/tags/didactic","allTagsPath":"/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/blog/tags/didactic","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

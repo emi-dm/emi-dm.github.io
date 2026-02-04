@@ -1,230 +1,183 @@
 {
-  "/__docusaurus/debug-5ff": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
+  "/es/blog-9d0": {
+    "__comp": "a6aa9e1f",
     "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/config-5ba": {
-    "__comp": "__comp---theme-debug-config-23-a-2ff",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/content-a2b": {
-    "__comp": "__comp---theme-debug-contentba-8-ce7",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
+      "plugin": "36994c47"
     },
-    "__props": "__props---docusaurus-debug-content-3-c-0-be2"
-  },
-  "/__docusaurus/debug/globalData-c3c": {
-    "__comp": "__comp---theme-debug-global-dataede-0fa",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/metadata-156": {
-    "__comp": "__comp---theme-debug-site-metadata-68-e-3d4",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/registry-88c": {
-    "__comp": "__comp---theme-debug-registry-679-501",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/__docusaurus/debug/routes-000": {
-    "__comp": "__comp---theme-debug-routes-946-699",
-    "__context": {
-      "plugin": "plugin---docusaurus-debugb-38-ad3"
-    }
-  },
-  "/blog-1ef": {
-    "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
-    "__context": {
-      "plugin": "plugin---blog-369-22e"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogf-61-133"
+        "content": "bee68552"
       },
       {
-        "content": "content---blogcaf-982"
+        "content": "f40d92d5"
       }
     ],
-    "__props": "__props---blogc-15-573"
+    "__props": "8b20138e"
   },
-  "/blog/2026/02/04/sdd-didactico-e85": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
+  "/es/blog/2026/02/04/sdd-didactico-ba7": {
+    "__comp": "ccc49370",
     "__context": {
       "data": {
-        "blogMetadata": "blogMetadata---blog-2026-02-04-sdd-didacticoace-41e"
+        "blogMetadata": "acecf23e"
       },
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-2026-02-04-sdd-didactico-869-efc"
+    "sidebar": "814f3328",
+    "content": "2eb71792"
   },
-  "/blog/2026/02/04/skills-find-skills-55d": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
+  "/es/blog/2026/02/04/skills-find-skills-049": {
+    "__comp": "ccc49370",
     "__context": {
       "data": {
-        "blogMetadata": "blogMetadata---blog-2026-02-04-sdd-didacticoace-41e"
+        "blogMetadata": "acecf23e"
       },
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-2026-02-04-skills-find-skillsb-54-e77"
+    "sidebar": "814f3328",
+    "content": "dccbadf5"
   },
-  "/blog/archive-182": {
-    "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
+  "/es/blog/archive-c1d": {
+    "__comp": "9e4087bc",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "__props": "__props---blog-archivef-81-229"
+    "__props": "dfed01cf"
   },
-  "/blog/tags-287": {
-    "__comp": "__comp---theme-blog-tags-list-page-01-a-d0b",
+  "/es/blog/tags-b1d": {
+    "__comp": "01a85c17",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
-    "__props": "__props---blog-tags-3-a-2-fa2"
+    "sidebar": "814f3328",
+    "__props": "0c69ec8d"
   },
-  "/blog/tags/ai-cbb": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/desarrollo-53f": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogf-61-133"
+        "content": "bee68552"
       }
     ],
-    "__props": "__props---blog-tags-ai-65-a-ec1"
+    "__props": "d4724bbe"
   },
-  "/blog/tags/development-e7b": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/didactico-c2e": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogf-61-133"
+        "content": "bee68552"
       }
     ],
-    "__props": "__props---blog-tags-developmentfca-357"
+    "__props": "bf51440d"
   },
-  "/blog/tags/didactic-fbf": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/especificacion-1f8": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogf-61-133"
+        "content": "bee68552"
       }
     ],
-    "__props": "__props---blog-tags-didactic-8-de-c3b"
+    "__props": "93829c00"
   },
-  "/blog/tags/find-skills-579": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/find-skills-05f": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogcaf-982"
+        "content": "f40d92d5"
       }
     ],
-    "__props": "__props---blog-tags-find-skills-31-a-4ff"
+    "__props": "0c43c308"
   },
-  "/blog/tags/sdd-a40": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/ia-fc3": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogf-61-133"
+        "content": "bee68552"
       }
     ],
-    "__props": "__props---blog-tags-sdd-8-ad-0a7"
+    "__props": "9974c02f"
   },
-  "/blog/tags/skills-ccd": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/sdd-18a": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogcaf-982"
+        "content": "bee68552"
       }
     ],
-    "__props": "__props---blog-tags-skillsffe-ff7"
+    "__props": "ef44f9f0"
   },
-  "/blog/tags/specification-722": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/skills-ef2": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogf-61-133"
+        "content": "f40d92d5"
       }
     ],
-    "__props": "__props---blog-tags-specificationbf-6-449"
+    "__props": "9246d5ef"
   },
-  "/blog/tags/vscode-296": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+  "/es/blog/tags/vscode-dbf": {
+    "__comp": "6875c492",
     "__context": {
-      "plugin": "plugin---blog-369-22e"
+      "plugin": "36994c47"
     },
-    "sidebar": "sidebar---blog-814-8ac",
+    "sidebar": "814f3328",
     "items": [
       {
-        "content": "content---blogcaf-982"
+        "content": "f40d92d5"
       }
     ],
-    "__props": "__props---blog-tags-vscode-8-fa-bc2"
+    "__props": "addc4ef4"
   },
-  "/docs-b2c": {
-    "__comp": "__comp---theme-docs-root-5-e-9-0b6",
+  "/es/docs-cd0": {
+    "__comp": "5e95c892",
     "__context": {
-      "plugin": "plugin---docsaba-d7c"
+      "plugin": "aba21aa0"
     }
   },
-  "/docs-4fa": {
-    "__comp": "__comp---theme-doc-version-roota-7-b-5de",
-    "__props": "__props---docs-005-788"
+  "/es/docs-363": {
+    "__comp": "a7bd4aaa",
+    "__props": "9d39d3e7"
   },
-  "/docs-e47": {
-    "__comp": "__comp---theme-doc-roota-94-67a"
+  "/es/docs-959": {
+    "__comp": "a94703ab"
   },
-  "/docs/getting-started-2a1": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-getting-startedd-58-f94"
+  "/es/docs/intro-55c": {
+    "__comp": "17896441",
+    "content": "0e384e19"
   },
-  "/docs/intro-61d": {
-    "__comp": "__comp---theme-doc-item-178-a40",
-    "content": "content---docs-intro-0-e-3-be1"
-  },
-  "/-e5f": {
-    "__comp": "__comp---site-src-pages-index-tsx-1-df-d3e",
+  "/es/-f57": {
+    "__comp": "1df93b7f",
     "__context": {
-      "plugin": "plugin---a-74-9d6"
+      "plugin": "a7456010"
     },
-    "config": "config---5-e-9-4f3"
+    "config": "5e9f5e1a"
   }
 }

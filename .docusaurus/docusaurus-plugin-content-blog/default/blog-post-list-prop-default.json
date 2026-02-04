@@ -2,14 +2,14 @@
   "title": "Recent posts",
   "items": [
     {
-      "title": "SDD (Didactic): What SDD is and understanding its role",
-      "permalink": "/blog/2026/02/04/sdd-didactico",
+      "title": "SDD didáctico: Qué es SDD y entender su rol",
+      "permalink": "/es/blog/2026/02/04/sdd-didactico",
       "unlisted": false,
       "date": "2026-02-04T00:00:00.000Z"
     },
     {
-      "title": "Skills: Using `find-skills` from VS Code",
-      "permalink": "/blog/2026/02/04/skills-find-skills",
+      "title": "Skills: usar `find-skills` desde VS Code",
+      "permalink": "/es/blog/2026/02/04/skills-find-skills",
       "unlisted": false,
       "date": "2026-02-04T00:00:00.000Z"
     }
