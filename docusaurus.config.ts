@@ -41,9 +41,10 @@ const config: Config = {
     themeConfig: {
         navbar: {
             title: 'EMILIO.DELGADO',
+            // Use a neutral project logo (remove personal photo from the header)
             logo: {
-                alt: 'Emilio Delgado',
-                src: 'personal/me.png',
+                alt: 'MiDoc Logo',
+                src: 'img/logo.svg',
             },
             items: [
                 // Links mirror the main personal site anchors (absolute URLs so anchors resolve from any page)
