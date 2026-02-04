@@ -86,12 +86,28 @@ a,
     color: #0d0d14 !important;
 }
 
-/* Make code blocks match darker background */
+/* Make code blocks match darker background (default dark theme) */
 .theme-code-block,
 pre,
 code {
     background-color: #16161f !important;
     color: var(--ifm-color-emphasis) !important;
+}
+
+/* Light theme: readable code blocks — use personal site light palette */
+[data-theme="light"] .theme-code-block,
+[data-theme="light"] pre,
+[data-theme="light"] code,
+[data-theme="light"] .prism-code {
+    background-color: #e8e6e3 !important; /* matches personal --bg-tertiary */
+    color: #1e1916 !important; /* matches personal --text-primary */
+}
+
+/* Ensure token lines inherit color so inline prism styles don't force unreadable colors */
+[data-theme="light"] .theme-code-block .token,
+[data-theme="light"] .theme-code-block .token-line,
+[data-theme="light"] .prism-code .token {
+    color: inherit !important;
 }
 
 /* Make blog sidebar match personal site muted color */
