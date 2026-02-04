@@ -1,10 +1,24 @@
 :root {
-    --ifm-color-primary: #d4a574; /* accent-primary from personal site */
+    --ifm-color-primary: #d4a574;
+    /* accent-primary from personal site */
     --ifm-navbar-background: rgba(13, 13, 20, 0.85);
-    --ifm-background-color: #0d0d14; /* bg-primary */
-    --ifm-color-emphasis: #f5f3ef; /* text-primary */
-    --ifm-color-muted: #b8b5ad; /* text-secondary */
+    --ifm-background-color: #0d0d14;
+    /* bg-primary */
+    --ifm-color-emphasis: #f5f3ef;
+    /* text-primary */
+    --ifm-color-muted: #b8b5ad;
+    /* text-secondary */
     --ifm-link-color: #d4a574;
+}
+
+/* Light theme overrides to match personal site */
+[data-theme="light"] {
+    --ifm-background-color: #f7f5f2;
+    --ifm-navbar-background: rgba(247, 245, 242, 0.85);
+    --ifm-color-emphasis: #1e1916;
+    --ifm-color-muted: #4a4641;
+    --ifm-link-color: #9b7653;
+    --ifm-color-primary: #9b7653;
 }
 
 /* Navbar tweaks to closer match personal site styling */
@@ -14,11 +28,16 @@
     letter-spacing: 1px;
 }
 
-/* Remove circular avatar styling (no personal image in header) */
-.navbar__logo img, .navbar__brand img {
+/* Remove circular avatar styling (no personal image in header) and force hide images for text-only header */
+.navbar__logo img,
+.navbar__brand img,
+.navbar__logo,
+.navbar__brand {
+    display: none !important;
     border-radius: 4px;
-    width: 36px;
-    height: auto;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 /* Make nav links spacing & sizing nicer */
@@ -31,7 +50,9 @@
 }
 
 /* ===== Apply personal site color palette ===== */
-:root, html, body {
+:root,
+html,
+body {
     background-color: var(--ifm-background-color) !important;
     color: var(--ifm-color-emphasis) !important;
 }
@@ -40,27 +61,35 @@
 .navbar {
     background-color: var(--ifm-navbar-background) !important;
 }
-.navbar__link, .navbar__item {
+
+.navbar__link,
+.navbar__item {
     color: var(--ifm-color-muted) !important;
 }
+
 .navbar__link:hover {
     color: var(--ifm-color-emphasis) !important;
 }
 
 /* Links and buttons */
-a, .theme-doc-sidebar-link, .ifm-navbar__link {
+a,
+.theme-doc-sidebar-link,
+.ifm-navbar__link {
     color: var(--ifm-link-color) !important;
 }
 
 /* Buttons */
-.button, .button--primary {
+.button,
+.button--primary {
     background-color: var(--ifm-color-primary) !important;
     border-color: var(--ifm-color-primary) !important;
     color: #0d0d14 !important;
 }
 
 /* Make code blocks match darker background */
-.theme-code-block, pre, code {
+.theme-code-block,
+pre,
+code {
     background-color: #16161f !important;
     color: var(--ifm-color-emphasis) !important;
 }
@@ -71,10 +100,14 @@ a, .theme-doc-sidebar-link, .ifm-navbar__link {
 }
 
 .navbar__logo img,
-.navbar__brand img {
+.navbar__brand img,
+.navbar__logo,
+.navbar__brand {
+    display: none !important;
     border-radius: 6px;
-    width: 36px;
-    height: auto;
+    width: 0;
+    height: 0;
+    overflow: hidden;
 }
 
 /* Make nav links spacing & sizing nicer */
