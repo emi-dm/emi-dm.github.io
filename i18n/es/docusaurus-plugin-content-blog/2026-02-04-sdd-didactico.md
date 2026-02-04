@@ -1,15 +1,14 @@
 ---
-title: "SDD (Didactic): What SDD is and understanding its role"
+title: "SDD didáctico: Qué es SDD y entender su rol"
 authors:
   - name: "Emi"
     url: "https://emi-dm.github.io"
 date: 2026-02-04T00:00:00.000Z
-tags: [sdd, specification, development, ai, didactic]
-description: "A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development."
+tags: [sdd, especificación, desarrollo, ia, didáctico]
+description: "Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA."
 ---
 
-
-**TL;DR:** SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.
+**TL;DR:** SDD pone la especificación en el centro: las especificaciones (bien escritas) generan el código mediante agentes IA. Menos malentendidos, más iteración rápida. 
 
 
 ## Definition of the concept
@@ -20,16 +19,16 @@ SDD surge como filosofía en respuesta a los agentes basados en LLMs y al *vibe 
 
 > Ejemplo rápido: escribes una especificación: "Al pulsar el botón X, enviar notificación Y al usuario con condiciones Z". Un agente puede transformar esa especificación en endpoints, pruebas y despliegue mínimo viable. Simple, repetible y trazable.
 
-## Source of truth
+## Fuente de la verdad
 
-- **Agile / Waterfall**: Code rules. Specs often become outdated notes.
-- **SDD**: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.
+- **Agile / Waterfall**: El código manda. Las specs son apuntes que a menudo se quedan anticuados.
+- **SDD**: La especificación manda. El código es una expresión temporal de esa especificación: si algo no cuadra, la fuente auténtica a corregir es la spec.
 
 En SDD la especificación funciona como un contrato: cuando la spec y el código difieren, la spec es la verdad hasta que decidimos lo contrario (y lo documentamos).
 
-## Change management (by analogy)
+## Gestión de Cambios (con analogía)
 
-Think of changes as updating a recipe, not re-making the dish by hand every time:
+Piensa en los cambios como actualizar una receta, no rehacer el plato a mano cada vez:
 
 - **Antes**: un cambio en el requisito provoca un sálvese quien pueda: edición en código, PRs, hotfixes.
 - **Con SDD**: cambias la spec, regeneras implementaciones y pruebas. Experimentas *what-if* con poco coste.

@@ -14,7 +14,7 @@ const config: Config = {
 
     i18n: {
         defaultLocale: 'en',
-        locales: ['en'],
+        locales: ['en', 'es'],
     },
 
     presets: [
@@ -59,6 +59,7 @@ const config: Config = {
                     target: '_blank',
                     rel: 'noopener noreferrer',
                 },
+                { type: 'localeDropdown', position: 'right' },
             ],
         },
         footer: {

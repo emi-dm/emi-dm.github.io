@@ -1,18 +1,18 @@
 ---
-title: "Skills: Using `find-skills` from VS Code"
+title: "Skills: usar `find-skills` desde VS Code"
 authors:
   - name: Emi
     url: https://emi-dm.github.io
 date: 2026-02-04
 tags: [skills, find-skills, vscode]
-description: "How to use the 'npx skills' CLI and discover/install skills from VS Code"
+description: "Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code"
 ---
 
-# Skills and using `find-skills` in VS Code
+# Skills y cómo usar `find-skills` en VS Code
 
-This post explains how to use the `npx skills` command (the skills manager) and how to integrate it into your workflow in Visual Studio Code.
+En este post explico cómo usar el comando `npx skills` (el gestor de skills) y cómo integrarlo en tu flujo de trabajo en Visual Studio Code.
 
-## What is `npx skills`?
+## ¿Qué es `npx skills`?
 
 `npx skills` es la CLI del ecosistema de skills: te ayuda a buscar, instalar y actualizar paquetes llamados *skills* que extienden las capacidades del agente.
 
@@ -22,9 +22,9 @@ Comandos clave:
 - Instalar: `npx skills add <owner/repo@skill>`
 - Actualizar: `npx skills update`
 
-## Quick usage from VS Code
+## Uso rápido desde VS Code
 
-1. Abre el terminal integrado (View → Terminal o `Ctrl+\``).
+1. Abre el terminal integrado (View → Terminal o `Ctrl+\`).
 2. Busca skills relevantes:
 
 ```bash
@@ -46,20 +46,20 @@ npm i -g @skills/cli
 skills find "react testing"
 ```
 
-### Practical tip
+### Consejo práctico
 Si quieres trabajar con skills frecuentemente desde VS Code, deja el terminal anclado y usa búsquedas con palabras específicas (p.ej. `react testing`, `docs`, `deploy`).
 
-## Example flow
+## Ejemplo de flujo
 
 - Buscar: `npx skills find changelog`
 - Instalar: `npx skills add composio/changelog-skill`
 - Ejecutar la tarea que provee el skill: depende del skill instalado (consulta la documentación en skills.sh).
 
-## Resources
+## Recursos
 
 - Sitio: https://skills.sh/ 🔗
 - Documentación y ejemplos (usa `npx skills find` para descubrir skills concretos)
 
 ---
 
-If you want, I can install a sample skill here and show step-by-step how to use it. Which category interests you (tests, docs, deploy, productivity)?
+Si quieres, puedo instalar un skill de ejemplo aquí y mostrar cómo usarlo paso a paso. ¿Qué categoría te interesa (tests, docs, deploy, productividad)?
