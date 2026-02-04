@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>MiDoc Blog</title>
+        <link>https://emi-dm.github.io/blog</link>
+        <description>MiDoc Blog</description>
+        <lastBuildDate>Wed, 04 Feb 2026 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>en</language>
+        <item>
+            <title><![CDATA[Skills: usar `find-skills` desde VS Code]]></title>
+            <link>https://emi-dm.github.io/blog/2026/02/04/skills-find-skills</link>
+            <guid>https://emi-dm.github.io/blog/2026/02/04/skills-find-skills</guid>
+            <pubDate>Wed, 04 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code]]></description>
+            <content:encoded><![CDATA[<p>En este post explico cómo usar el comando <code>npx skills</code> (el gestor de skills) y cómo integrarlo en tu flujo de trabajo en Visual Studio Code.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="qué-es-npx-skills">¿Qué es <code>npx skills</code>?<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#qu%C3%A9-es-npx-skills" class="hash-link" aria-label="Direct link to qué-es-npx-skills" title="Direct link to qué-es-npx-skills" translate="no">​</a></h2>
+<p><code>npx skills</code> es la CLI del ecosistema de skills: te ayuda a buscar, instalar y actualizar paquetes llamados <em>skills</em> que extienden las capacidades del agente.</p>
+<p>Comandos clave:</p>
+<ul>
+<li class="">Buscar: <code>npx skills find [query]</code></li>
+<li class="">Instalar: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
+<li class="">Actualizar: <code>npx skills update</code></li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="uso-rápido-desde-vs-code">Uso rápido desde VS Code<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#uso-r%C3%A1pido-desde-vs-code" class="hash-link" aria-label="Direct link to Uso rápido desde VS Code" title="Direct link to Uso rápido desde VS Code" translate="no">​</a></h2>
+<ol>
+<li class="">Abre el terminal integrado (View → Terminal o `Ctrl+``).</li>
+<li class="">Busca skills relevantes:</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># buscar skills por palabras clave</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">npx skills find react performance</span><br></span></code></pre></div></div>
+<ol start="3">
+<li class="">Revisa la salida y, si te interesa uno, instálalo:</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># instalar un skill (instalación global omitible, puedes usar npx directamente)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">npx skills add vercel-labs/agent-skills@vercel-react-best-practices</span><br></span></code></pre></div></div>
+<ol start="4">
+<li class="">Opcional: instala globalmente y evita escribir <code>npx</code>:</li>
+</ol>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">npm i -g @skills/cli</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">skills find "react testing"</span><br></span></code></pre></div></div>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="consejo-práctico">Consejo práctico<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#consejo-pr%C3%A1ctico" class="hash-link" aria-label="Direct link to Consejo práctico" title="Direct link to Consejo práctico" translate="no">​</a></h3>
+<p>Si quieres trabajar con skills frecuentemente desde VS Code, deja el terminal anclado y usa búsquedas con palabras específicas (p.ej. <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="ejemplo-de-flujo">Ejemplo de flujo<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#ejemplo-de-flujo" class="hash-link" aria-label="Direct link to Ejemplo de flujo" title="Direct link to Ejemplo de flujo" translate="no">​</a></h2>
+<ul>
+<li class="">Buscar: <code>npx skills find changelog</code></li>
+<li class="">Instalar: <code>npx skills add composio/changelog-skill</code></li>
+<li class="">Ejecutar la tarea que provee el skill: depende del skill instalado (consulta la documentación en skills.sh).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="recursos">Recursos<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#recursos" class="hash-link" aria-label="Direct link to Recursos" title="Direct link to Recursos" translate="no">​</a></h2>
+<ul>
+<li class="">Sitio: <a href="https://skills.sh/" target="_blank" rel="noopener noreferrer" class="">https://skills.sh/</a> 🔗</li>
+<li class="">Documentación y ejemplos (usa <code>npx skills find</code> para descubrir skills concretos)</li>
+</ul>
+<hr>
+<p>Si quieres, puedo instalar un skill de ejemplo aquí y mostrar cómo usarlo paso a paso. ¿Qué categoría te interesa (tests, docs, deploy, productividad)?</p>]]></content:encoded>
+            <category>skills</category>
+            <category>find-skills</category>
+            <category>vscode</category>
+        </item>
+        <item>
+            <title><![CDATA[Welcome to MiDoc]]></title>
+            <link>https://emi-dm.github.io/blog/2026/02/04/welcome</link>
+            <guid>https://emi-dm.github.io/blog/2026/02/04/welcome</guid>
+            <pubDate>Wed, 04 Feb 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is the first post of the example blog. Edit blog/2026-02-04-welcome.md to update it.]]></description>
+            <content:encoded><![CDATA[<p>This is the first post of the example blog. Edit <code>blog/2026-02-04-welcome.md</code> to update it.</p>]]></content:encoded>
+            <category>welcome</category>
+            <category>example</category>
+        </item>
+    </channel>
+</rss>
