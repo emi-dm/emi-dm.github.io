@@ -29,7 +29,8 @@ const config: Config = {
                     showReadingTime: true,
                     editUrl: 'https://github.com/example/midoc/tree/main/',
                     // Path to authors map to resolve author keys used in posts
-                    authorsMapPath: './authors.json',
+                    // Use require.resolve to ensure absolute path is embedded at build time
+                    authorsMapPath: require.resolve('./authors.json'),
                 },
                 theme: {
                     customCss: require.resolve('./src/css/custom.css'),
@@ -41,11 +42,7 @@ const config: Config = {
     themeConfig: {
         navbar: {
             title: 'EMILIO.DELGADO',
-            // Use a neutral project logo (remove personal photo from the header)
-            logo: {
-                alt: 'MiDoc Logo',
-                src: 'img/logo.svg',
-            },
+            // No logo image in header to match personal site (text-only header)
             items: [
                 // Links mirror the main personal site anchors (absolute URLs so anchors resolve from any page)
                 { href: 'https://emi-dm.github.io/personal/index.html', label: 'Home', position: 'left' },
