@@ -52,7 +52,6 @@ const config: Config = {
                 { href: 'https://emi-dm.github.io/personal/index.html#projects', label: 'Projects', position: 'left' },
                 { href: 'https://emi-dm.github.io/personal/index.html#repositories', label: 'Repositories', position: 'left' },
                 { href: 'https://emi-dm.github.io/personal/index.html#publications', label: 'Publications', position: 'left' },
-                { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     href: 'https://github.com/emi-dm',
                     label: 'GitHub',
@@ -64,17 +63,7 @@ const config: Config = {
         },
         footer: {
             style: 'dark',
-            links: [
-                {
-                    title: 'Docs',
-                    items: [
-                        {
-                            label: 'Tutorial',
-                            to: '/docs/intro',
-                        },
-                    ],
-                },
-            ],
+            links: [],
             copyright: `Copyright © ${new Date().getFullYear()} MiDoc`,
         },
     },
