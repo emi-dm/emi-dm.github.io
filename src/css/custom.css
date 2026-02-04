@@ -99,8 +99,10 @@ code {
 [data-theme="light"] pre,
 [data-theme="light"] code,
 [data-theme="light"] .prism-code {
-    background-color: #e8e6e3 !important; /* matches personal --bg-tertiary */
-    color: #1e1916 !important; /* matches personal --text-primary */
+    background-color: #e8e6e3 !important;
+    /* matches personal --bg-tertiary */
+    color: #1e1916 !important;
+    /* matches personal --text-primary */
 }
 
 /* Ensure token lines inherit color so inline prism styles don't force unreadable colors */

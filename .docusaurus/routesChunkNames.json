@@ -42,7 +42,7 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/blog-e05": {
+  "/blog-1ef": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
       "plugin": "plugin---blog-369-22e"
@@ -54,9 +54,6 @@
       },
       {
         "content": "content---blogcaf-982"
-      },
-      {
-        "content": "content---blogb-75-acf"
       }
     ],
     "__props": "__props---blogc-15-573"
@@ -83,17 +80,6 @@
     "sidebar": "sidebar---blog-814-8ac",
     "content": "content---blog-2026-02-04-skills-find-skillsb-54-e77"
   },
-  "/blog/2026/02/04/welcome-f62": {
-    "__comp": "__comp---theme-blog-post-pageccc-cab",
-    "__context": {
-      "data": {
-        "blogMetadata": "blogMetadata---blog-2026-02-04-sdd-didacticoace-41e"
-      },
-      "plugin": "plugin---blog-369-22e"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "content": "content---blog-2026-02-04-welcome-8-f-5-0c2"
-  },
   "/blog/archive-182": {
     "__comp": "__comp---theme-blog-archive-page-9-e-4-1d8",
     "__context": {
@@ -109,7 +95,7 @@
     "sidebar": "sidebar---blog-814-8ac",
     "__props": "__props---blog-tags-3-a-2-fa2"
   },
-  "/blog/tags/desarrollo-831": {
+  "/blog/tags/ai-cbb": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
       "plugin": "plugin---blog-369-22e"
@@ -120,9 +106,9 @@
         "content": "content---blogf-61-133"
       }
     ],
-    "__props": "__props---blog-tags-desarrollo-717-58a"
+    "__props": "__props---blog-tags-ai-65-a-ec1"
   },
-  "/blog/tags/didactico-799": {
+  "/blog/tags/development-e7b": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
       "plugin": "plugin---blog-369-22e"
@@ -133,9 +119,9 @@
         "content": "content---blogf-61-133"
       }
     ],
-    "__props": "__props---blog-tags-didactico-997-1c1"
+    "__props": "__props---blog-tags-developmentfca-357"
   },
-  "/blog/tags/especificacion-6ac": {
+  "/blog/tags/didactic-fbf": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
       "plugin": "plugin---blog-369-22e"
@@ -146,20 +132,7 @@
         "content": "content---blogf-61-133"
       }
     ],
-    "__props": "__props---blog-tags-especificacion-044-2f6"
-  },
-  "/blog/tags/example-936": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-369-22e"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blogb-75-acf"
-      }
-    ],
-    "__props": "__props---blog-tags-examplebcc-b9e"
+    "__props": "__props---blog-tags-didactic-8-de-c3b"
   },
   "/blog/tags/find-skills-579": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
@@ -173,19 +146,6 @@
       }
     ],
     "__props": "__props---blog-tags-find-skills-31-a-4ff"
-  },
-  "/blog/tags/ia-66d": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-369-22e"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blogf-61-133"
-      }
-    ],
-    "__props": "__props---blog-tags-ia-41-c-cc7"
   },
   "/blog/tags/sdd-a40": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
@@ -213,6 +173,19 @@
     ],
     "__props": "__props---blog-tags-skillsffe-ff7"
   },
+  "/blog/tags/specification-722": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-61-133"
+      }
+    ],
+    "__props": "__props---blog-tags-specificationbf-6-449"
+  },
   "/blog/tags/vscode-296": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
     "__context": {
@@ -225,19 +198,6 @@
       }
     ],
     "__props": "__props---blog-tags-vscode-8-fa-bc2"
-  },
-  "/blog/tags/welcome-c40": {
-    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
-    "__context": {
-      "plugin": "plugin---blog-369-22e"
-    },
-    "sidebar": "sidebar---blog-814-8ac",
-    "items": [
-      {
-        "content": "content---blogb-75-acf"
-      }
-    ],
-    "__props": "__props---blog-tags-welcome-436-c4b"
   },
   "/docs-b2c": {
     "__comp": "__comp---theme-docs-root-5-e-9-0b6",

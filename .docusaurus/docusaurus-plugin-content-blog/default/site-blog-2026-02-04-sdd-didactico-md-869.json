@@ -2,8 +2,8 @@
   "permalink": "/blog/2026/02/04/sdd-didactico",
   "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-sdd-didactico.md",
   "source": "@site/blog/2026-02-04-sdd-didactico.md",
-  "title": "SDD didáctico: Qué es SDD y entender su rol",
-  "description": "Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA.",
+  "title": "SDD (Didactic): What SDD is and understanding its role",
+  "description": "A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.",
   "date": "2026-02-04T00:00:00.000Z",
   "tags": [
     {
@@ -13,26 +13,26 @@
     },
     {
       "inline": true,
-      "label": "especificación",
-      "permalink": "/blog/tags/especificacion"
+      "label": "specification",
+      "permalink": "/blog/tags/specification"
     },
     {
       "inline": true,
-      "label": "desarrollo",
-      "permalink": "/blog/tags/desarrollo"
+      "label": "development",
+      "permalink": "/blog/tags/development"
     },
     {
       "inline": true,
-      "label": "ia",
-      "permalink": "/blog/tags/ia"
+      "label": "ai",
+      "permalink": "/blog/tags/ai"
     },
     {
       "inline": true,
-      "label": "didáctico",
-      "permalink": "/blog/tags/didactico"
+      "label": "didactic",
+      "permalink": "/blog/tags/didactic"
     }
   ],
-  "readingTime": 3.07,
+  "readingTime": 3.02,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -44,7 +44,7 @@
     }
   ],
   "frontMatter": {
-    "title": "SDD didáctico: Qué es SDD y entender su rol",
+    "title": "SDD (Didactic): What SDD is and understanding its role",
     "authors": [
       {
         "name": "Emi",
@@ -54,16 +54,16 @@
     "date": "2026-02-04T00:00:00.000Z",
     "tags": [
       "sdd",
-      "especificación",
-      "desarrollo",
-      "ia",
-      "didáctico"
+      "specification",
+      "development",
+      "ai",
+      "didactic"
     ],
-    "description": "Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA."
+    "description": "A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development."
   },
   "unlisted": false,
   "nextItem": {
-    "title": "Skills: usar `find-skills` desde VS Code",
+    "title": "Skills: Using `find-skills` from VS Code",
     "permalink": "/blog/2026/02/04/skills-find-skills"
   }
 }

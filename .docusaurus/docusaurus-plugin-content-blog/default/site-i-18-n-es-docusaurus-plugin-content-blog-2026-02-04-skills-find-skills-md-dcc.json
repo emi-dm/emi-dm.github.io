@@ -1,28 +1,28 @@
 {
-  "permalink": "/blog/2026/02/04/skills-find-skills",
+  "permalink": "/es/blog/2026/02/04/skills-find-skills",
   "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-skills-find-skills.md",
-  "source": "@site/blog/2026-02-04-skills-find-skills.md",
-  "title": "Skills: Using `find-skills` from VS Code",
-  "description": "How to use the 'npx skills' CLI and discover/install skills from VS Code",
+  "source": "@site/i18n/es/docusaurus-plugin-content-blog/2026-02-04-skills-find-skills.md",
+  "title": "Skills: usar `find-skills` desde VS Code",
+  "description": "Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code",
   "date": "2026-02-04T00:00:00.000Z",
   "tags": [
     {
       "inline": true,
       "label": "skills",
-      "permalink": "/blog/tags/skills"
+      "permalink": "/es/blog/tags/skills"
     },
     {
       "inline": true,
       "label": "find-skills",
-      "permalink": "/blog/tags/find-skills"
+      "permalink": "/es/blog/tags/find-skills"
     },
     {
       "inline": true,
       "label": "vscode",
-      "permalink": "/blog/tags/vscode"
+      "permalink": "/es/blog/tags/vscode"
     }
   ],
-  "readingTime": 1.25,
+  "readingTime": 1.24,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -34,7 +34,7 @@
     }
   ],
   "frontMatter": {
-    "title": "Skills: Using `find-skills` from VS Code",
+    "title": "Skills: usar `find-skills` desde VS Code",
     "authors": [
       {
         "name": "Emi",
@@ -47,11 +47,11 @@
       "find-skills",
       "vscode"
     ],
-    "description": "How to use the 'npx skills' CLI and discover/install skills from VS Code"
+    "description": "Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code"
   },
   "unlisted": false,
   "prevItem": {
-    "title": "SDD (Didactic): What SDD is and understanding its role",
-    "permalink": "/blog/2026/02/04/sdd-didactico"
+    "title": "SDD didáctico: Qué es SDD y entender su rol",
+    "permalink": "/es/blog/2026/02/04/sdd-didactico"
   }
 }

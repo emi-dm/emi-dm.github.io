@@ -1,7 +1,7 @@
 {
   "id": "intro",
-  "title": "Introduction",
-  "description": "Welcome to the example docs",
+  "title": "Page removed",
+  "description": "Esta página de ejemplo ha sido eliminada.",
   "source": "@site/docs/intro.md",
   "sourceDirName": ".",
   "slug": "/intro",
@@ -12,14 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "id": "intro",
-    "title": "Introduction",
-    "sidebar_label": "Introduction",
-    "description": "Welcome to the example docs"
+    "title": "Page removed"
   },
   "sidebar": "tutorialSidebar",
   "next": {
-    "title": "Getting Started",
+    "title": "Page removed",
     "permalink": "/docs/getting-started"
   }
 }

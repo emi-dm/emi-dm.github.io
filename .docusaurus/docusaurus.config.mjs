@@ -15,7 +15,8 @@ export default {
   "i18n": {
     "defaultLocale": "en",
     "locales": [
-      "en"
+      "en",
+      "es"
     ],
     "path": "i18n",
     "localeConfigs": {}
@@ -31,7 +32,7 @@ export default {
         "blog": {
           "showReadingTime": true,
           "editUrl": "https://github.com/example/midoc/tree/main/",
-          "authorsMapPath": "./authors.json"
+          "authorsMapPath": "/Users/emi/Desktop/Test/example-docusaurus/authors.json"
         },
         "theme": {
           "customCss": "/Users/emi/Desktop/Test/example-docusaurus/src/css/custom.css"
@@ -41,44 +42,62 @@ export default {
   ],
   "themeConfig": {
     "navbar": {
-      "title": "MiDoc",
-      "logo": {
-        "alt": "MiDoc Logo",
-        "src": "img/logo.svg"
-      },
+      "title": "EMILIO.DELGADO",
       "items": [
         {
-          "type": "doc",
-          "docId": "intro",
-          "position": "left",
-          "label": "Docs"
-        },
-        {
-          "to": "/blog",
-          "label": "Blog",
+          "href": "https://emi-dm.github.io/personal/index.html",
+          "label": "Home",
           "position": "left"
         },
         {
-          "href": "https://github.com/example/midoc",
+          "href": "https://emi-dm.github.io/personal/index.html#about",
+          "label": "About",
+          "position": "left"
+        },
+        {
+          "href": "https://emi-dm.github.io/personal/index.html#timeline",
+          "label": "Journey",
+          "position": "left"
+        },
+        {
+          "href": "https://emi-dm.github.io/personal/index.html#research",
+          "label": "Research",
+          "position": "left"
+        },
+        {
+          "href": "https://emi-dm.github.io/personal/index.html#projects",
+          "label": "Projects",
+          "position": "left"
+        },
+        {
+          "href": "https://emi-dm.github.io/personal/index.html#repositories",
+          "label": "Repositories",
+          "position": "left"
+        },
+        {
+          "href": "https://emi-dm.github.io/personal/index.html#publications",
+          "label": "Publications",
+          "position": "left"
+        },
+        {
+          "href": "https://github.com/emi-dm",
           "label": "GitHub",
-          "position": "right"
+          "position": "right",
+          "target": "_blank",
+          "rel": "noopener noreferrer"
+        },
+        {
+          "type": "localeDropdown",
+          "position": "right",
+          "dropdownItemsBefore": [],
+          "dropdownItemsAfter": []
         }
       ],
       "hideOnScroll": false
     },
     "footer": {
       "style": "dark",
-      "links": [
-        {
-          "title": "Docs",
-          "items": [
-            {
-              "label": "Tutorial",
-              "to": "/docs/intro"
-            }
-          ]
-        }
-      ],
+      "links": [],
       "copyright": "Copyright © 2026 MiDoc"
     },
     "colorMode": {

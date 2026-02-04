@@ -39,7 +39,7 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', 'e05'),
+    component: ComponentCreator('/blog', '1ef'),
     exact: true
   },
   {
@@ -53,11 +53,6 @@ export default [
     exact: true
   },
   {
-    path: '/blog/2026/02/04/welcome',
-    component: ComponentCreator('/blog/2026/02/04/welcome', 'f62'),
-    exact: true
-  },
-  {
     path: '/blog/archive',
     component: ComponentCreator('/blog/archive', '182'),
     exact: true
@@ -68,33 +63,23 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags/desarrollo',
-    component: ComponentCreator('/blog/tags/desarrollo', '831'),
+    path: '/blog/tags/ai',
+    component: ComponentCreator('/blog/tags/ai', 'cbb'),
     exact: true
   },
   {
-    path: '/blog/tags/didactico',
-    component: ComponentCreator('/blog/tags/didactico', '799'),
+    path: '/blog/tags/development',
+    component: ComponentCreator('/blog/tags/development', 'e7b'),
     exact: true
   },
   {
-    path: '/blog/tags/especificacion',
-    component: ComponentCreator('/blog/tags/especificacion', '6ac'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/example',
-    component: ComponentCreator('/blog/tags/example', '936'),
+    path: '/blog/tags/didactic',
+    component: ComponentCreator('/blog/tags/didactic', 'fbf'),
     exact: true
   },
   {
     path: '/blog/tags/find-skills',
     component: ComponentCreator('/blog/tags/find-skills', '579'),
-    exact: true
-  },
-  {
-    path: '/blog/tags/ia',
-    component: ComponentCreator('/blog/tags/ia', '66d'),
     exact: true
   },
   {
@@ -108,13 +93,13 @@ export default [
     exact: true
   },
   {
-    path: '/blog/tags/vscode',
-    component: ComponentCreator('/blog/tags/vscode', '296'),
+    path: '/blog/tags/specification',
+    component: ComponentCreator('/blog/tags/specification', '722'),
     exact: true
   },
   {
-    path: '/blog/tags/welcome',
-    component: ComponentCreator('/blog/tags/welcome', 'c40'),
+    path: '/blog/tags/vscode',
+    component: ComponentCreator('/blog/tags/vscode', '296'),
     exact: true
   },
   {

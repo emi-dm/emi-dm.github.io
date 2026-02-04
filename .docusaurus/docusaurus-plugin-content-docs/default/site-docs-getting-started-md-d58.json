@@ -1,7 +1,7 @@
 {
   "id": "getting-started",
-  "title": "Getting Started",
-  "description": "Install",
+  "title": "Page removed",
+  "description": "Esta página de ejemplo ha sido eliminada.",
   "source": "@site/docs/getting-started.md",
   "sourceDirName": ".",
   "slug": "/getting-started",
@@ -12,13 +12,11 @@
   "tags": [],
   "version": "current",
   "frontMatter": {
-    "id": "getting-started",
-    "title": "Getting Started",
-    "sidebar_label": "Getting Started"
+    "title": "Page removed"
   },
   "sidebar": "tutorialSidebar",
   "previous": {
-    "title": "Introduction",
+    "title": "Page removed",
     "permalink": "/docs/intro"
   }
 }
