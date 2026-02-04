@@ -40,21 +40,23 @@ const config: Config = {
 
     themeConfig: {
         navbar: {
-            title: 'MiDoc',
+            title: 'EMILIO.DELGADO',
             logo: {
-                alt: 'MiDoc Logo',
-                src: 'img/logo.svg',
+                alt: 'Emilio Delgado',
+                src: 'personal/me.png',
             },
             items: [
-                {
-                    type: 'doc',
-                    docId: 'intro',
-                    position: 'left',
-                    label: 'Docs',
-                },
+                // Links mirror the main personal site anchors
+                { href: '/personal/index.html#', label: 'Home', position: 'left' },
+                { href: '/personal/index.html#about', label: 'About', position: 'left' },
+                { href: '/personal/index.html#timeline', label: 'Journey', position: 'left' },
+                { href: '/personal/index.html#research', label: 'Research', position: 'left' },
+                { href: '/personal/index.html#projects', label: 'Projects', position: 'left' },
+                { href: '/personal/index.html#repositories', label: 'Repositories', position: 'left' },
+                { href: '/personal/index.html#publications', label: 'Publications', position: 'left' },
                 { to: '/blog', label: 'Blog', position: 'left' },
                 {
-                    href: 'https://github.com/example/midoc',
+                    href: 'https://github.com/emi-dm',
                     label: 'GitHub',
                     position: 'right',
                 },
