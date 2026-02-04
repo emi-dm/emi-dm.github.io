@@ -1,0 +1,11 @@
+{
+    "extends": "./node_modules/@docusaurus/core/lib/tsconfig/base.json",
+    "compilerOptions": {
+        "sourceMap": true,
+        "noEmit": true
+    },
+    "include": [
+        "src",
+        "docusaurus.config.ts"
+    ]
+}

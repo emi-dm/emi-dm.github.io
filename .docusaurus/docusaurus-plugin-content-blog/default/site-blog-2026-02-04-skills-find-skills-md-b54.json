@@ -1,0 +1,57 @@
+{
+  "permalink": "/blog/2026/02/04/skills-find-skills",
+  "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-skills-find-skills.md",
+  "source": "@site/blog/2026-02-04-skills-find-skills.md",
+  "title": "Skills: usar `find-skills` desde VS Code",
+  "description": "Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code",
+  "date": "2026-02-04T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "skills",
+      "permalink": "/blog/tags/skills"
+    },
+    {
+      "inline": true,
+      "label": "find-skills",
+      "permalink": "/blog/tags/find-skills"
+    },
+    {
+      "inline": true,
+      "label": "vscode",
+      "permalink": "/blog/tags/vscode"
+    }
+  ],
+  "readingTime": 1.24,
+  "hasTruncateMarker": false,
+  "authors": [
+    {
+      "name": "Emi",
+      "url": "https://emi-dm.github.io",
+      "socials": {},
+      "key": null,
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "title": "Skills: usar `find-skills` desde VS Code",
+    "authors": [
+      {
+        "name": "Emi",
+        "url": "https://emi-dm.github.io"
+      }
+    ],
+    "date": "2026-02-04T00:00:00.000Z",
+    "tags": [
+      "skills",
+      "find-skills",
+      "vscode"
+    ],
+    "description": "Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code"
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Welcome to MiDoc",
+    "permalink": "/blog/2026/02/04/welcome"
+  }
+}

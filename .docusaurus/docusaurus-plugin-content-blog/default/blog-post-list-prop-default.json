@@ -1,0 +1,17 @@
+{
+  "title": "Recent posts",
+  "items": [
+    {
+      "title": "Skills: usar `find-skills` desde VS Code",
+      "permalink": "/blog/2026/02/04/skills-find-skills",
+      "unlisted": false,
+      "date": "2026-02-04T00:00:00.000Z"
+    },
+    {
+      "title": "Welcome to MiDoc",
+      "permalink": "/blog/2026/02/04/welcome",
+      "unlisted": false,
+      "date": "2026-02-04T00:00:00.000Z"
+    }
+  ]
+}

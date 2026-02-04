@@ -1,0 +1,68 @@
+{
+  "permalink": "/blog/2026/02/04/welcome",
+  "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-welcome.md",
+  "source": "@site/blog/2026-02-04-welcome.md",
+  "title": "Welcome to MiDoc",
+  "description": "This is the first post of the example blog. Edit blog/2026-02-04-welcome.md to update it.",
+  "date": "2026-02-04T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "welcome",
+      "permalink": "/blog/tags/welcome"
+    },
+    {
+      "inline": true,
+      "label": "example",
+      "permalink": "/blog/tags/example"
+    }
+  ],
+  "readingTime": 0.09,
+  "hasTruncateMarker": false,
+  "authors": [
+    {
+      "name": "The Team",
+      "socials": {},
+      "key": null,
+      "page": null
+    },
+    {
+      "name": "GitHub Copilot",
+      "url": "https://github.com",
+      "socials": {},
+      "key": null,
+      "page": null
+    },
+    {
+      "name": "Example",
+      "socials": {},
+      "key": null,
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "title": "Welcome to MiDoc",
+    "authors": [
+      {
+        "name": "The Team"
+      },
+      {
+        "name": "GitHub Copilot",
+        "url": "https://github.com"
+      },
+      {
+        "name": "Example"
+      }
+    ],
+    "date": "2026-02-04T00:00:00.000Z",
+    "tags": [
+      "welcome",
+      "example"
+    ]
+  },
+  "unlisted": false,
+  "prevItem": {
+    "title": "Skills: usar `find-skills` desde VS Code",
+    "permalink": "/blog/2026/02/04/skills-find-skills"
+  }
+}

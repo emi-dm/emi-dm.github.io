@@ -1,0 +1,8 @@
+:root {
+    --ifm-color-primary: #0b66ff;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}

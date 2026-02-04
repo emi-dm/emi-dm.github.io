@@ -1,0 +1,24 @@
+{
+  "id": "getting-started",
+  "title": "Getting Started",
+  "description": "Install",
+  "source": "@site/docs/getting-started.md",
+  "sourceDirName": ".",
+  "slug": "/getting-started",
+  "permalink": "/docs/getting-started",
+  "draft": false,
+  "unlisted": false,
+  "editUrl": "https://github.com/example/midoc/tree/main/docs/getting-started.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "id": "getting-started",
+    "title": "Getting Started",
+    "sidebar_label": "Getting Started"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Introduction",
+    "permalink": "/docs/intro"
+  }
+}
