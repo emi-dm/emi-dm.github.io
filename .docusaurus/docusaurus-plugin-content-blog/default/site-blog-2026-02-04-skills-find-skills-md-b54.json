@@ -50,6 +50,10 @@
     "description": "Cómo usar el CLI 'npx skills' y encontrar e instalar skills desde VS Code"
   },
   "unlisted": false,
+  "prevItem": {
+    "title": "SDD didáctico: Qué es SDD y entender su rol",
+    "permalink": "/blog/2026/02/04/sdd-didactico"
+  },
   "nextItem": {
     "title": "Welcome to MiDoc",
     "permalink": "/blog/2026/02/04/welcome"

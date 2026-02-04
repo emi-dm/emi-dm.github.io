@@ -39,7 +39,12 @@ export default [
   },
   {
     path: '/blog',
-    component: ComponentCreator('/blog', '3dd'),
+    component: ComponentCreator('/blog', 'e05'),
+    exact: true
+  },
+  {
+    path: '/blog/2026/02/04/sdd-didactico',
+    component: ComponentCreator('/blog/2026/02/04/sdd-didactico', 'e85'),
     exact: true
   },
   {
@@ -63,6 +68,21 @@ export default [
     exact: true
   },
   {
+    path: '/blog/tags/desarrollo',
+    component: ComponentCreator('/blog/tags/desarrollo', '831'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/didactico',
+    component: ComponentCreator('/blog/tags/didactico', '799'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/especificacion',
+    component: ComponentCreator('/blog/tags/especificacion', '6ac'),
+    exact: true
+  },
+  {
     path: '/blog/tags/example',
     component: ComponentCreator('/blog/tags/example', '936'),
     exact: true
@@ -70,6 +90,16 @@ export default [
   {
     path: '/blog/tags/find-skills',
     component: ComponentCreator('/blog/tags/find-skills', '579'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/ia',
+    component: ComponentCreator('/blog/tags/ia', '66d'),
+    exact: true
+  },
+  {
+    path: '/blog/tags/sdd',
+    component: ComponentCreator('/blog/tags/sdd', 'a40'),
     exact: true
   },
   {

@@ -42,13 +42,16 @@
       "plugin": "plugin---docusaurus-debugb-38-ad3"
     }
   },
-  "/blog-3dd": {
+  "/blog-e05": {
     "__comp": "__comp---theme-blog-list-pagea-6-a-7ba",
     "__context": {
       "plugin": "plugin---blog-369-22e"
     },
     "sidebar": "sidebar---blog-814-8ac",
     "items": [
+      {
+        "content": "content---blogf-61-133"
+      },
       {
         "content": "content---blogcaf-982"
       },
@@ -58,11 +61,22 @@
     ],
     "__props": "__props---blogc-15-573"
   },
+  "/blog/2026/02/04/sdd-didactico-e85": {
+    "__comp": "__comp---theme-blog-post-pageccc-cab",
+    "__context": {
+      "data": {
+        "blogMetadata": "blogMetadata---blog-2026-02-04-sdd-didacticoace-41e"
+      },
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "content": "content---blog-2026-02-04-sdd-didactico-869-efc"
+  },
   "/blog/2026/02/04/skills-find-skills-55d": {
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
       "data": {
-        "blogMetadata": "blogMetadata---blog-2026-02-04-skills-find-skillsace-42c"
+        "blogMetadata": "blogMetadata---blog-2026-02-04-sdd-didacticoace-41e"
       },
       "plugin": "plugin---blog-369-22e"
     },
@@ -73,7 +87,7 @@
     "__comp": "__comp---theme-blog-post-pageccc-cab",
     "__context": {
       "data": {
-        "blogMetadata": "blogMetadata---blog-2026-02-04-skills-find-skillsace-42c"
+        "blogMetadata": "blogMetadata---blog-2026-02-04-sdd-didacticoace-41e"
       },
       "plugin": "plugin---blog-369-22e"
     },
@@ -94,6 +108,45 @@
     },
     "sidebar": "sidebar---blog-814-8ac",
     "__props": "__props---blog-tags-3-a-2-fa2"
+  },
+  "/blog/tags/desarrollo-831": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-61-133"
+      }
+    ],
+    "__props": "__props---blog-tags-desarrollo-717-58a"
+  },
+  "/blog/tags/didactico-799": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-61-133"
+      }
+    ],
+    "__props": "__props---blog-tags-didactico-997-1c1"
+  },
+  "/blog/tags/especificacion-6ac": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-61-133"
+      }
+    ],
+    "__props": "__props---blog-tags-especificacion-044-2f6"
   },
   "/blog/tags/example-936": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
@@ -120,6 +173,32 @@
       }
     ],
     "__props": "__props---blog-tags-find-skills-31-a-4ff"
+  },
+  "/blog/tags/ia-66d": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-61-133"
+      }
+    ],
+    "__props": "__props---blog-tags-ia-41-c-cc7"
+  },
+  "/blog/tags/sdd-a40": {
+    "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",
+    "__context": {
+      "plugin": "plugin---blog-369-22e"
+    },
+    "sidebar": "sidebar---blog-814-8ac",
+    "items": [
+      {
+        "content": "content---blogf-61-133"
+      }
+    ],
+    "__props": "__props---blog-tags-sdd-8-ad-0a7"
   },
   "/blog/tags/skills-ccd": {
     "__comp": "__comp---theme-blog-tags-posts-page-687-b6c",

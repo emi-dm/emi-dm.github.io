@@ -1,0 +1,69 @@
+{
+  "permalink": "/blog/2026/02/04/sdd-didactico",
+  "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-sdd-didactico.md",
+  "source": "@site/blog/2026-02-04-sdd-didactico.md",
+  "title": "SDD didáctico: Qué es SDD y entender su rol",
+  "description": "Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA.",
+  "date": "2026-02-04T00:00:00.000Z",
+  "tags": [
+    {
+      "inline": true,
+      "label": "sdd",
+      "permalink": "/blog/tags/sdd"
+    },
+    {
+      "inline": true,
+      "label": "especificación",
+      "permalink": "/blog/tags/especificacion"
+    },
+    {
+      "inline": true,
+      "label": "desarrollo",
+      "permalink": "/blog/tags/desarrollo"
+    },
+    {
+      "inline": true,
+      "label": "ia",
+      "permalink": "/blog/tags/ia"
+    },
+    {
+      "inline": true,
+      "label": "didáctico",
+      "permalink": "/blog/tags/didactico"
+    }
+  ],
+  "readingTime": 3.07,
+  "hasTruncateMarker": false,
+  "authors": [
+    {
+      "name": "Emi",
+      "url": "https://emi-dm.github.io",
+      "socials": {},
+      "key": null,
+      "page": null
+    }
+  ],
+  "frontMatter": {
+    "title": "SDD didáctico: Qué es SDD y entender su rol",
+    "authors": [
+      {
+        "name": "Emi",
+        "url": "https://emi-dm.github.io"
+      }
+    ],
+    "date": "2026-02-04T00:00:00.000Z",
+    "tags": [
+      "sdd",
+      "especificación",
+      "desarrollo",
+      "ia",
+      "didáctico"
+    ],
+    "description": "Introducción didáctica y amena a Specification Driven Development (SDD) y su rol en el desarrollo asistido por IA."
+  },
+  "unlisted": false,
+  "nextItem": {
+    "title": "Skills: usar `find-skills` desde VS Code",
+    "permalink": "/blog/2026/02/04/skills-find-skills"
+  }
+}
