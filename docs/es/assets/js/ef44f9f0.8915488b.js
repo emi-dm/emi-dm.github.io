@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmidoc=self.webpackChunkmidoc||[]).push([[187],{5988(s){s.exports=JSON.parse('{"tag":{"label":"sdd","permalink":"/es/blog/tags/sdd","allTagsPath":"/es/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/es/blog/tags/sdd","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
