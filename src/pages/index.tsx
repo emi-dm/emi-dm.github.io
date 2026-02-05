@@ -5,9 +5,19 @@ export default function Home() {
     useEffect(() => {
         const s = document.createElement('script');
         s.src = '/personal/script.js';
-        s.async = true;
+        s.async = false; // Load synchronously to ensure DOM is ready
+        s.onload = () => {
+            // Trigger DOMContentLoaded event manually if script loads after DOM is ready
+            if (document.readyState === 'complete') {
+                window.dispatchEvent(new Event('DOMContentLoaded'));
+            }
+        };
         document.body.appendChild(s);
-        return () => { document.body.removeChild(s); };
+        return () => { 
+            if (document.body.contains(s)) {
+                document.body.removeChild(s);
+            }
+        };
     }, []);
 
     return (
