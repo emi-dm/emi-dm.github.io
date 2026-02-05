@@ -14,32 +14,32 @@ This post explains how to use the `npx skills` command (the skills manager) and 
 
 ## What is `npx skills`?
 
-`npx skills` es la CLI del ecosistema de skills: te ayuda a buscar, instalar y actualizar paquetes llamados *skills* que extienden las capacidades del agente.
+`npx skills` is the CLI for the skills ecosystem: it helps you search, install, and update packages called *skills* that extend the agent's capabilities.
 
-Comandos clave:
+Key commands:
 
-- Buscar: `npx skills find [query]`
-- Instalar: `npx skills add <owner/repo@skill>`
-- Actualizar: `npx skills update`
+- Search: `npx skills find [query]`
+- Install: `npx skills add <owner/repo@skill>`
+- Update: `npx skills update`
 
 ## Quick usage from VS Code
 
-1. Abre el terminal integrado (View → Terminal o `Ctrl+\``).
-2. Busca skills relevantes:
+1. Open the integrated terminal (View → Terminal or `Ctrl+\``).
+2. Search for relevant skills:
 
 ```bash
-# buscar skills por palabras clave
+# search for skills by keywords
 npx skills find react performance
 ```
 
-3. Revisa la salida y, si te interesa uno, instálalo:
+3. Review the output and, if interested, install one:
 
 ```bash
-# instalar un skill (instalación global omitible, puedes usar npx directamente)
+# install a skill (global installation is optional, you can use npx directly)
 npx skills add vercel-labs/agent-skills@vercel-react-best-practices
 ```
 
-4. Opcional: instala globalmente y evita escribir `npx`:
+4. Optional: install globally and avoid typing `npx`:
 
 ```bash
 npm i -g @skills/cli
@@ -47,19 +47,20 @@ skills find "react testing"
 ```
 
 ### Practical tip
-Si quieres trabajar con skills frecuentemente desde VS Code, deja el terminal anclado y usa búsquedas con palabras específicas (p.ej. `react testing`, `docs`, `deploy`).
+If you want to work with skills frequently from VS Code, keep the terminal pinned and use searches with specific words (e.g., `react testing`, `docs`, `deploy`).
 
 ## Example flow
 
-- Buscar: `npx skills find changelog`
-- Instalar: `npx skills add composio/changelog-skill`
-- Ejecutar la tarea que provee el skill: depende del skill instalado (consulta la documentación en skills.sh).
+- Search: `npx skills find changelog`
+- Install: `npx skills add composio/changelog-skill`
+- Execute the task the skill provides: depends on the installed skill (check the documentation at skills.sh).
 
 ## Resources
 
-- Sitio: https://skills.sh/ 🔗
-- Documentación y ejemplos (usa `npx skills find` para descubrir skills concretos)
+- Website: https://skills.sh/ 🔗
+- Documentation and examples (use `npx skills find` to discover specific skills)
 
 ---
 
 If you want, I can install a sample skill here and show step-by-step how to use it. Which category interests you (tests, docs, deploy, productivity)?
+
