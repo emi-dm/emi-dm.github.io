@@ -121,26 +121,6 @@ code {
     background: transparent;
 }
 
-/* Force personal layout inside Docusaurus wrapper to avoid being overridden */
-#__docusaurus .hero {
-    /* Override inherited flex layout and large paddings from the personal stylesheet */
-    display: block !important;
-    min-height: 55vh !important;
-    padding-top: 3rem !important;
-    padding-bottom: 2rem !important;
-}
-
-/* Use a stable two-column grid inside the hero container to avoid absolute positioning issues */
-#__docusaurus .hero > .container {
-    display: grid !important;
-    grid-template-columns: 1fr minmax(220px, 36vw) !important;
-    gap: 1.5rem !important;
-    align-items: center !important;
-    min-height: 55vh !important;
-    padding-top: 0 !important;
-    padding-bottom: 0 !important;
-}
-
 /* === GLOBAL TYPOGRAPHY: Force personal site fonts everywhere === */
 /* Base body font for all pages */
 html, 
@@ -204,6 +184,33 @@ tt {
     font-family: 'JetBrains Mono', monospace !important;
 }
 
+/* Load the personal site stylesheet — MUST come before hero overrides */
+@import url('/personal/style.css');
+
+/* ============================================
+   CRITICAL OVERRIDES - Must come AFTER personal stylesheet import
+   ============================================ */
+
+/* Force personal layout inside Docusaurus wrapper to avoid being overridden */
+#__docusaurus .hero {
+    /* Override inherited flex layout and large paddings from the personal stylesheet */
+    display: block !important;
+    min-height: 55vh !important;
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+}
+
+/* Use a stable two-column grid inside the hero container to avoid absolute positioning issues */
+#__docusaurus .hero > .container {
+    display: grid !important;
+    grid-template-columns: 1fr minmax(220px, 36vw) !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+    min-height: 55vh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
 /* Ensure content aligns to left column and visual sits to the right */
 #__docusaurus .hero .hero-content {
     justify-self: start !important;
@@ -217,6 +224,19 @@ tt {
     right: auto !important;
 }
 
+/* Fix button text color for better readability */
+#__docusaurus .hero .btn-primary {
+    background-color: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+#__docusaurus .hero .btn-secondary {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
 /* Mobile adjustments */
 @media (max-width: 996px) {
     #__docusaurus .hero > .container {
@@ -228,6 +248,3 @@ tt {
         display: none !important;
     }
 }
-
-/* Load the personal site stylesheet last so its rules override Docusaurus theme CSS */
-@import url('/personal/style.css');
