@@ -11,6 +11,8 @@
     --ifm-link-color: #d4a574;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 /* Light theme overrides to match personal site */
 [data-theme="light"] {
     --ifm-background-color: #f7f5f2;
@@ -139,25 +141,40 @@ code {
 
 /* Force personal layout inside Docusaurus wrapper to avoid being overridden */
 #__docusaurus .hero {
-    align-items: flex-start !important;
+    /* Use a stable two-column grid to avoid absolute positioning issues */
+}
+
+#__docusaurus .hero > .container {
+    display: grid !important;
+    grid-template-columns: 1fr minmax(220px, 36vw) !important;
+    gap: 2rem !important;
+    align-items: center !important;
     min-height: 55vh !important;
-    padding-top: 6rem !important;
+    padding-top: 4.5rem !important;
     padding-bottom: 2rem !important;
-    text-align: left !important;
 }
 
-#__docusaurus .hero-visual {
-    top: 30% !important;
-    right: 8% !important;
+/* Ensure content aligns to left column and visual sits to the right */
+#__docusaurus .hero .hero-content {
+    justify-self: start !important;
+    max-width: 800px !important;
 }
 
+#__docusaurus .hero .hero-visual {
+    position: static !important;
+    justify-self: end !important;
+    top: auto !important;
+    right: auto !important;
+}
+
+/* Mobile adjustments */
 @media (max-width: 996px) {
-    #__docusaurus .hero {
-        text-align: center !important;
+    #__docusaurus .hero > .container {
+        grid-template-columns: 1fr !important;
         padding-top: 4rem !important;
     }
 
-    #__docusaurus .hero-visual {
+    #__docusaurus .hero .hero-visual {
         display: none !important;
     }
 }
