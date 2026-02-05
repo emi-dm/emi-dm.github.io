@@ -7,6 +7,9 @@ const config: Config = {
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
+    // Some pages reference homepage anchors (e.g. /#about). These intentionally point
+    // to sections on the homepage; ignore anchor validation to avoid noisy build warnings.
+    onBrokenAnchors: 'ignore',
     favicon: 'img/favicon.ico',
 
     // Load Google Fonts early for consistent typography across pages
