@@ -204,30 +204,40 @@ tt {
 #__docusaurus .hero > .container {
     display: grid !important;
     grid-template-columns: 1fr minmax(220px, 36vw) !important;
+    grid-template-rows: auto !important;
     gap: 1.5rem !important;
     align-items: center !important;
     min-height: 55vh !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+    position: relative !important;
 }
 
 /* Ensure content aligns to left column and visual sits to the right */
 #__docusaurus .hero .hero-content {
     justify-self: start !important;
     max-width: 800px !important;
+    grid-column: 1 !important;
 }
 
 #__docusaurus .hero .hero-visual {
     position: static !important;
     justify-self: end !important;
+    grid-column: 2 !important;
     top: auto !important;
     right: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
 }
 
 /* Remove floating animation and keep hero image static */
 #__docusaurus .hero .hero-image {
     animation: none !important;
     transition: none !important;
+    width: clamp(200px, 25vw, 350px) !important;
+    height: auto !important;
 }
 
 #__docusaurus .hero .hero-image:hover {
@@ -251,7 +261,12 @@ tt {
 @media (max-width: 996px) {
     #__docusaurus .hero > .container {
         grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
         padding-top: 4rem !important;
+    }
+
+    #__docusaurus .hero .hero-content {
+        grid-column: 1 !important;
     }
 
     #__docusaurus .hero .hero-visual {
