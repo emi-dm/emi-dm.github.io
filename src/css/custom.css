@@ -141,3 +141,6 @@ code {
     text-align: center;
     padding: 4rem 0;
 }
+
+/* Load the personal site stylesheet last so its rules override Docusaurus theme CSS */
+@import url('/personal/style.css');
