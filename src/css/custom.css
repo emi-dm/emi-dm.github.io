@@ -137,9 +137,29 @@ code {
     font-weight: 600;
 }
 
-.hero {
-    text-align: center;
-    padding: 4rem 0;
+/* Force personal layout inside Docusaurus wrapper to avoid being overridden */
+#__docusaurus .hero {
+    align-items: flex-start !important;
+    min-height: 55vh !important;
+    padding-top: 6rem !important;
+    padding-bottom: 2rem !important;
+    text-align: left !important;
+}
+
+#__docusaurus .hero-visual {
+    top: 30% !important;
+    right: 8% !important;
+}
+
+@media (max-width: 996px) {
+    #__docusaurus .hero {
+        text-align: center !important;
+        padding-top: 4rem !important;
+    }
+
+    #__docusaurus .hero-visual {
+        display: none !important;
+    }
 }
 
 /* Load the personal site stylesheet last so its rules override Docusaurus theme CSS */
