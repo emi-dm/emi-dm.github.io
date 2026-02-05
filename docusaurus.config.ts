@@ -9,6 +9,11 @@ const config: Config = {
     onBrokenMarkdownLinks: 'warn',
     favicon: 'img/favicon.ico',
 
+    // Load Google Fonts early for consistent typography across pages
+    stylesheets: [
+        'https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap'
+    ],
+
     organizationName: 'emi-dm',
     projectName: 'emi-dm.github.io',
 
