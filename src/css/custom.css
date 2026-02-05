@@ -64,6 +64,15 @@ body {
 /* Navbar background + link hover */
 .navbar {
     background-color: var(--ifm-navbar-background) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+[data-theme="light"] .navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(155, 118, 83, 0.15);
 }
 
 .navbar__link,
@@ -96,6 +105,25 @@ pre,
 code {
     background-color: #16161f !important;
     color: var(--ifm-color-emphasis) !important;
+}
+
+/* Fix spacing for blog posts and docs to prevent titles appearing under navbar */
+.theme-doc-markdown > header,
+article > header,
+.markdown > h1:first-child,
+.theme-blog-post-paginator {
+    margin-top: 2rem !important;
+}
+
+/* Ensure main content has proper top spacing */
+main.container {
+    padding-top: 2rem !important;
+}
+
+/* Blog post specific spacing */
+.theme-doc-markdown header h1,
+article header h1 {
+    margin-top: 0 !important;
 }
 
 /* Light theme: readable code blocks — use personal site light palette */
