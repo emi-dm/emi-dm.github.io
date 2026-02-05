@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmidoc=self.webpackChunkmidoc||[]).push([[57],{328(a){a.exports=JSON.parse('{"tag":{"label":"ia","permalink":"/es/blog/tags/ia","allTagsPath":"/es/blog/tags","count":1,"unlisted":false},"listMetadata":{"permalink":"/es/blog/tags/ia","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);

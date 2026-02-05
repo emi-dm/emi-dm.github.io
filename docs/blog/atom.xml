@@ -8,61 +8,61 @@
     <subtitle>MiDoc Blog</subtitle>
     <icon>https://emi-dm.github.io/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[SDD (Didactic): What SDD is and understanding its role]]></title>
+        <title type="html"><![CDATA[Specification Driven-Development: What SDD is and understanding its role]]></title>
         <id>https://emi-dm.github.io/blog/2026/02/04/sdd-didactico</id>
         <link href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico"/>
         <updated>2026-02-04T00:00:00.000Z</updated>
         <summary type="html"><![CDATA[A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.]]></summary>
         <content type="html"><![CDATA[<p><strong>TL;DR:</strong> SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="definition-of-the-concept">Definition of the concept<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#definition-of-the-concept" class="hash-link" aria-label="Direct link to Definition of the concept" title="Direct link to Definition of the concept" translate="no">​</a></h2>
-<p>Imagina que la especificación es la receta y el código el plato final. En <strong>Specification Driven Development (SDD)</strong> la receta no es una nota pobre al margen; es el manual que usan los chefs (incluyendo los chefs robot—los LLMs) para cocinar la aplicación.</p>
-<p>SDD surge como filosofía en respuesta a los agentes basados en LLMs y al <em>vibe coding</em>: en lugar de escribir primero el código y luego la documentación, la documentación bien redactada y ejecutable pasa a ser la "fuente de la verdad" y guía la generación del código.</p>
+<p>Imagine the specification is the recipe and the code is the final dish. In <strong>Specification Driven Development (SDD)</strong>, the recipe is not a poor note in the margin; it's the manual that the chefs (including robot chefs—LLMs) use to cook the application.</p>
+<p>SDD emerges as a philosophy in response to LLM-based agents and <em>vibe coding</em>: instead of writing code first and then documentation, well-written and executable documentation becomes the "source of truth" and guides code generation.</p>
 <blockquote>
-<p>Ejemplo rápido: escribes una especificación: "Al pulsar el botón X, enviar notificación Y al usuario con condiciones Z". Un agente puede transformar esa especificación en endpoints, pruebas y despliegue mínimo viable. Simple, repetible y trazable.</p>
+<p>Quick example: you write a specification: "When button X is pressed, send notification Y to the user with conditions Z". An agent can transform that specification into endpoints, tests, and minimum viable deployment. Simple, repeatable, and traceable.</p>
 </blockquote>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="source-of-truth">Source of truth<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#source-of-truth" class="hash-link" aria-label="Direct link to Source of truth" title="Direct link to Source of truth" translate="no">​</a></h2>
 <ul>
 <li class=""><strong>Agile / Waterfall</strong>: Code rules. Specs often become outdated notes.</li>
 <li class=""><strong>SDD</strong>: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.</li>
 </ul>
-<p>En SDD la especificación funciona como un contrato: cuando la spec y el código difieren, la spec es la verdad hasta que decidimos lo contrario (y lo documentamos).</p>
+<p>In SDD, the specification functions as a contract: when the spec and code differ, the spec is the truth until we decide otherwise (and document it).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="change-management-by-analogy">Change management (by analogy)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#change-management-by-analogy" class="hash-link" aria-label="Direct link to Change management (by analogy)" title="Direct link to Change management (by analogy)" translate="no">​</a></h2>
 <p>Think of changes as updating a recipe, not re-making the dish by hand every time:</p>
 <ul>
-<li class=""><strong>Antes</strong>: un cambio en el requisito provoca un sálvese quien pueda: edición en código, PRs, hotfixes.</li>
-<li class=""><strong>Con SDD</strong>: cambias la spec, regeneras implementaciones y pruebas. Experimentas <em>what-if</em> con poco coste.</li>
+<li class=""><strong>Before</strong>: a change in requirements causes chaos: code editing, PRs, hotfixes.</li>
+<li class=""><strong>With SDD</strong>: change the spec, regenerate implementations and tests. Experiment <em>what-if</em> at low cost.</li>
 </ul>
 <hr>
-<table><thead><tr><th></th><th>Metodologías Tradicionales (Agile / Waterfall)</th><th>Spec-Driven Development (SDD)</th></tr></thead><tbody><tr><td><strong>La Fuente de la Verdad</strong></td><td><strong>El Código es el Rey.</strong> Las specs se quedan atrás.</td><td><strong>La Especificación es el Rey.</strong> El PRD genera la implementación.</td></tr><tr><td><strong>Relación Spec-Código</strong></td><td>La especificación suele ser estática y se desvía del código.</td><td>La especificación es un artefacto <strong>ejecutable</strong>; el código es su expresión.</td></tr><tr><td><strong>La Brecha (The Gap)</strong></td><td>Ambigüedades y malentendidos inevitables.</td><td>La transformación automática reduce o elimina la brecha de interpretación.</td></tr></tbody></table>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="por-qué-ahora-tendencias-que-empujan-sdd">¿Por qué ahora? (tendencias que empujan SDD)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#por-qu%C3%A9-ahora-tendencias-que-empujan-sdd" class="hash-link" aria-label="Direct link to ¿Por qué ahora? (tendencias que empujan SDD)" title="Direct link to ¿Por qué ahora? (tendencias que empujan SDD)" translate="no">​</a></h2>
+<table><thead><tr><th></th><th>Traditional Methodologies (Agile / Waterfall)</th><th>Spec-Driven Development (SDD)</th></tr></thead><tbody><tr><td><strong>The Source of Truth</strong></td><td><strong>Code is King.</strong> Specs fall behind.</td><td><strong>The Specification is King.</strong> The PRD generates the implementation.</td></tr><tr><td><strong>Spec-Code Relationship</strong></td><td>The specification is usually static and deviates from the code.</td><td>The specification is an <strong>executable</strong> artifact; code is its expression.</td></tr><tr><td><strong>The Gap</strong></td><td>Ambiguities and misunderstandings are inevitable.</td><td>Automatic transformation reduces or eliminates the interpretation gap.</td></tr></tbody></table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="why-now-trends-pushing-sdd">Why now? (trends pushing SDD)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#why-now-trends-pushing-sdd" class="hash-link" aria-label="Direct link to Why now? (trends pushing SDD)" title="Direct link to Why now? (trends pushing SDD)" translate="no">​</a></h2>
 <ol>
-<li class="">IA más capaz: las specs en lenguaje natural generan código funcional de forma fiable.</li>
-<li class="">Software más complejo: mantener la coherencia manualmente es cada vez más caro.</li>
-<li class="">Ritmo de cambio acelerado: los pivots son la norma y hay que poder iterar rápido y con seguridad.</li>
+<li class="">More capable AI: natural language specs generate functional code reliably.</li>
+<li class="">More complex software: maintaining consistency manually is increasingly expensive.</li>
+<li class="">Accelerated pace of change: pivots are the norm and you need to iterate quickly and safely.</li>
 </ol>
-<p>Esto habilita además un juego interesante: generar varias implementaciones a partir de la misma spec y comparar ventajas (rendimiento vs. coste vs. mantenibilidad).</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="principios-fundamentales-en-una-frase-cada-uno">Principios fundamentales (en una frase cada uno)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#principios-fundamentales-en-una-frase-cada-uno" class="hash-link" aria-label="Direct link to Principios fundamentales (en una frase cada uno)" title="Direct link to Principios fundamentales (en una frase cada uno)" translate="no">​</a></h2>
+<p>This also enables an interesting game: generate multiple implementations from the same spec and compare advantages (performance vs. cost vs. maintainability).</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fundamental-principles-one-sentence-each">Fundamental principles (one sentence each)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#fundamental-principles-one-sentence-each" class="hash-link" aria-label="Direct link to Fundamental principles (one sentence each)" title="Direct link to Fundamental principles (one sentence each)" translate="no">​</a></h2>
 <ol>
-<li class=""><strong>Especificaciones como lengua franca</strong> — la spec es el artefacto central.</li>
-<li class=""><strong>Especificaciones ejecutables</strong> — precisas, completas y sin ambigüedades.</li>
-<li class=""><strong>Refinamiento continuo</strong> — validación y detección de ambigüedades todo el tiempo.</li>
-<li class=""><strong>Contexto impulsado por la investigación</strong> — los agentes recolectan contexto y opciones técnicas.</li>
-<li class=""><strong>Retroalimentación bidireccional</strong> — la producción alimenta la especificación.</li>
-<li class=""><strong>Ramificación para la exploración</strong> — generar alternativas para optimizar distintos objetivos.</li>
+<li class=""><strong>Specifications as lingua franca</strong> — the spec is the central artifact.</li>
+<li class=""><strong>Executable specifications</strong> — precise, complete, and unambiguous.</li>
+<li class=""><strong>Continuous refinement</strong> — validation and ambiguity detection all the time.</li>
+<li class=""><strong>Research-driven context</strong> — agents collect context and technical options.</li>
+<li class=""><strong>Bidirectional feedback</strong> — production feeds back into the specification.</li>
+<li class=""><strong>Branching for exploration</strong> — generate alternatives to optimize different objectives.</li>
 </ol>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="pequeño-ejercicio-ponlo-a-prueba">Pequeño ejercicio (¡ponlo a prueba!)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#peque%C3%B1o-ejercicio-ponlo-a-prueba" class="hash-link" aria-label="Direct link to Pequeño ejercicio (¡ponlo a prueba!)" title="Direct link to Pequeño ejercicio (¡ponlo a prueba!)" translate="no">​</a></h2>
-<p>Toma una historia de usuario y conviértela en una spec mínima (3–5 líneas) clara y sin ambigüedades. Luego pregúntate:</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="small-exercise-try-it">Small exercise (try it!)<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#small-exercise-try-it" class="hash-link" aria-label="Direct link to Small exercise (try it!)" title="Direct link to Small exercise (try it!)" translate="no">​</a></h2>
+<p>Take a user story and turn it into a minimal spec (3–5 lines) that's clear and unambiguous. Then ask yourself:</p>
 <ul>
-<li class="">¿Puede un agente generar endpoints y pruebas a partir de esto?</li>
-<li class="">¿Qué ambigüedades quedan?</li>
+<li class="">Can an agent generate endpoints and tests from this?</li>
+<li class="">What ambiguities remain?</li>
 </ul>
-<p>Si respondiste que sí y que hay poca ambigüedad, has dado un gran paso hacia SDD.</p>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="reflexión-final">Reflexión final<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#reflexi%C3%B3n-final" class="hash-link" aria-label="Direct link to Reflexión final" title="Direct link to Reflexión final" translate="no">​</a></h2>
-<p>SDD no viene a sustituir al desarrollador: viene a convertirlo en arquitecto de especificaciones, director de orquesta y crítico curioso. Es una forma potente de acelerar iteraciones, mejorar trazabilidad y minimizar deuda técnica cuando está bien implementado.</p>
+<p>If you answered yes and there's little ambiguity, you've taken a big step toward SDD.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="final-reflection">Final reflection<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#final-reflection" class="hash-link" aria-label="Direct link to Final reflection" title="Direct link to Final reflection" translate="no">​</a></h2>
+<p>SDD doesn't come to replace the developer: it comes to turn them into a specification architect, orchestra conductor, and curious critic. It's a powerful way to accelerate iterations, improve traceability, and minimize technical debt when properly implemented.</p>
 <hr>
-<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="fuentes-y-referencias">Fuentes y referencias<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#fuentes-y-referencias" class="hash-link" aria-label="Direct link to Fuentes y referencias" title="Direct link to Fuentes y referencias" translate="no">​</a></h2>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="sources-and-references">Sources and references<a href="https://emi-dm.github.io/blog/2026/02/04/sdd-didactico#sources-and-references" class="hash-link" aria-label="Direct link to Sources and references" title="Direct link to Sources and references" translate="no">​</a></h2>
 <ul>
-<li class="">Definición de SDD proporcionada por GitHub Spec Kit: <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noopener noreferrer" class="">https://github.com/github/spec-kit/blob/main/spec-driven.md</a></li>
+<li class="">SDD definition provided by GitHub Spec Kit: <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noopener noreferrer" class="">https://github.com/github/spec-kit/blob/main/spec-driven.md</a></li>
 </ul>]]></content>
         <author>
             <name>Emi</name>
@@ -82,39 +82,39 @@
         <summary type="html"><![CDATA[How to use the 'npx skills' CLI and discover/install skills from VS Code]]></summary>
         <content type="html"><![CDATA[<p>This post explains how to use the <code>npx skills</code> command (the skills manager) and how to integrate it into your workflow in Visual Studio Code.</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="what-is-npx-skills">What is <code>npx skills</code>?<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#what-is-npx-skills" class="hash-link" aria-label="Direct link to what-is-npx-skills" title="Direct link to what-is-npx-skills" translate="no">​</a></h2>
-<p><code>npx skills</code> es la CLI del ecosistema de skills: te ayuda a buscar, instalar y actualizar paquetes llamados <em>skills</em> que extienden las capacidades del agente.</p>
-<p>Comandos clave:</p>
+<p><code>npx skills</code> is the CLI for the skills ecosystem: it helps you search, install, and update packages called <em>skills</em> that extend the agent's capabilities.</p>
+<p>Key commands:</p>
 <ul>
-<li class="">Buscar: <code>npx skills find [query]</code></li>
-<li class="">Instalar: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
-<li class="">Actualizar: <code>npx skills update</code></li>
+<li class="">Search: <code>npx skills find [query]</code></li>
+<li class="">Install: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
+<li class="">Update: <code>npx skills update</code></li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="quick-usage-from-vs-code">Quick usage from VS Code<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#quick-usage-from-vs-code" class="hash-link" aria-label="Direct link to Quick usage from VS Code" title="Direct link to Quick usage from VS Code" translate="no">​</a></h2>
 <ol>
-<li class="">Abre el terminal integrado (View → Terminal o `Ctrl+``).</li>
-<li class="">Busca skills relevantes:</li>
+<li class="">Open the integrated terminal (View → Terminal or `Ctrl+``).</li>
+<li class="">Search for relevant skills:</li>
 </ol>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># buscar skills por palabras clave</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">npx skills find react performance</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># search for skills by keywords</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">npx skills find react performance</span><br></span></code></pre></div></div>
 <ol start="3">
-<li class="">Revisa la salida y, si te interesa uno, instálalo:</li>
+<li class="">Review the output and, if interested, install one:</li>
 </ol>
-<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># instalar un skill (instalación global omitible, puedes usar npx directamente)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">npx skills add vercel-labs/agent-skills@vercel-react-best-practices</span><br></span></code></pre></div></div>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain"># install a skill (global installation is optional, you can use npx directly)</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">npx skills add vercel-labs/agent-skills@vercel-react-best-practices</span><br></span></code></pre></div></div>
 <ol start="4">
-<li class="">Opcional: instala globalmente y evita escribir <code>npx</code>:</li>
+<li class="">Optional: install globally and avoid typing <code>npx</code>:</li>
 </ol>
 <div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style="--prism-color:#bfc7d5;--prism-background-color:#292d3e"><div class="codeBlockContent_QJqH"><pre tabindex="0" class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style="color:#bfc7d5;background-color:#292d3e"><code class="codeBlockLines_e6Vv"><span class="token-line" style="color:#bfc7d5"><span class="token plain">npm i -g @skills/cli</span><br></span><span class="token-line" style="color:#bfc7d5"><span class="token plain">skills find "react testing"</span><br></span></code></pre></div></div>
 <h3 class="anchor anchorTargetStickyNavbar_Vzrq" id="practical-tip">Practical tip<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#practical-tip" class="hash-link" aria-label="Direct link to Practical tip" title="Direct link to Practical tip" translate="no">​</a></h3>
-<p>Si quieres trabajar con skills frecuentemente desde VS Code, deja el terminal anclado y usa búsquedas con palabras específicas (p.ej. <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
+<p>If you want to work with skills frequently from VS Code, keep the terminal pinned and use searches with specific words (e.g., <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="example-flow">Example flow<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#example-flow" class="hash-link" aria-label="Direct link to Example flow" title="Direct link to Example flow" translate="no">​</a></h2>
 <ul>
-<li class="">Buscar: <code>npx skills find changelog</code></li>
-<li class="">Instalar: <code>npx skills add composio/changelog-skill</code></li>
-<li class="">Ejecutar la tarea que provee el skill: depende del skill instalado (consulta la documentación en skills.sh).</li>
+<li class="">Search: <code>npx skills find changelog</code></li>
+<li class="">Install: <code>npx skills add composio/changelog-skill</code></li>
+<li class="">Execute the task the skill provides: depends on the installed skill (check the documentation at skills.sh).</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="resources">Resources<a href="https://emi-dm.github.io/blog/2026/02/04/skills-find-skills#resources" class="hash-link" aria-label="Direct link to Resources" title="Direct link to Resources" translate="no">​</a></h2>
 <ul>
-<li class="">Sitio: <a href="https://skills.sh/" target="_blank" rel="noopener noreferrer" class="">https://skills.sh/</a> 🔗</li>
-<li class="">Documentación y ejemplos (usa <code>npx skills find</code> para descubrir skills concretos)</li>
+<li class="">Website: <a href="https://skills.sh/" target="_blank" rel="noopener noreferrer" class="">https://skills.sh/</a> 🔗</li>
+<li class="">Documentation and examples (use <code>npx skills find</code> to discover specific skills)</li>
 </ul>
 <hr>
 <p>If you want, I can install a sample skill here and show step-by-step how to use it. Which category interests you (tests, docs, deploy, productivity)?</p>]]></content>
