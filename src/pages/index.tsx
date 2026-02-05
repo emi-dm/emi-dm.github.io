@@ -6,12 +6,6 @@ export default function Home() {
         const s = document.createElement('script');
         s.src = '/personal/script.js';
         s.async = false; // Load synchronously to ensure DOM is ready
-        s.onload = () => {
-            // Trigger DOMContentLoaded event manually if script loads after DOM is ready
-            if (document.readyState === 'complete') {
-                window.dispatchEvent(new Event('DOMContentLoaded'));
-            }
-        };
         document.body.appendChild(s);
         return () => { 
             if (document.body.contains(s)) {

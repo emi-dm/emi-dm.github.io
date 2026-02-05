@@ -1,5 +1,9 @@
 // Computational Poetry - Modern JavaScript
 function initializeApp() {
+    if (window.__personalAppInitialized) {
+        return;
+    }
+    window.__personalAppInitialized = true;
     // Theme Management
     const htmlElement = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
@@ -265,9 +269,11 @@ function initializeApp() {
     });
 }
 
+window.initializePersonalApp = initializeApp;
+
 // Execute immediately if DOM is ready, otherwise wait
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeApp);
+    document.addEventListener('DOMContentLoaded', initializeApp, { once: true });
 } else {
     // DOM is already loaded (common in SPAs like React)
     initializeApp();
