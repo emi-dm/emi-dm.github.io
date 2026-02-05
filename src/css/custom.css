@@ -25,6 +25,7 @@
 
 /* Navbar tweaks to closer match personal site styling */
 .navbar__title {
+    font-family: 'DM Sans', sans-serif !important;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
@@ -48,6 +49,7 @@
 }
 
 .navbar__link {
+    font-family: 'DM Sans', sans-serif !important;
     font-weight: 600;
 }
 
@@ -119,26 +121,6 @@ code {
     background: transparent;
 }
 
-.navbar__logo img,
-.navbar__brand img,
-.navbar__logo,
-.navbar__brand {
-    display: none !important;
-    border-radius: 6px;
-    width: 0;
-    height: 0;
-    overflow: hidden;
-}
-
-/* Make nav links spacing & sizing nicer */
-.navbar__items {
-    gap: 0.75rem;
-}
-
-.navbar__link {
-    font-weight: 600;
-}
-
 /* Force personal layout inside Docusaurus wrapper to avoid being overridden */
 #__docusaurus .hero {
     /* Override inherited flex layout and large paddings from the personal stylesheet */
@@ -159,26 +141,67 @@ code {
     padding-bottom: 0 !important;
 }
 
-/* Ensure headings and body use the intended site fonts globally */
-html, body {
+/* === GLOBAL TYPOGRAPHY: Force personal site fonts everywhere === */
+/* Base body font for all pages */
+html, 
+body,
+#__docusaurus,
+.main-wrapper,
+article,
+.markdown,
+p {
     font-family: 'Crimson Pro', serif !important;
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
 }
 
-h1, h2, h3, h4, h5 {
+/* All headings use display font */
+h1, h2, h3, h4, h5, h6,
+.navbar__title,
+.navbar__brand,
+.blog-post-title,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-doc-markdown h5,
+.theme-doc-markdown h6 {
     font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
 }
 
-/* Ensure content aligns to left column and visual sits to the right */
-#__docusaurus .hero .hero-content {
-    justify-self: start !important;
-    max-width: 800px !important;
+/* Navbar title styling to match personal site */
+.navbar__title,
+.navbar__brand {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
 }
 
-#__docusaurus .hero .hero-visual {
-    position: static !important;
-    justify-self: end !important;
-    top: auto !important;
-    right: auto !important;
+/* Blog-specific typography */
+.blog-post-title,
+.blog-page-header h1 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.03em !important;
+}
+
+/* Ensure code/mono elements use the correct mono font */
+code,
+pre,
+.prism-code,
+kbd,
+samp,
+tt {
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
 /* Ensure content aligns to left column and visual sits to the right */
