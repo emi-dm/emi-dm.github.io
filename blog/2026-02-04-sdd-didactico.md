@@ -1,5 +1,5 @@
 ---
-title: "SDD (Didactic): What SDD is and understanding its role"
+title: "Specification Driven-Development: What SDD is and understanding its role"
 authors:
   - name: "Emi"
     url: "https://emi-dm.github.io"
@@ -8,72 +8,70 @@ tags: [sdd, specification, development, ai, didactic]
 description: "A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development."
 ---
 
-
 **TL;DR:** SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.
-
 
 ## Definition of the concept
 
-Imagina que la especificación es la receta y el código el plato final. En **Specification Driven Development (SDD)** la receta no es una nota pobre al margen; es el manual que usan los chefs (incluyendo los chefs robot—los LLMs) para cocinar la aplicación.
+Imagine the specification is the recipe and the code is the final dish. In **Specification Driven Development (SDD)**, the recipe is not a poor note in the margin; it's the manual that the chefs (including robot chefs—LLMs) use to cook the application.
 
-SDD surge como filosofía en respuesta a los agentes basados en LLMs y al *vibe coding*: en lugar de escribir primero el código y luego la documentación, la documentación bien redactada y ejecutable pasa a ser la "fuente de la verdad" y guía la generación del código.
+SDD emerges as a philosophy in response to LLM-based agents and _vibe coding_: instead of writing code first and then documentation, well-written and executable documentation becomes the "source of truth" and guides code generation.
 
-> Ejemplo rápido: escribes una especificación: "Al pulsar el botón X, enviar notificación Y al usuario con condiciones Z". Un agente puede transformar esa especificación en endpoints, pruebas y despliegue mínimo viable. Simple, repetible y trazable.
+> Quick example: you write a specification: "When button X is pressed, send notification Y to the user with conditions Z". An agent can transform that specification into endpoints, tests, and minimum viable deployment. Simple, repeatable, and traceable.
 
 ## Source of truth
 
 - **Agile / Waterfall**: Code rules. Specs often become outdated notes.
 - **SDD**: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.
 
-En SDD la especificación funciona como un contrato: cuando la spec y el código difieren, la spec es la verdad hasta que decidimos lo contrario (y lo documentamos).
+In SDD, the specification functions as a contract: when the spec and code differ, the spec is the truth until we decide otherwise (and document it).
 
 ## Change management (by analogy)
 
 Think of changes as updating a recipe, not re-making the dish by hand every time:
 
-- **Antes**: un cambio en el requisito provoca un sálvese quien pueda: edición en código, PRs, hotfixes.
-- **Con SDD**: cambias la spec, regeneras implementaciones y pruebas. Experimentas *what-if* con poco coste.
+- **Before**: a change in requirements causes chaos: code editing, PRs, hotfixes.
+- **With SDD**: change the spec, regenerate implementations and tests. Experiment _what-if_ at low cost.
 
 ---
 
-|                            | Metodologías Tradicionales (Agile / Waterfall)                                                                                                 | Spec-Driven Development (SDD)                                                                                                         |
-| -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| **La Fuente de la Verdad** | **El Código es el Rey.** Las specs se quedan atrás.                                                                                          | **La Especificación es el Rey.** El PRD genera la implementación.                                                                    |
-| **Relación Spec-Código**   | La especificación suele ser estática y se desvía del código.                                                                                  | La especificación es un artefacto **ejecutable**; el código es su expresión.                                                        |
-| **La Brecha (The Gap)**    | Ambigüedades y malentendidos inevitables.                                                                                                     | La transformación automática reduce o elimina la brecha de interpretación.                                                          |
+|                            | Traditional Methodologies (Agile / Waterfall)                   | Spec-Driven Development (SDD)                                            |
+| -------------------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------ |
+| **The Source of Truth**    | **Code is King.** Specs fall behind.                            | **The Specification is King.** The PRD generates the implementation.     |
+| **Spec-Code Relationship** | The specification is usually static and deviates from the code. | The specification is an **executable** artifact; code is its expression. |
+| **The Gap**                | Ambiguities and misunderstandings are inevitable.               | Automatic transformation reduces or eliminates the interpretation gap.   |
 
-## ¿Por qué ahora? (tendencias que empujan SDD)
+## Why now? (trends pushing SDD)
 
-1. IA más capaz: las specs en lenguaje natural generan código funcional de forma fiable.
-2. Software más complejo: mantener la coherencia manualmente es cada vez más caro.
-3. Ritmo de cambio acelerado: los pivots son la norma y hay que poder iterar rápido y con seguridad.
+1. More capable AI: natural language specs generate functional code reliably.
+2. More complex software: maintaining consistency manually is increasingly expensive.
+3. Accelerated pace of change: pivots are the norm and you need to iterate quickly and safely.
 
-Esto habilita además un juego interesante: generar varias implementaciones a partir de la misma spec y comparar ventajas (rendimiento vs. coste vs. mantenibilidad).
+This also enables an interesting game: generate multiple implementations from the same spec and compare advantages (performance vs. cost vs. maintainability).
 
-## Principios fundamentales (en una frase cada uno)
+## Fundamental principles (one sentence each)
 
-1. **Especificaciones como lengua franca** — la spec es el artefacto central.
-2. **Especificaciones ejecutables** — precisas, completas y sin ambigüedades.
-3. **Refinamiento continuo** — validación y detección de ambigüedades todo el tiempo.
-4. **Contexto impulsado por la investigación** — los agentes recolectan contexto y opciones técnicas.
-5. **Retroalimentación bidireccional** — la producción alimenta la especificación.
-6. **Ramificación para la exploración** — generar alternativas para optimizar distintos objetivos.
+1. **Specifications as lingua franca** — the spec is the central artifact.
+2. **Executable specifications** — precise, complete, and unambiguous.
+3. **Continuous refinement** — validation and ambiguity detection all the time.
+4. **Research-driven context** — agents collect context and technical options.
+5. **Bidirectional feedback** — production feeds back into the specification.
+6. **Branching for exploration** — generate alternatives to optimize different objectives.
 
-## Pequeño ejercicio (¡ponlo a prueba!)
+## Small exercise (try it!)
 
-Toma una historia de usuario y conviértela en una spec mínima (3–5 líneas) clara y sin ambigüedades. Luego pregúntate:
+Take a user story and turn it into a minimal spec (3–5 lines) that's clear and unambiguous. Then ask yourself:
 
-- ¿Puede un agente generar endpoints y pruebas a partir de esto?
-- ¿Qué ambigüedades quedan?
+- Can an agent generate endpoints and tests from this?
+- What ambiguities remain?
 
-Si respondiste que sí y que hay poca ambigüedad, has dado un gran paso hacia SDD.
+If you answered yes and there's little ambiguity, you've taken a big step toward SDD.
 
-## Reflexión final
+## Final reflection
 
-SDD no viene a sustituir al desarrollador: viene a convertirlo en arquitecto de especificaciones, director de orquesta y crítico curioso. Es una forma potente de acelerar iteraciones, mejorar trazabilidad y minimizar deuda técnica cuando está bien implementado.
+SDD doesn't come to replace the developer: it comes to turn them into a specification architect, orchestra conductor, and curious critic. It's a powerful way to accelerate iterations, improve traceability, and minimize technical debt when properly implemented.
 
 ---
 
-## Fuentes y referencias
+## Sources and references
 
-- Definición de SDD proporcionada por GitHub Spec Kit: https://github.com/github/spec-kit/blob/main/spec-driven.md
+- SDD definition provided by GitHub Spec Kit: https://github.com/github/spec-kit/blob/main/spec-driven.md

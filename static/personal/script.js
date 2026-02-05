@@ -1,5 +1,5 @@
 // Computational Poetry - Modern JavaScript
-document.addEventListener('DOMContentLoaded', () => {
+function initializeApp() {
     // Theme Management
     const htmlElement = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
@@ -263,4 +263,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+}
+
+// Execute immediately if DOM is ready, otherwise wait
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeApp);
+} else {
+    // DOM is already loaded (common in SPAs like React)
+    initializeApp();
+}
+

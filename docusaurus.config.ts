@@ -7,14 +7,22 @@ const config: Config = {
     baseUrl: '/',
     onBrokenLinks: 'warn',
     onBrokenMarkdownLinks: 'warn',
+    // Some pages reference homepage anchors (e.g. /#about). These intentionally point
+    // to sections on the homepage; ignore anchor validation to avoid noisy build warnings.
+    onBrokenAnchors: 'ignore',
     favicon: 'img/favicon.ico',
+
+    // Load Google Fonts early for consistent typography across pages
+    stylesheets: [
+        'https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap'
+    ],
 
     organizationName: 'emi-dm',
     projectName: 'emi-dm.github.io',
 
     i18n: {
         defaultLocale: 'en',
-        locales: ['en', 'es'],
+        locales: ['en'],
     },
 
     presets: [
@@ -44,14 +52,15 @@ const config: Config = {
             title: 'EMILIO.DELGADO',
             // No logo image in header to match personal site (text-only header)
             items: [
-                // Links mirror the main personal site anchors (absolute URLs so anchors resolve from any page)
-                { href: 'https://emi-dm.github.io/personal/index.html', label: 'Home', position: 'left' },
-                { href: 'https://emi-dm.github.io/personal/index.html#about', label: 'About', position: 'left' },
-                { href: 'https://emi-dm.github.io/personal/index.html#timeline', label: 'Journey', position: 'left' },
-                { href: 'https://emi-dm.github.io/personal/index.html#research', label: 'Research', position: 'left' },
-                { href: 'https://emi-dm.github.io/personal/index.html#projects', label: 'Projects', position: 'left' },
-                { href: 'https://emi-dm.github.io/personal/index.html#repositories', label: 'Repositories', position: 'left' },
-                { href: 'https://emi-dm.github.io/personal/index.html#publications', label: 'Publications', position: 'left' },
+                { to: '/', label: 'Home', position: 'left' },
+                { to: '/#about', label: 'About', position: 'left' },
+                { to: '/#timeline', label: 'Journey', position: 'left' },
+                { to: '/#research', label: 'Research', position: 'left' },
+                { to: '/#projects', label: 'Projects', position: 'left' },
+                { to: '/#repositories', label: 'Repositories', position: 'left' },
+                { to: '/#publications', label: 'Publications', position: 'left' },
+                { to: '/docs', label: 'Docs', position: 'left' },
+                { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     href: 'https://github.com/emi-dm',
                     label: 'GitHub',

@@ -11,6 +11,8 @@
     --ifm-link-color: #d4a574;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
 /* Light theme overrides to match personal site */
 [data-theme="light"] {
     --ifm-background-color: #f7f5f2;
@@ -23,6 +25,7 @@
 
 /* Navbar tweaks to closer match personal site styling */
 .navbar__title {
+    font-family: 'DM Sans', sans-serif !important;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1px;
@@ -46,6 +49,7 @@
 }
 
 .navbar__link {
+    font-family: 'DM Sans', sans-serif !important;
     font-weight: 600;
 }
 
@@ -60,6 +64,15 @@ body {
 /* Navbar background + link hover */
 .navbar {
     background-color: var(--ifm-navbar-background) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
+}
+
+[data-theme="light"] .navbar {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid rgba(155, 118, 83, 0.15);
 }
 
 .navbar__link,
@@ -94,6 +107,35 @@ code {
     color: var(--ifm-color-emphasis) !important;
 }
 
+/* Fix spacing for blog posts and docs to prevent titles appearing under navbar */
+.theme-doc-markdown > header,
+article > header,
+.markdown > h1:first-child,
+.theme-blog-post-paginator {
+    margin-top: 2rem !important;
+}
+
+/* Ensure main content has proper top spacing */
+main.container {
+    padding-top: 2rem !important;
+}
+
+/* Blog post specific spacing */
+.theme-doc-markdown header h1,
+article header h1 {
+    margin-top: 0 !important;
+}
+
+/* Hide Docusaurus navbar on homepage - use custom personal navbar instead */
+body:not(.docs-wrapper):not(.blog-wrapper) .navbar.navbar--fixed-top {
+    display: none !important;
+}
+
+/* Ensure homepage has no top padding since it uses custom navbar */
+body:not(.docs-wrapper):not(.blog-wrapper) main.container {
+    padding-top: 0 !important;
+}
+
 /* Light theme: readable code blocks — use personal site light palette */
 [data-theme="light"] .theme-code-block,
 [data-theme="light"] pre,
@@ -117,27 +159,155 @@ code {
     background: transparent;
 }
 
-.navbar__logo img,
-.navbar__brand img,
-.navbar__logo,
+/* === GLOBAL TYPOGRAPHY: Force personal site fonts everywhere === */
+/* Base body font for all pages */
+html, 
+body,
+#__docusaurus,
+.main-wrapper,
+article,
+.markdown,
+p {
+    font-family: 'Crimson Pro', serif !important;
+    font-size: 1.125rem !important;
+    line-height: 1.7 !important;
+}
+
+/* All headings use display font */
+h1, h2, h3, h4, h5, h6,
+.navbar__title,
+.navbar__brand,
+.blog-post-title,
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6,
+.theme-doc-markdown h1,
+.theme-doc-markdown h2,
+.theme-doc-markdown h3,
+.theme-doc-markdown h4,
+.theme-doc-markdown h5,
+.theme-doc-markdown h6 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
+}
+
+/* Navbar title styling to match personal site */
+.navbar__title,
 .navbar__brand {
-    display: none !important;
-    border-radius: 6px;
-    width: 0;
-    height: 0;
-    overflow: hidden;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.02em !important;
 }
 
-/* Make nav links spacing & sizing nicer */
-.navbar__items {
-    gap: 0.75rem;
+/* Blog-specific typography */
+.blog-post-title,
+.blog-page-header h1 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: -0.03em !important;
 }
 
-.navbar__link {
-    font-weight: 600;
+/* Ensure code/mono elements use the correct mono font */
+code,
+pre,
+.prism-code,
+kbd,
+samp,
+tt {
+    font-family: 'JetBrains Mono', monospace !important;
 }
 
-.hero {
-    text-align: center;
-    padding: 4rem 0;
+/* Load the personal site stylesheet — MUST come before hero overrides */
+@import url('/personal/style.css');
+
+/* ============================================
+   CRITICAL OVERRIDES - Must come AFTER personal stylesheet import
+   ============================================ */
+
+/* Force personal layout inside Docusaurus wrapper to avoid being overridden */
+#__docusaurus .hero {
+    /* Override inherited flex layout and large paddings from the personal stylesheet */
+    display: block !important;
+    min-height: 55vh !important;
+    padding-top: 3rem !important;
+    padding-bottom: 2rem !important;
+}
+
+/* Use a stable two-column grid inside the hero container to avoid absolute positioning issues */
+#__docusaurus .hero > .container {
+    display: grid !important;
+    grid-template-columns: 1fr minmax(220px, 36vw) !important;
+    grid-template-rows: auto !important;
+    gap: 1.5rem !important;
+    align-items: center !important;
+    min-height: 55vh !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    position: relative !important;
+}
+
+/* Ensure content aligns to left column and visual sits to the right */
+#__docusaurus .hero .hero-content {
+    justify-self: start !important;
+    max-width: 800px !important;
+    grid-column: 1 !important;
+}
+
+#__docusaurus .hero .hero-visual {
+    position: static !important;
+    justify-self: end !important;
+    grid-column: 2 !important;
+    top: auto !important;
+    right: auto !important;
+    transform: none !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+}
+
+/* Remove floating animation and keep hero image static */
+#__docusaurus .hero .hero-image {
+    animation: none !important;
+    transition: none !important;
+    width: clamp(200px, 25vw, 350px) !important;
+    height: auto !important;
+}
+
+#__docusaurus .hero .hero-image:hover {
+    transform: none !important;
+}
+
+/* Fix button text color for better readability */
+#__docusaurus .hero .btn-primary {
+    background-color: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+#__docusaurus .hero .btn-secondary {
+    background-color: transparent !important;
+    color: var(--text-primary) !important;
+    border-color: var(--border-color) !important;
+}
+
+/* Mobile adjustments */
+@media (max-width: 996px) {
+    #__docusaurus .hero > .container {
+        grid-template-columns: 1fr !important;
+        grid-template-rows: auto !important;
+        padding-top: 4rem !important;
+    }
+
+    #__docusaurus .hero .hero-content {
+        grid-column: 1 !important;
+    }
+
+    #__docusaurus .hero .hero-visual {
+        display: none !important;
+    }
 }
