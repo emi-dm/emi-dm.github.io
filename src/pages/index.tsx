@@ -34,6 +34,34 @@ export default function Home() {
             <div className="math-bg" id="math-bg" />
             <div className="grain-overlay" />
 
+            {/* Navbar */}
+            <nav className="navbar">
+                <div className="container">
+                    <a className="navbar-brand" href="#">EMILIO<span className="brand-dot">.</span>DELGADO</a>
+                    <button className="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <div className="nav-menu" id="nav-menu">
+                        <ul className="nav-list">
+                            <li><a className="nav-link" href="#about" data-i18n="nav.about">About</a></li>
+                            <li><a className="nav-link" href="#timeline" data-i18n="nav.timeline">Journey</a></li>
+                            <li><a className="nav-link" href="#research" data-i18n="nav.interests">Research</a></li>
+                            <li><a className="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
+                            <li><a className="nav-link" href="#repositories" data-i18n="nav.repositories">Repositories</a></li>
+                            <li><a className="nav-link" href="#publications" data-i18n="nav.publications">Publications</a></li>
+                            <li><a className="nav-link" href="/blog">Blog</a></li>
+                            <li className="nav-controls">
+                                <button id="lang-toggle" className="control-btn" aria-label="Toggle language">EN</button>
+                                <button id="theme-toggle" className="control-btn" aria-label="Toggle theme">
+                                    <span className="theme-icon">◐</span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
             <main>
                 <section className="hero">
                     <div className="container">

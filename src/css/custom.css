@@ -126,6 +126,16 @@ article header h1 {
     margin-top: 0 !important;
 }
 
+/* Hide Docusaurus navbar on homepage - use custom personal navbar instead */
+body:not(.docs-wrapper):not(.blog-wrapper) .navbar.navbar--fixed-top {
+    display: none !important;
+}
+
+/* Ensure homepage has no top padding since it uses custom navbar */
+body:not(.docs-wrapper):not(.blog-wrapper) main.container {
+    padding-top: 0 !important;
+}
+
 /* Light theme: readable code blocks — use personal site light palette */
 [data-theme="light"] .theme-code-block,
 [data-theme="light"] pre,
