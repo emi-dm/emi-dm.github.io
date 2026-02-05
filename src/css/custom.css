@@ -224,6 +224,16 @@ tt {
     right: auto !important;
 }
 
+/* Remove floating animation and keep hero image static */
+#__docusaurus .hero .hero-image {
+    animation: none !important;
+    transition: none !important;
+}
+
+#__docusaurus .hero .hero-image:hover {
+    transform: none !important;
+}
+
 /* Fix button text color for better readability */
 #__docusaurus .hero .btn-primary {
     background-color: var(--accent-primary) !important;
