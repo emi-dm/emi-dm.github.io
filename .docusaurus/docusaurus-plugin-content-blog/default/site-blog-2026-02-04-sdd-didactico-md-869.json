@@ -1,8 +1,8 @@
 {
   "permalink": "/blog/2026/02/04/sdd-didactico",
-  "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-sdd-didactico.md",
+  "editUrl": "https://github.com/emi-dm/emi-dm.github.io/tree/main/blog/blog/2026-02-04-sdd-didactico.md",
   "source": "@site/blog/2026-02-04-sdd-didactico.md",
-  "title": "SDD (Didactic): What SDD is and understanding its role",
+  "title": "Specification Driven-Development: What SDD is and understanding its role",
   "description": "A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.",
   "date": "2026-02-04T00:00:00.000Z",
   "tags": [
@@ -32,7 +32,7 @@
       "permalink": "/blog/tags/didactic"
     }
   ],
-  "readingTime": 3.02,
+  "readingTime": 2.77,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -44,7 +44,7 @@
     }
   ],
   "frontMatter": {
-    "title": "SDD (Didactic): What SDD is and understanding its role",
+    "title": "Specification Driven-Development: What SDD is and understanding its role",
     "authors": [
       {
         "name": "Emi",

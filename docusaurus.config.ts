@@ -1,8 +1,10 @@
 import { Config } from '@docusaurus/types';
 
+const repoEdit = 'https://github.com/emi-dm/emi-dm.github.io/tree/main';
+
 const config: Config = {
-    title: 'MiDoc',
-    tagline: 'Example Docusaurus site',
+    title: 'Emilio Delgado',
+    tagline: 'PhD research · LLM-generated code quality · Specification-Driven Development',
     url: 'https://emi-dm.github.io',
     baseUrl: '/',
     onBrokenLinks: 'warn',
@@ -10,7 +12,7 @@ const config: Config = {
     // Some pages reference homepage anchors (e.g. /#about). These intentionally point
     // to sections on the homepage; ignore anchor validation to avoid noisy build warnings.
     onBrokenAnchors: 'ignore',
-    favicon: 'img/favicon.ico',
+    favicon: 'https://intia.unex.es/favicon.ico',
 
     // Load Google Fonts early for consistent typography across pages
     stylesheets: [
@@ -30,12 +32,14 @@ const config: Config = {
             'classic',
             ({
                 docs: {
+                    path: 'documentation',
+                    routeBasePath: 'docs',
                     sidebarPath: require.resolve('./sidebars.ts'),
-                    editUrl: 'https://github.com/example/midoc/tree/main/',
+                    editUrl: `${repoEdit}/documentation/`,
                 },
                 blog: {
                     showReadingTime: true,
-                    editUrl: 'https://github.com/example/midoc/tree/main/',
+                    editUrl: `${repoEdit}/blog/`,
                     // Path to authors map to resolve author keys used in posts
                     // Use require.resolve to ensure absolute path is embedded at build time
                     authorsMapPath: require.resolve('./authors.json'),
@@ -59,7 +63,7 @@ const config: Config = {
                 { to: '/#projects', label: 'Projects', position: 'left' },
                 { to: '/#repositories', label: 'Repositories', position: 'left' },
                 { to: '/#publications', label: 'Publications', position: 'left' },
-                { to: '/docs', label: 'Docs', position: 'left' },
+                { to: '/docs/intro', label: 'Docs', position: 'left' },
                 { to: '/blog', label: 'Blog', position: 'left' },
                 {
                     href: 'https://github.com/emi-dm',
@@ -68,13 +72,44 @@ const config: Config = {
                     target: '_blank',
                     rel: 'noopener noreferrer',
                 },
-                { type: 'localeDropdown', position: 'right' },
             ],
         },
         footer: {
             style: 'dark',
-            links: [],
-            copyright: `Copyright © ${new Date().getFullYear()} MiDoc`,
+            links: [
+                {
+                    title: 'Research',
+                    items: [
+                        { label: 'INTIA', href: 'https://intia.unex.es/', target: '_blank', rel: 'noopener noreferrer' },
+                        { label: 'i3Lab', href: 'https://i3lab.unex.es/', target: '_blank', rel: 'noopener noreferrer' },
+                        {
+                            label: 'Google Scholar',
+                            href: 'https://scholar.google.com/citations?user=eIBVkQEAAAAJ&hl=es',
+                            target: '_blank',
+                            rel: 'noopener noreferrer',
+                        },
+                    ],
+                },
+                {
+                    title: 'Site',
+                    items: [
+                        { label: 'Home', to: '/' },
+                        { label: 'Docs', to: '/docs/intro' },
+                        { label: 'Blog', to: '/blog' },
+                        {
+                            label: 'GitHub',
+                            href: 'https://github.com/emi-dm',
+                            target: '_blank',
+                            rel: 'noopener noreferrer',
+                        },
+                    ],
+                },
+            ],
+            copyright: `Copyright © ${new Date().getFullYear()} Emilio Delgado`,
+        },
+        colorMode: {
+            defaultMode: 'dark',
+            respectPrefersColorScheme: true,
         },
     },
 };

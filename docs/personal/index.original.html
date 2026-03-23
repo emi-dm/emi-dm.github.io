@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap"
         rel="stylesheet">
 
     <!-- Custom CSS -->
@@ -27,15 +27,23 @@
     <div class="math-bg" id="math-bg"></div>
     <div class="grain-overlay"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <a class="navbar-brand" href="#">EMILIO<span class="brand-dot">.</span>DELGADO</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+    <nav class="site-header" aria-label="Principal">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="#">
+                <span class="site-brand__mark" aria-hidden="true">
+                    <span class="site-brand__mark-inner">E</span>
+                </span>
+                <span class="site-brand__wordmark">
+                    <span class="site-brand__part">emilio</span>
+                    <span class="site-brand__dot">.</span>
+                    <span class="site-brand__part site-brand__part--accent">delgado</span>
+                </span>
+            </a>
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
                 <span></span>
                 <span></span>
             </button>
-            <div class="nav-menu" id="nav-menu">
+            <div class="site-header__panel nav-menu" id="nav-menu" role="navigation">
                 <ul class="nav-list">
                     <li><a class="nav-link" href="#about" data-i18n="nav.about">About</a></li>
                     <li><a class="nav-link" href="#timeline" data-i18n="nav.timeline">Journey</a></li>
@@ -44,13 +52,13 @@
                     <li><a class="nav-link" href="#repositories" data-i18n="nav.repositories">Repositories</a></li>
                     <li><a class="nav-link" href="#publications" data-i18n="nav.publications">Publications</a></li>
                     <li><a class="nav-link" href="/blog">Blog</a></li>
-                    <li class="nav-controls">
-                        <button id="lang-toggle" class="control-btn" aria-label="Toggle language">EN</button>
-                        <button id="theme-toggle" class="control-btn" aria-label="Toggle theme">
-                            <span class="theme-icon">◐</span>
-                        </button>
-                    </li>
                 </ul>
+                <div class="nav-controls" role="toolbar" aria-label="Idioma y tema">
+                    <button type="button" id="lang-toggle" class="control-btn control-btn--lang" aria-label="Toggle language">EN</button>
+                    <button type="button" id="theme-toggle" class="control-btn control-btn--theme" aria-label="Toggle theme">
+                        <span class="theme-icon" aria-hidden="true">◐</span>
+                    </button>
+                </div>
             </div>
         </div>
     </nav>

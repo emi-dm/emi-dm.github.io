@@ -1,59 +1,65 @@
+/* Meridian — Docusaurus + Infima (reemplazo completo) */
+
 :root {
-    --ifm-color-primary: #d4a574;
-    /* accent-primary from personal site */
-    --ifm-navbar-background: rgba(13, 13, 20, 0.85);
-    --ifm-background-color: #0d0d14;
-    /* bg-primary */
-    --ifm-color-emphasis: #f5f3ef;
-    /* text-primary */
-    --ifm-color-muted: #b8b5ad;
-    /* text-secondary */
-    --ifm-link-color: #d4a574;
+    --ifm-color-primary: #38bdf8;
+    --ifm-color-primary-dark: #0ea5e9;
+    --ifm-color-primary-darker: #0284c7;
+    --ifm-color-primary-darkest: #0369a1;
+    --ifm-navbar-background: rgba(8, 12, 20, 0.88);
+    --ifm-background-color: #080c14;
+    --ifm-color-emphasis: #eef2f7;
+    --ifm-color-muted: #94a3b8;
+    --ifm-link-color: #38bdf8;
+    --ifm-container-width: 1320px;
+    --content-readable-max: 50rem;
+    --meridian-border: rgba(148, 163, 184, 0.14);
+    --meridian-accent-soft: rgba(56, 189, 248, 0.12);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-/* Light theme overrides to match personal site */
-[data-theme="light"] {
-    --ifm-background-color: #f7f5f2;
-    --ifm-navbar-background: rgba(247, 245, 242, 0.85);
-    --ifm-color-emphasis: #1e1916;
-    --ifm-color-muted: #4a4641;
-    --ifm-link-color: #9b7653;
-    --ifm-color-primary: #9b7653;
+[data-theme='light'] {
+    --ifm-color-primary: #0284c7;
+    --ifm-color-primary-dark: #0369a1;
+    --ifm-background-color: #f8fafc;
+    --ifm-navbar-background: rgba(248, 250, 252, 0.92);
+    --ifm-color-emphasis: #0f172a;
+    --ifm-color-muted: #475569;
+    --ifm-link-color: #0284c7;
+    --meridian-border: rgba(15, 23, 42, 0.1);
+    --meridian-accent-soft: rgba(2, 132, 199, 0.1);
 }
 
-/* Navbar tweaks to closer match personal site styling */
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
 .navbar__title {
-    font-family: 'DM Sans', sans-serif !important;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1px;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    font-size: 0.8125rem !important;
 }
 
-/* Remove circular avatar styling (no personal image in header) and force hide images for text-only header */
 .navbar__logo img,
 .navbar__brand img,
 .navbar__logo,
 .navbar__brand {
     display: none !important;
-    border-radius: 4px;
-    width: 0;
-    height: 0;
-    overflow: hidden;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
 }
 
-/* Make nav links spacing & sizing nicer */
 .navbar__items {
-    gap: 0.75rem;
+    gap: 0.35rem 1rem;
 }
 
 .navbar__link {
-    font-family: 'DM Sans', sans-serif !important;
-    font-weight: 600;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
 }
 
-/* ===== Apply personal site color palette ===== */
 :root,
 html,
 body {
@@ -61,18 +67,12 @@ body {
     color: var(--ifm-color-emphasis) !important;
 }
 
-/* Navbar background + link hover */
-.navbar {
+.navbar.navbar--fixed-top {
     background-color: var(--ifm-navbar-background) !important;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(212, 165, 116, 0.1);
-}
-
-[data-theme="light"] .navbar {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(155, 118, 83, 0.15);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border-bottom: 1px solid var(--meridian-border) !important;
+    box-shadow: none !important;
 }
 
 .navbar__link,
@@ -80,34 +80,49 @@ body {
     color: var(--ifm-color-muted) !important;
 }
 
-.navbar__link:hover {
+.navbar__link:hover,
+.navbar__link--active {
     color: var(--ifm-color-emphasis) !important;
 }
 
-/* Links and buttons */
-a,
-.theme-doc-sidebar-link,
-.ifm-navbar__link {
+a:not(.navbar__link):not(.footer__link-item a):not(.menu__link):not(.pagination-nav__link):not(.tag),
+.theme-doc-sidebar-link {
     color: var(--ifm-link-color) !important;
 }
 
-/* Buttons */
-.button,
 .button--primary {
-    background-color: var(--ifm-color-primary) !important;
-    border-color: var(--ifm-color-primary) !important;
-    color: #0d0d14 !important;
+    background: linear-gradient(135deg, var(--ifm-color-primary), #7dd3fc) !important;
+    border: none !important;
+    color: #050810 !important;
+    font-weight: 700 !important;
+    border-radius: 12px !important;
 }
 
-/* Make code blocks match darker background (default dark theme) */
+[data-theme='light'] .button--primary {
+    color: #fff !important;
+}
+
 .theme-code-block,
 pre,
 code {
-    background-color: #16161f !important;
+    background-color: #0f1624 !important;
+    color: var(--ifm-color-emphasis) !important;
+    border-radius: 10px !important;
+}
+
+[data-theme='light'] .theme-code-block,
+[data-theme='light'] pre,
+[data-theme='light'] code,
+[data-theme='light'] .prism-code {
+    background-color: #f1f5f9 !important;
     color: var(--ifm-color-emphasis) !important;
 }
 
-/* Fix spacing for blog posts and docs to prevent titles appearing under navbar */
+[data-theme='light'] .theme-code-block .token,
+[data-theme='light'] .prism-code .token {
+    color: inherit !important;
+}
+
 .theme-doc-markdown > header,
 article > header,
 .markdown > h1:first-child,
@@ -115,146 +130,120 @@ article > header,
     margin-top: 2rem !important;
 }
 
-/* Ensure main content has proper top spacing */
 main.container {
     padding-top: 2rem !important;
 }
 
-/* Blog post specific spacing */
 .theme-doc-markdown header h1,
 article header h1 {
     margin-top: 0 !important;
 }
 
-/* Hide Docusaurus navbar on homepage - use custom personal navbar instead */
 body:not(.docs-wrapper):not(.blog-wrapper) .navbar.navbar--fixed-top {
     display: none !important;
 }
 
-/* Ensure homepage has no top padding since it uses custom navbar */
 body:not(.docs-wrapper):not(.blog-wrapper) main.container {
     padding-top: 0 !important;
 }
 
-/* Light theme: readable code blocks — use personal site light palette */
-[data-theme="light"] .theme-code-block,
-[data-theme="light"] pre,
-[data-theme="light"] code,
-[data-theme="light"] .prism-code {
-    background-color: #e8e6e3 !important;
-    /* matches personal --bg-tertiary */
-    color: #1e1916 !important;
-    /* matches personal --text-primary */
-}
-
-/* Ensure token lines inherit color so inline prism styles don't force unreadable colors */
-[data-theme="light"] .theme-code-block .token,
-[data-theme="light"] .theme-code-block .token-line,
-[data-theme="light"] .prism-code .token {
-    color: inherit !important;
-}
-
-/* Make blog sidebar match personal site muted color */
-.blog-index .sidebar {
-    background: transparent;
-}
-
-/* === GLOBAL TYPOGRAPHY: Force personal site fonts everywhere === */
-/* Base body font for all pages */
-html, 
+html,
 body,
 #__docusaurus,
 .main-wrapper,
 article,
 .markdown,
 p {
-    font-family: 'Crimson Pro', serif !important;
+    font-family: 'Crimson Pro', Georgia, serif !important;
     font-size: 1.125rem !important;
-    line-height: 1.7 !important;
+    line-height: 1.72 !important;
 }
 
-/* All headings use display font */
-h1, h2, h3, h4, h5, h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 .navbar__title,
-.navbar__brand,
 .blog-post-title,
 article h1,
 article h2,
 article h3,
-article h4,
-article h5,
-article h6,
 .theme-doc-markdown h1,
 .theme-doc-markdown h2,
-.theme-doc-markdown h3,
-.theme-doc-markdown h4,
-.theme-doc-markdown h5,
-.theme-doc-markdown h6 {
-    font-family: 'DM Sans', sans-serif !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em !important;
-}
-
-/* Navbar title styling to match personal site */
-.navbar__title,
-.navbar__brand {
-    font-family: 'DM Sans', sans-serif !important;
-    font-size: 1.25rem !important;
-    font-weight: 700 !important;
-    letter-spacing: -0.02em !important;
-}
-
-/* Blog-specific typography */
-.blog-post-title,
-.blog-page-header h1 {
-    font-family: 'DM Sans', sans-serif !important;
-    font-weight: 700 !important;
+.theme-doc-markdown h3 {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-weight: 800 !important;
     letter-spacing: -0.03em !important;
 }
 
-/* Ensure code/mono elements use the correct mono font */
 code,
 pre,
 .prism-code,
 kbd,
 samp,
 tt {
-    font-family: 'JetBrains Mono', monospace !important;
+    font-family: 'JetBrains Mono', ui-monospace, monospace !important;
 }
 
-/* Load the personal site stylesheet — MUST come before hero overrides */
 @import url('/personal/style.css');
 
-/* ============================================
-   CRITICAL OVERRIDES - Must come AFTER personal stylesheet import
-   ============================================ */
-
-/* Force personal layout inside Docusaurus wrapper to avoid being overridden */
+/* Hero dentro de Docusaurus */
 #__docusaurus .hero {
-    /* Override inherited flex layout and large paddings from the personal stylesheet */
     display: block !important;
-    min-height: 55vh !important;
-    padding-top: 3rem !important;
+    min-height: 58vh !important;
+    padding-top: 3.5rem !important;
     padding-bottom: 2rem !important;
 }
 
-/* Use a stable two-column grid inside the hero container to avoid absolute positioning issues */
 #__docusaurus .hero > .container {
     display: grid !important;
-    grid-template-columns: 1fr minmax(220px, 36vw) !important;
-    grid-template-rows: auto !important;
-    gap: 1.5rem !important;
+    grid-template-columns: minmax(0, 1fr) minmax(180px, min(32vw, 320px)) !important;
+    gap: clamp(1.25rem, 3vw, 2rem) !important;
     align-items: center !important;
-    min-height: 55vh !important;
+    min-height: 56vh !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
     position: relative !important;
+    overflow: visible !important;
 }
 
-/* Ensure content aligns to left column and visual sits to the right */
+/* Anular `p { line-height: 1.72 !important }` global en el hero (provocaba layout raro) */
+#__docusaurus .hero .hero-meta p,
+#__docusaurus .hero .hero-meta-line {
+    list-style: none !important;
+    list-style-type: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 0 !important;
+    text-indent: 0 !important;
+    line-height: 1.55 !important;
+    font-size: 1.05rem !important;
+}
+
+#__docusaurus .hero .hero-meta p:first-of-type {
+    margin-bottom: 0.35rem !important;
+}
+
+#__docusaurus .hero h1.hero-title {
+    line-height: 1.2 !important;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    overflow: visible !important;
+}
+
+#__docusaurus .hero .hero-name {
+    line-height: 1.2 !important;
+    padding-bottom: 0.2em !important;
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
 #__docusaurus .hero .hero-content {
     justify-self: start !important;
-    max-width: 800px !important;
+    align-self: center;
+    max-width: min(100%, 46rem) !important;
+    min-width: 0 !important;
+    overflow: visible !important;
     grid-column: 1 !important;
 }
 
@@ -262,52 +251,259 @@ tt {
     position: static !important;
     justify-self: end !important;
     grid-column: 2 !important;
-    top: auto !important;
-    right: auto !important;
     transform: none !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-end !important;
 }
 
-/* Remove floating animation and keep hero image static */
 #__docusaurus .hero .hero-image {
     animation: none !important;
-    transition: none !important;
-    width: clamp(200px, 25vw, 350px) !important;
-    height: auto !important;
+    transform: rotate(2deg) !important;
+    width: clamp(200px, 28vw, 320px) !important;
 }
 
 #__docusaurus .hero .hero-image:hover {
-    transform: none !important;
+    transform: rotate(0deg) scale(1.02) !important;
 }
 
-/* Fix button text color for better readability */
 #__docusaurus .hero .btn-primary {
-    background-color: var(--accent-primary) !important;
-    color: var(--bg-primary) !important;
-    border-color: var(--accent-primary) !important;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+    color: var(--bg-deep) !important;
+    border: none !important;
+}
+
+[data-theme='light'] #__docusaurus .hero .btn-primary {
+    color: #fff !important;
 }
 
 #__docusaurus .hero .btn-secondary {
-    background-color: transparent !important;
+    background: transparent !important;
     color: var(--text-primary) !important;
     border-color: var(--border-color) !important;
 }
 
-/* Mobile adjustments */
 @media (max-width: 996px) {
     #__docusaurus .hero > .container {
         grid-template-columns: 1fr !important;
-        grid-template-rows: auto !important;
-        padding-top: 4rem !important;
-    }
-
-    #__docusaurus .hero .hero-content {
-        grid-column: 1 !important;
+        padding-top: 3rem !important;
     }
 
     #__docusaurus .hero .hero-visual {
         display: none !important;
     }
+}
+
+/* Footer Docusaurus */
+.footer {
+    background-color: var(--ifm-background-color) !important;
+    border-top: 1px solid var(--meridian-border) !important;
+}
+
+.footer__title {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-weight: 800 !important;
+    font-size: 0.75rem !important;
+    letter-spacing: 0.08em !important;
+    text-transform: uppercase !important;
+    color: var(--ifm-color-emphasis) !important;
+}
+
+.footer__link-item a {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.8125rem !important;
+    color: var(--ifm-color-muted) !important;
+}
+
+.footer__link-item a:hover {
+    color: var(--ifm-link-color) !important;
+}
+
+.footer__copyright {
+    font-family: 'Crimson Pro', serif !important;
+    color: var(--ifm-color-muted) !important;
+}
+
+.theme-doc-sidebar-container,
+.theme-doc-sidebar-menu {
+    border-right: 1px solid var(--meridian-border) !important;
+}
+
+.menu__link {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 0.875rem !important;
+}
+
+.menu__link--active {
+    color: var(--ifm-link-color) !important;
+}
+
+.table-of-contents__link {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
+.markdown blockquote {
+    border-left: 4px solid var(--ifm-color-primary);
+    background: var(--meridian-accent-soft);
+    border-radius: 0 10px 10px 0;
+    padding: 0.75rem 1rem;
+}
+
+.markdown table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.markdown th,
+.markdown td {
+    border: 1px solid var(--meridian-border);
+    padding: 0.55rem 0.85rem;
+}
+
+.markdown th {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 0.875rem;
+    background: var(--meridian-accent-soft);
+}
+
+/* Blog layout */
+html.blog-wrapper .theme-layout-main.main-wrapper > .container {
+    max-width: min(96vw, 92rem) !important;
+    width: 100%;
+    padding-left: clamp(1rem, 4vw, 2.5rem);
+    padding-right: clamp(1rem, 4vw, 2.5rem);
+}
+
+html.blog-wrapper .theme-layout-main.main-wrapper > .container > .row {
+    display: grid !important;
+    grid-template-columns: minmax(0, 15.5rem) minmax(0, 1fr) !important;
+    gap: clamp(1.5rem, 3.5vw, 3rem) !important;
+    align-items: start;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+html.blog-wrapper aside.col--3,
+html.blog-wrapper main.col--7 {
+    --ifm-col-width: 100% !important;
+    flex: none !important;
+    max-width: none !important;
+    width: 100% !important;
+}
+
+html.blog-wrapper aside.col--3 nav[aria-label='Blog recent posts navigation'] {
+    position: sticky;
+    top: calc(var(--ifm-navbar-height, 3.75rem) + 0.75rem);
+    max-height: calc(100vh - var(--ifm-navbar-height, 3.75rem) - 1.5rem);
+    overflow: auto;
+    padding-right: 0.25rem;
+}
+
+html.blog-wrapper aside.col--3 nav[aria-label='Blog recent posts navigation'] a {
+    line-height: 1.45;
+    font-size: 0.9rem;
+}
+
+html.blog-wrapper .markdown {
+    font-size: 1.1875rem !important;
+    line-height: 1.82 !important;
+    max-width: var(--content-readable-max);
+}
+
+html.blog-wrapper .markdown h2 {
+    margin-top: 2.25rem;
+    margin-bottom: 0.85rem;
+    font-size: 1.55rem !important;
+}
+
+html.blog-wrapper .markdown h3 {
+    margin-top: 1.75rem;
+    font-size: 1.25rem !important;
+}
+
+html.blog-wrapper .markdown table {
+    font-size: 1.02rem;
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+html.blog-post-page article > header h1 {
+    font-size: clamp(1.85rem, 2.8vw, 2.65rem) !important;
+    line-height: 1.18 !important;
+    max-width: var(--content-readable-max);
+}
+
+html.blog-list-page main article > header h2 {
+    font-size: clamp(1.45rem, 2.2vw, 1.95rem) !important;
+    line-height: 1.25 !important;
+    max-width: var(--content-readable-max);
+}
+
+html.blog-wrapper .theme-code-block {
+    font-size: 0.95rem !important;
+}
+
+@media (max-width: 996px) {
+    html.blog-wrapper .theme-layout-main.main-wrapper > .container > .row {
+        grid-template-columns: 1fr !important;
+    }
+
+    html.blog-wrapper aside.col--3 nav[aria-label='Blog recent posts navigation'] {
+        position: relative;
+        top: auto;
+        max-height: none;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--meridian-border);
+        margin-bottom: 0.5rem;
+    }
+
+    html.blog-wrapper .markdown {
+        max-width: none;
+    }
+}
+
+html.docs-wrapper .main-wrapper > .container {
+    max-width: min(96vw, 88rem) !important;
+    padding-left: clamp(1rem, 3vw, 2rem);
+    padding-right: clamp(1rem, 3vw, 2rem);
+}
+
+html.docs-wrapper .theme-doc-markdown {
+    font-size: 1.125rem !important;
+    line-height: 1.78 !important;
+}
+
+article.margin-bottom--xl {
+    padding-bottom: 2rem;
+}
+
+.pagination-nav__link {
+    border: 1px solid var(--meridian-border) !important;
+    border-radius: 12px !important;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pagination-nav__link:hover {
+    border-color: var(--ifm-color-primary) !important;
+    box-shadow: 0 12px 40px rgba(56, 189, 248, 0.08);
+}
+
+.tag {
+    font-family: 'JetBrains Mono', monospace !important;
+    border-radius: 999px !important;
+    border-color: var(--meridian-border) !important;
+}
+
+.breadcrumbs__link,
+.breadcrumbs__item {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
+}
+
+.theme-edit-this-page {
+    font-family: 'DM Sans', system-ui, sans-serif !important;
 }

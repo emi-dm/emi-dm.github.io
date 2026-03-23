@@ -3,85 +3,85 @@ import ComponentCreator from '@docusaurus/ComponentCreator';
 
 export default [
   {
-    path: '/es/blog',
-    component: ComponentCreator('/es/blog', '9d0'),
+    path: '/blog',
+    component: ComponentCreator('/blog', '1ef'),
     exact: true
   },
   {
-    path: '/es/blog/2026/02/04/sdd-didactico',
-    component: ComponentCreator('/es/blog/2026/02/04/sdd-didactico', 'ba7'),
+    path: '/blog/2026/02/04/sdd-didactico',
+    component: ComponentCreator('/blog/2026/02/04/sdd-didactico', 'e85'),
     exact: true
   },
   {
-    path: '/es/blog/2026/02/04/skills-find-skills',
-    component: ComponentCreator('/es/blog/2026/02/04/skills-find-skills', '049'),
+    path: '/blog/2026/02/04/skills-find-skills',
+    component: ComponentCreator('/blog/2026/02/04/skills-find-skills', '55d'),
     exact: true
   },
   {
-    path: '/es/blog/archive',
-    component: ComponentCreator('/es/blog/archive', 'c1d'),
+    path: '/blog/archive',
+    component: ComponentCreator('/blog/archive', '182'),
     exact: true
   },
   {
-    path: '/es/blog/tags',
-    component: ComponentCreator('/es/blog/tags', 'b1d'),
+    path: '/blog/tags',
+    component: ComponentCreator('/blog/tags', '287'),
     exact: true
   },
   {
-    path: '/es/blog/tags/desarrollo',
-    component: ComponentCreator('/es/blog/tags/desarrollo', '53f'),
+    path: '/blog/tags/ai',
+    component: ComponentCreator('/blog/tags/ai', 'cbb'),
     exact: true
   },
   {
-    path: '/es/blog/tags/didactico',
-    component: ComponentCreator('/es/blog/tags/didactico', 'c2e'),
+    path: '/blog/tags/development',
+    component: ComponentCreator('/blog/tags/development', 'e7b'),
     exact: true
   },
   {
-    path: '/es/blog/tags/especificacion',
-    component: ComponentCreator('/es/blog/tags/especificacion', '1f8'),
+    path: '/blog/tags/didactic',
+    component: ComponentCreator('/blog/tags/didactic', 'fbf'),
     exact: true
   },
   {
-    path: '/es/blog/tags/find-skills',
-    component: ComponentCreator('/es/blog/tags/find-skills', '05f'),
+    path: '/blog/tags/find-skills',
+    component: ComponentCreator('/blog/tags/find-skills', '579'),
     exact: true
   },
   {
-    path: '/es/blog/tags/ia',
-    component: ComponentCreator('/es/blog/tags/ia', 'fc3'),
+    path: '/blog/tags/sdd',
+    component: ComponentCreator('/blog/tags/sdd', 'a40'),
     exact: true
   },
   {
-    path: '/es/blog/tags/sdd',
-    component: ComponentCreator('/es/blog/tags/sdd', '18a'),
+    path: '/blog/tags/skills',
+    component: ComponentCreator('/blog/tags/skills', 'ccd'),
     exact: true
   },
   {
-    path: '/es/blog/tags/skills',
-    component: ComponentCreator('/es/blog/tags/skills', 'ef2'),
+    path: '/blog/tags/specification',
+    component: ComponentCreator('/blog/tags/specification', '722'),
     exact: true
   },
   {
-    path: '/es/blog/tags/vscode',
-    component: ComponentCreator('/es/blog/tags/vscode', 'dbf'),
+    path: '/blog/tags/vscode',
+    component: ComponentCreator('/blog/tags/vscode', '296'),
     exact: true
   },
   {
-    path: '/es/docs',
-    component: ComponentCreator('/es/docs', 'cd0'),
+    path: '/docs',
+    component: ComponentCreator('/docs', '2b2'),
     routes: [
       {
-        path: '/es/docs',
-        component: ComponentCreator('/es/docs', '363'),
+        path: '/docs',
+        component: ComponentCreator('/docs', '27f'),
         routes: [
           {
-            path: '/es/docs',
-            component: ComponentCreator('/es/docs', '959'),
+            path: '/docs',
+            component: ComponentCreator('/docs', 'cb5'),
             routes: [
               {
-                path: '/es/docs/intro',
-                component: ComponentCreator('/es/docs/intro', '55c'),
+                path: '/docs/intro',
+                component: ComponentCreator('/docs/intro', '218'),
                 exact: true,
                 sidebar: "tutorialSidebar"
               }
@@ -92,8 +92,8 @@ export default [
     ]
   },
   {
-    path: '/es/',
-    component: ComponentCreator('/es/', 'f57'),
+    path: '/',
+    component: ComponentCreator('/', 'e5f'),
     exact: true
   },
   {

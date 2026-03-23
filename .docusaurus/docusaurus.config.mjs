@@ -4,19 +4,22 @@
  * Modify the docusaurus.config.js file at your site's root instead.
  */
 export default {
-  "title": "MiDoc",
-  "tagline": "Example Docusaurus site",
+  "title": "Emilio Delgado",
+  "tagline": "PhD research · LLM-generated code quality · Specification-Driven Development",
   "url": "https://emi-dm.github.io",
-  "baseUrl": "/es/",
+  "baseUrl": "/",
   "onBrokenLinks": "warn",
-  "favicon": "img/favicon.ico",
+  "onBrokenAnchors": "ignore",
+  "favicon": "https://intia.unex.es/favicon.ico",
+  "stylesheets": [
+    "https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap"
+  ],
   "organizationName": "emi-dm",
   "projectName": "emi-dm.github.io",
   "i18n": {
     "defaultLocale": "en",
     "locales": [
-      "en",
-      "es"
+      "en"
     ],
     "path": "i18n",
     "localeConfigs": {}
@@ -26,16 +29,18 @@ export default {
       "classic",
       {
         "docs": {
-          "sidebarPath": "/Users/emi/Desktop/Test/example-docusaurus/sidebars.ts",
-          "editUrl": "https://github.com/example/midoc/tree/main/"
+          "path": "documentation",
+          "routeBasePath": "docs",
+          "sidebarPath": "/Users/emi/Desktop/emi-dm.github.io/sidebars.ts",
+          "editUrl": "https://github.com/emi-dm/emi-dm.github.io/tree/main/documentation/"
         },
         "blog": {
           "showReadingTime": true,
-          "editUrl": "https://github.com/example/midoc/tree/main/",
-          "authorsMapPath": "/Users/emi/Desktop/Test/example-docusaurus/authors.json"
+          "editUrl": "https://github.com/emi-dm/emi-dm.github.io/tree/main/blog/",
+          "authorsMapPath": "/Users/emi/Desktop/emi-dm.github.io/authors.json"
         },
         "theme": {
-          "customCss": "/Users/emi/Desktop/Test/example-docusaurus/src/css/custom.css"
+          "customCss": "/Users/emi/Desktop/emi-dm.github.io/src/css/custom.css"
         }
       }
     ]
@@ -45,38 +50,48 @@ export default {
       "title": "EMILIO.DELGADO",
       "items": [
         {
-          "href": "https://emi-dm.github.io/personal/index.html",
+          "to": "/",
           "label": "Home",
           "position": "left"
         },
         {
-          "href": "https://emi-dm.github.io/personal/index.html#about",
+          "to": "/#about",
           "label": "About",
           "position": "left"
         },
         {
-          "href": "https://emi-dm.github.io/personal/index.html#timeline",
+          "to": "/#timeline",
           "label": "Journey",
           "position": "left"
         },
         {
-          "href": "https://emi-dm.github.io/personal/index.html#research",
+          "to": "/#research",
           "label": "Research",
           "position": "left"
         },
         {
-          "href": "https://emi-dm.github.io/personal/index.html#projects",
+          "to": "/#projects",
           "label": "Projects",
           "position": "left"
         },
         {
-          "href": "https://emi-dm.github.io/personal/index.html#repositories",
+          "to": "/#repositories",
           "label": "Repositories",
           "position": "left"
         },
         {
-          "href": "https://emi-dm.github.io/personal/index.html#publications",
+          "to": "/#publications",
           "label": "Publications",
+          "position": "left"
+        },
+        {
+          "to": "/docs/intro",
+          "label": "Docs",
+          "position": "left"
+        },
+        {
+          "to": "/blog",
+          "label": "Blog",
           "position": "left"
         },
         {
@@ -85,25 +100,66 @@ export default {
           "position": "right",
           "target": "_blank",
           "rel": "noopener noreferrer"
-        },
-        {
-          "type": "localeDropdown",
-          "position": "right",
-          "dropdownItemsBefore": [],
-          "dropdownItemsAfter": []
         }
       ],
       "hideOnScroll": false
     },
     "footer": {
       "style": "dark",
-      "links": [],
-      "copyright": "Copyright © 2026 MiDoc"
+      "links": [
+        {
+          "title": "Research",
+          "items": [
+            {
+              "label": "INTIA",
+              "href": "https://intia.unex.es/",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            {
+              "label": "i3Lab",
+              "href": "https://i3lab.unex.es/",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            },
+            {
+              "label": "Google Scholar",
+              "href": "https://scholar.google.com/citations?user=eIBVkQEAAAAJ&hl=es",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        },
+        {
+          "title": "Site",
+          "items": [
+            {
+              "label": "Home",
+              "to": "/"
+            },
+            {
+              "label": "Docs",
+              "to": "/docs/intro"
+            },
+            {
+              "label": "Blog",
+              "to": "/blog"
+            },
+            {
+              "label": "GitHub",
+              "href": "https://github.com/emi-dm",
+              "target": "_blank",
+              "rel": "noopener noreferrer"
+            }
+          ]
+        }
+      ],
+      "copyright": "Copyright © 2026 Emilio Delgado"
     },
     "colorMode": {
-      "defaultMode": "light",
-      "disableSwitch": false,
-      "respectPrefersColorScheme": false
+      "defaultMode": "dark",
+      "respectPrefersColorScheme": true,
+      "disableSwitch": false
     },
     "docs": {
       "versionPersistence": "localStorage",
@@ -287,7 +343,6 @@ export default {
     },
     "experimental_router": "browser"
   },
-  "onBrokenAnchors": "warn",
   "onDuplicateRoutes": "warn",
   "staticDirectories": [
     "static"
@@ -297,7 +352,6 @@ export default {
   "themes": [],
   "scripts": [],
   "headTags": [],
-  "stylesheets": [],
   "clientModules": [],
   "titleDelimiter": "|",
   "noIndex": false,

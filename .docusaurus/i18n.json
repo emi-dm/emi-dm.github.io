@@ -1,11 +1,10 @@
 {
   "defaultLocale": "en",
   "locales": [
-    "en",
-    "es"
+    "en"
   ],
   "path": "i18n",
-  "currentLocale": "es",
+  "currentLocale": "en",
   "localeConfigs": {
     "en": {
       "label": "English",
@@ -16,16 +15,6 @@
       "translate": false,
       "url": "https://emi-dm.github.io",
       "baseUrl": "/"
-    },
-    "es": {
-      "label": "Español",
-      "direction": "ltr",
-      "htmlLang": "es",
-      "calendar": "gregory",
-      "path": "es",
-      "translate": true,
-      "url": "https://emi-dm.github.io",
-      "baseUrl": "/es/"
     }
   }
 }

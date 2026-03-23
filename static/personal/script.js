@@ -1,10 +1,11 @@
-// Computational Poetry - Modern JavaScript
+// Personal site — theme, i18n, motion-aware UI
 function initializeApp() {
     if (window.__personalAppInitialized) {
         return;
     }
     window.__personalAppInitialized = true;
-    // Theme Management
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const htmlElement = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme') || 'dark';
@@ -23,26 +24,29 @@ function initializeApp() {
         });
     }
 
-    // Mobile Nav Toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
 
+    function setNavOpen(open) {
+        if (!navToggle || !navMenu) return;
+        navToggle.classList.toggle('active', open);
+        navMenu.classList.toggle('active', open);
+        navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
-            navToggle.classList.toggle('active');
-            navMenu.classList.toggle('active');
+            setNavOpen(!navMenu.classList.contains('active'));
         });
 
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                navToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+        document.querySelectorAll('.nav-link').forEach((link) => {
+            link.addEventListener('click', () => setNavOpen(false));
         });
     }
 
-    // Language Toggle & Translations
+    const linkIntia = 'https://intia.unex.es/';
+    const linkI3 = 'https://i3lab.unex.es/';
+
     const translations = {
         en: {
             nav: {
@@ -50,98 +54,148 @@ function initializeApp() {
                 timeline: 'Journey',
                 interests: 'Research',
                 projects: 'Projects',
-                publications: 'Publications'
+                publications: 'Publications',
+                repositories: 'Repositories',
+                blog: 'Blog',
             },
             hero: {
                 label: 'PhD Student & AI Researcher',
                 publications: 'View Publications',
                 specialized: 'Specialized in',
-                typing: ['Multi-Agent Systems', 'Software Engineering', 'AI Development']
+                typing: [
+                    'LLM code quality',
+                    'Specification-Driven Development',
+                    'AI-assisted software engineering',
+                ],
             },
             about: {
                 title: 'About',
-                p1: 'I\'m a PhD student and researcher at INTIA & i3Lab (University of Extremadura), working at the intersection of AI and Software Engineering.',
-                p2: 'My research focuses on systematically benchmarking LLM-based multi-agent systems for software development. I explore Specification-Driven Development (SDD) as an approach to leverage formal specifications not only for guiding code generation, but for automatically producing evaluation artifacts that ensure quality and correctness.',
-                p3: 'The goal: establish rigorous methodologies for trustworthy AI-assisted software development, where generated code can be validated systematically, transparently, and at scale.',
-                skills: 'Expertise'
+                p1:
+                    `I'm a PhD student and researcher at <a href="${linkIntia}" target="_blank" rel="noreferrer" class="text-link">INTIA</a> & <a href="${linkI3}" target="_blank" rel="noreferrer" class="text-link">i3Lab</a> (University of Extremadura), working where AI meets software engineering.`,
+                p2:
+                    'My research focuses on <strong>quality assurance for code produced by large language models</strong>. I work with <strong>Specification-Driven Development (SDD)</strong> so that formal specifications are not just prompts for generation, but a basis for <strong>tests, checks, and evaluation artifacts</strong> that make LLM-generated code easier to validate and trust.',
+                p3:
+                    'The broader goal is <strong>rigorous, transparent</strong> AI-assisted development: models can draft code quickly, but we still need <strong>systematic ways to measure and improve its correctness</strong>.',
+                skills: 'Expertise',
+            },
+            focus: {
+                title: 'Focus areas',
+                f1: 'LLM-generated code quality',
+                f2: 'Specification-Driven Development',
+                f3: 'Multi-agent & tool-using systems',
+                f4: 'RAG & retrieval for engineering workflows',
             },
             education: {
                 title: 'Education',
                 master: 'M.Sc. in Artificial Intelligence',
                 data: 'Advanced University Course in Data Analyst',
                 bachelor: 'B.Sc. in Software Engineering',
-                university: 'University of Extremadura'
+                university: 'University of Extremadura',
             },
             interests: { title: 'Research' },
             projects: {
                 title: 'Projects',
-                music: 'Innovative project exploring generative AI in the context of music composition and analysis.',
-                spec: 'Research on specification-driven validation for AI-generated software artifacts.'
+                music:
+                    'Innovative project exploring generative AI in the context of music composition and analysis.',
+                spec: 'Research on specification-driven validation for AI-generated software artifacts.',
             },
-            publications: { title: 'Publications' }
+            repositories: {
+                title: 'Repositories',
+                pubmed: 'MCP server for PubMed search and literature retrieval.',
+                research: 'MCP server for research assistance and academic workflows.',
+            },
+            publications: { title: 'Publications' },
         },
         es: {
             nav: {
-                about: 'Sobre Mí',
+                about: 'Sobre mí',
                 timeline: 'Trayectoria',
                 interests: 'Investigación',
                 projects: 'Proyectos',
-                publications: 'Publicaciones'
+                publications: 'Publicaciones',
+                repositories: 'Repositorios',
+                blog: 'Blog',
             },
             hero: {
-                label: 'Doctorando & Investigador IA',
-                publications: 'Ver Publicaciones',
+                label: 'Doctorando e investigador en IA',
+                publications: 'Ver publicaciones',
                 specialized: 'Especializado en',
-                typing: ['Sistemas Multi-Agente', 'Ingeniería de Software', 'Desarrollo IA']
+                typing: [
+                    'Calidad del código LLM',
+                    'Desarrollo dirigido por especificación',
+                    'Ingeniería de software asistida por IA',
+                ],
             },
             about: {
-                title: 'Sobre Mí',
-                p1: 'Soy doctorando e investigador en INTIA & i3Lab (Universidad de Extremadura), trabajando en la intersección entre IA e Ingeniería de Software.',
-                p2: 'Mi investigación se centra en el benchmarking sistemático de sistemas multi-agente basados en LLM para desarrollo de software. Exploro el Desarrollo Dirigido por Especificación (SDD) como enfoque para aprovechar especificaciones formales no solo para guiar la generación de código, sino para producir automáticamente artefactos de evaluación que garanticen calidad y corrección.',
-                p3: 'El objetivo: establecer metodologías rigurosas para el desarrollo de software asistido por IA confiable, donde el código generado pueda validarse de forma sistemática, transparente y a escala.',
-                skills: 'Experiencia'
+                title: 'Sobre mí',
+                p1:
+                    `Soy doctorando e investigador en <a href="${linkIntia}" target="_blank" rel="noreferrer" class="text-link">INTIA</a> & <a href="${linkI3}" target="_blank" rel="noreferrer" class="text-link">i3Lab</a> (Universidad de Extremadura), en el cruce entre IA e ingeniería del software.`,
+                p2:
+                    'Mi trabajo se centra en el <strong>aseguramiento de la calidad del código generado por modelos de lenguaje</strong>. Trabajo con el <strong>Desarrollo Dirigido por Especificación (SDD)</strong> para que las especificaciones formales no sirvan solo de guía a la generación, sino como base de <strong>pruebas, comprobaciones y artefactos de evaluación</strong> que hagan ese código más fácil de validar y de confiar.',
+                p3:
+                    'El objetivo general es un desarrollo asistido por IA <strong>riguroso y transparente</strong>: los modelos pueden proponer código muy rápido, pero hace falta <strong>formas sistemáticas de medir y mejorar su corrección</strong>.',
+                skills: 'Experiencia',
+            },
+            focus: {
+                title: 'Áreas de foco',
+                f1: 'Calidad del código generado por LLM',
+                f2: 'Desarrollo dirigido por especificación (SDD)',
+                f3: 'Sistemas multi-agente y uso de herramientas',
+                f4: 'RAG y recuperación para flujos de ingeniería',
             },
             education: {
                 title: 'Educación',
                 master: 'Máster en Inteligencia Artificial',
                 data: 'Curso Universitario Superior en Analista de Datos',
                 bachelor: 'Grado en Ingeniería de Software',
-                university: 'Universidad de Extremadura'
+                university: 'Universidad de Extremadura',
             },
             interests: { title: 'Investigación' },
             projects: {
                 title: 'Proyectos',
-                music: 'Proyecto innovador explorando IA generativa en el contexto de composición y análisis musical.',
-                spec: 'Investigación sobre validación dirigida por especificaciones para artefactos de software generados por IA.'
+                music:
+                    'Proyecto innovador que explora la IA generativa en composición y análisis musical.',
+                spec: 'Investigación sobre validación dirigida por especificaciones para artefactos generados por IA.',
             },
-            publications: { title: 'Publicaciones' }
-        }
+            repositories: {
+                title: 'Repositorios',
+                pubmed: 'Servidor MCP para búsqueda en PubMed y recuperación bibliográfica.',
+                research: 'Servidor MCP para asistencia a la investigación y flujos académicos.',
+            },
+            publications: { title: 'Publicaciones' },
+        },
     };
 
     let currentLang = localStorage.getItem('language') || 'en';
     const langToggle = document.getElementById('lang-toggle');
 
-    // Typing Effect
     const typingElement = document.querySelector('.typing-effect');
     let textOptions = [];
     let textIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
     let typeSpeed = 100;
+    let typeTimeoutId = null;
+
+    function getByPath(obj, path) {
+        return path.split('.').reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : null), obj);
+    }
 
     function updateLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('language', lang);
-        if (langToggle) langToggle.textContent = lang.toUpperCase();
+        if (langToggle) langToggle.textContent = lang === 'en' ? 'EN' : 'ES';
 
-        document.querySelectorAll('[data-i18n]').forEach(el => {
+        document.querySelectorAll('[data-i18n]').forEach((el) => {
             const key = el.getAttribute('data-i18n');
-            const keys = key.split('.');
-            let value = translations[lang];
-            keys.forEach(k => {
-                if (value) value = value[k];
-            });
+            const value = getByPath(translations[lang], key);
             if (value) el.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-html]').forEach((el) => {
+            const key = el.getAttribute('data-i18n-html');
+            const value = getByPath(translations[lang], key);
+            if (value) el.innerHTML = value;
         });
 
         textOptions = translations[lang].hero.typing;
@@ -154,13 +208,24 @@ function initializeApp() {
     if (langToggle) {
         langToggle.addEventListener('click', () => {
             updateLanguage(currentLang === 'en' ? 'es' : 'en');
+            if (!prefersReducedMotion) {
+                if (typeTimeoutId) clearTimeout(typeTimeoutId);
+                type();
+            } else if (typingElement && textOptions.length) {
+                typingElement.textContent = textOptions[0];
+            }
         });
     }
 
     updateLanguage(currentLang);
 
     function type() {
-        if (!typingElement || !textOptions.length) return;
+        if (!typingElement || !textOptions.length || prefersReducedMotion) {
+            if (typingElement && textOptions.length && prefersReducedMotion) {
+                typingElement.textContent = textOptions[0];
+            }
+            return;
+        }
 
         const currentText = textOptions[textIndex];
 
@@ -183,12 +248,15 @@ function initializeApp() {
             typeSpeed = 500;
         }
 
-        setTimeout(type, typeSpeed);
+        typeTimeoutId = setTimeout(type, typeSpeed);
     }
 
-    type();
+    if (!prefersReducedMotion) {
+        type();
+    } else if (typingElement && textOptions.length) {
+        typingElement.textContent = textOptions[0];
+    }
 
-    // Mathematical Formula Animation
     const formulaContainer = document.getElementById('formula-container');
     const formulas = [
         'f(x) = Σ wᵢxᵢ + b',
@@ -196,39 +264,44 @@ function initializeApp() {
         'P(A|B) = P(B|A)P(A)/P(B)',
         'E[X] = Σ xᵢp(xᵢ)',
         'σ(z) = 1/(1+e⁻ᶻ)',
-        'J(θ) = -Σ ylog(ŷ)'
+        'J(θ) = -Σ ylog(ŷ)',
     ];
-
     let formulaIndex = 0;
+    let formulaIntervalId = null;
 
     function animateFormulas() {
-        if (formulaContainer) {
-            formulaContainer.style.opacity = '0';
-            setTimeout(() => {
-                formulaContainer.textContent = formulas[formulaIndex];
-                formulaContainer.style.opacity = '0.15';
-                formulaIndex = (formulaIndex + 1) % formulas.length;
-            }, 500);
-        }
+        if (!formulaContainer) return;
+        formulaContainer.style.opacity = '0';
+        setTimeout(() => {
+            formulaContainer.textContent = formulas[formulaIndex];
+            formulaContainer.style.opacity = '0.15';
+            formulaIndex = (formulaIndex + 1) % formulas.length;
+        }, 500);
     }
 
-    setInterval(animateFormulas, 4000);
-    animateFormulas();
+    if (!prefersReducedMotion) {
+        formulaIntervalId = setInterval(animateFormulas, 4000);
+        animateFormulas();
+    } else if (formulaContainer) {
+        formulaContainer.textContent = formulas[0];
+        formulaContainer.style.opacity = '0.12';
+    }
 
-    // Math Background Animation
     const mathBg = document.getElementById('math-bg');
-    if (mathBg) {
+    let mathIntervalId = null;
+
+    if (mathBg && !prefersReducedMotion) {
         const symbols = ['∫', '∑', '∂', '∇', 'α', 'β', 'θ', 'λ', 'π', 'σ', '≈', '≤', '≥', '∞'];
 
         function createMathSymbol() {
             const symbol = document.createElement('div');
             symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
             symbol.style.position = 'absolute';
-            symbol.style.left = Math.random() * 100 + '%';
-            symbol.style.top = Math.random() * 100 + '%';
-            symbol.style.fontSize = (Math.random() * 20 + 15) + 'px';
-            symbol.style.color = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary');
-            symbol.style.opacity = '0.1';
+            symbol.style.left = `${Math.random() * 100}%`;
+            symbol.style.top = `${Math.random() * 100}%`;
+            symbol.style.fontSize = `${Math.random() * 20 + 15}px`;
+            symbol.style.color = getComputedStyle(document.documentElement).getPropertyValue('--accent-primary').trim();
+            symbol.style.opacity = '0.08';
             symbol.style.fontFamily = 'var(--font-mono)';
             symbol.style.pointerEvents = 'none';
 
@@ -237,45 +310,50 @@ function initializeApp() {
             setTimeout(() => symbol.remove(), 10000);
         }
 
-        for (let i = 0; i < 15; i++) {
-            setTimeout(createMathSymbol, i * 500);
+        for (let i = 0; i < 12; i++) {
+            setTimeout(createMathSymbol, i * 400);
         }
 
-        setInterval(createMathSymbol, 3000);
+        mathIntervalId = setInterval(createMathSymbol, 3500);
     }
 
-    // Scroll Animations
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        },
+        { threshold: 0.08, rootMargin: '0px 0px -5% 0px' },
+    );
 
-    document.querySelectorAll('.fade-in, .info-card, .project-card').forEach(el => {
-        observer.observe(el);
-    });
+    document
+        .querySelectorAll(
+            '.fade-in, .info-card, .project-card, .repo-card, .publication-item, .reveal-on-scroll, .timeline-item-compact',
+        )
+        .forEach((el) => observer.observe(el));
 
-    // Smooth Scroll
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (!target) return;
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            target.scrollIntoView({
+                behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                block: 'start',
+            });
+            setNavOpen(false);
         });
     });
 }
 
 window.initializePersonalApp = initializeApp;
 
-// Execute immediately if DOM is ready, otherwise wait
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', initializeApp, { once: true });
 } else {
-    // DOM is already loaded (common in SPAs like React)
     initializeApp();
 }
-

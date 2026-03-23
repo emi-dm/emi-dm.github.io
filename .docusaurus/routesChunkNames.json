@@ -1,5 +1,5 @@
 {
-  "/es/blog-9d0": {
+  "/blog-1ef": {
     "__comp": "a6aa9e1f",
     "__context": {
       "plugin": "36994c47"
@@ -7,15 +7,15 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "bee68552"
+        "content": "f61421b8"
       },
       {
-        "content": "f40d92d5"
+        "content": "caf9669b"
       }
     ],
-    "__props": "8b20138e"
+    "__props": "c15d9823"
   },
-  "/es/blog/2026/02/04/sdd-didactico-ba7": {
+  "/blog/2026/02/04/sdd-didactico-e85": {
     "__comp": "ccc49370",
     "__context": {
       "data": {
@@ -24,9 +24,9 @@
       "plugin": "36994c47"
     },
     "sidebar": "814f3328",
-    "content": "2eb71792"
+    "content": "869e0f9f"
   },
-  "/es/blog/2026/02/04/skills-find-skills-049": {
+  "/blog/2026/02/04/skills-find-skills-55d": {
     "__comp": "ccc49370",
     "__context": {
       "data": {
@@ -35,24 +35,24 @@
       "plugin": "36994c47"
     },
     "sidebar": "814f3328",
-    "content": "dccbadf5"
+    "content": "b54ec636"
   },
-  "/es/blog/archive-c1d": {
+  "/blog/archive-182": {
     "__comp": "9e4087bc",
     "__context": {
       "plugin": "36994c47"
     },
-    "__props": "dfed01cf"
+    "__props": "f81c1134"
   },
-  "/es/blog/tags-b1d": {
+  "/blog/tags-287": {
     "__comp": "01a85c17",
     "__context": {
       "plugin": "36994c47"
     },
     "sidebar": "814f3328",
-    "__props": "0c69ec8d"
+    "__props": "3a2db09e"
   },
-  "/es/blog/tags/desarrollo-53f": {
+  "/blog/tags/ai-cbb": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -60,12 +60,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "bee68552"
+        "content": "f61421b8"
       }
     ],
-    "__props": "d4724bbe"
+    "__props": "65a6d713"
   },
-  "/es/blog/tags/didactico-c2e": {
+  "/blog/tags/development-e7b": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -73,12 +73,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "bee68552"
+        "content": "f61421b8"
       }
     ],
-    "__props": "bf51440d"
+    "__props": "fcad5cc1"
   },
-  "/es/blog/tags/especificacion-1f8": {
+  "/blog/tags/didactic-fbf": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -86,12 +86,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "bee68552"
+        "content": "f61421b8"
       }
     ],
-    "__props": "93829c00"
+    "__props": "8ded423c"
   },
-  "/es/blog/tags/find-skills-05f": {
+  "/blog/tags/find-skills-579": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -99,12 +99,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "f40d92d5"
+        "content": "caf9669b"
       }
     ],
-    "__props": "0c43c308"
+    "__props": "31a7990b"
   },
-  "/es/blog/tags/ia-fc3": {
+  "/blog/tags/sdd-a40": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -112,12 +112,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "bee68552"
+        "content": "f61421b8"
       }
     ],
-    "__props": "9974c02f"
+    "__props": "8ad91dff"
   },
-  "/es/blog/tags/sdd-18a": {
+  "/blog/tags/skills-ccd": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -125,12 +125,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "bee68552"
+        "content": "caf9669b"
       }
     ],
-    "__props": "ef44f9f0"
+    "__props": "ffecdf50"
   },
-  "/es/blog/tags/skills-ef2": {
+  "/blog/tags/specification-722": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -138,12 +138,12 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "f40d92d5"
+        "content": "f61421b8"
       }
     ],
-    "__props": "9246d5ef"
+    "__props": "bf6aee19"
   },
-  "/es/blog/tags/vscode-dbf": {
+  "/blog/tags/vscode-296": {
     "__comp": "6875c492",
     "__context": {
       "plugin": "36994c47"
@@ -151,29 +151,29 @@
     "sidebar": "814f3328",
     "items": [
       {
-        "content": "f40d92d5"
+        "content": "caf9669b"
       }
     ],
-    "__props": "addc4ef4"
+    "__props": "8fa5d4d3"
   },
-  "/es/docs-cd0": {
+  "/docs-2b2": {
     "__comp": "5e95c892",
     "__context": {
       "plugin": "aba21aa0"
     }
   },
-  "/es/docs-363": {
+  "/docs-27f": {
     "__comp": "a7bd4aaa",
-    "__props": "9d39d3e7"
+    "__props": "0058b4c6"
   },
-  "/es/docs-959": {
+  "/docs-cb5": {
     "__comp": "a94703ab"
   },
-  "/es/docs/intro-55c": {
+  "/docs/intro-218": {
     "__comp": "17896441",
-    "content": "0e384e19"
+    "content": "dd0624f4"
   },
-  "/es/-f57": {
+  "/-e5f": {
     "__comp": "1df93b7f",
     "__context": {
       "plugin": "a7456010"

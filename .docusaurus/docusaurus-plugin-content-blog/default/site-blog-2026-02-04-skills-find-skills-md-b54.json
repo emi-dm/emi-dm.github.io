@@ -1,6 +1,6 @@
 {
   "permalink": "/blog/2026/02/04/skills-find-skills",
-  "editUrl": "https://github.com/example/midoc/tree/main/blog/2026-02-04-skills-find-skills.md",
+  "editUrl": "https://github.com/emi-dm/emi-dm.github.io/tree/main/blog/blog/2026-02-04-skills-find-skills.md",
   "source": "@site/blog/2026-02-04-skills-find-skills.md",
   "title": "Skills: Using `find-skills` from VS Code",
   "description": "How to use the 'npx skills' CLI and discover/install skills from VS Code",
@@ -22,7 +22,7 @@
       "permalink": "/blog/tags/vscode"
     }
   ],
-  "readingTime": 1.25,
+  "readingTime": 1.26,
   "hasTruncateMarker": false,
   "authors": [
     {
@@ -51,7 +51,7 @@
   },
   "unlisted": false,
   "prevItem": {
-    "title": "SDD (Didactic): What SDD is and understanding its role",
+    "title": "Specification Driven-Development: What SDD is and understanding its role",
     "permalink": "/blog/2026/02/04/sdd-didactico"
   }
 }

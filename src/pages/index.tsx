@@ -18,25 +18,45 @@ export default function Home() {
         <>
             <Head>
                 <title>Emilio Delgado | PhD Student</title>
-                <meta name="description" content="PhD Student at the University of Extremadura focusing on multi-agent systems and AI-assisted software development." />
+                <meta name="description" content="PhD researcher at the University of Extremadura. Quality assurance for LLM-generated code and Specification-Driven Development (SDD)." />
                 <link rel="icon" type="image/x-icon" href="https://intia.unex.es/favicon.ico" />
                 <link rel="preconnect" href="https://fonts.googleapis.com" />
                 <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-                <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+                <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600&family=DM+Sans:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
             </Head>
 
-            <div className="math-bg" id="math-bg" />
+            <a href="#main-content" className="skip-link">
+                Skip to main content
+            </a>
+
+            <div className="math-bg" id="math-bg" aria-hidden="true" />
             <div className="grain-overlay" />
 
-            {/* Navbar */}
-            <nav className="navbar">
-                <div className="container">
-                    <a className="navbar-brand" href="#">EMILIO<span className="brand-dot">.</span>DELGADO</a>
-                    <button className="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
+            {/* Cabecera (clase propia: evita conflictos con Infima `.navbar`) */}
+            <nav className="site-header" aria-label="Principal">
+                <div className="container site-header__inner">
+                    <a className="site-brand" href="#">
+                        <span className="site-brand__mark" aria-hidden="true">
+                            <span className="site-brand__mark-inner">E</span>
+                        </span>
+                        <span className="site-brand__wordmark">
+                            <span className="site-brand__part">emilio</span>
+                            <span className="site-brand__dot">.</span>
+                            <span className="site-brand__part site-brand__part--accent">delgado</span>
+                        </span>
+                    </a>
+                    <button
+                        type="button"
+                        className="nav-toggle"
+                        id="nav-toggle"
+                        aria-label="Toggle navigation"
+                        aria-expanded="false"
+                        aria-controls="nav-menu"
+                    >
+                        <span />
+                        <span />
                     </button>
-                    <div className="nav-menu" id="nav-menu">
+                    <div className="site-header__panel nav-menu" id="nav-menu" role="navigation">
                         <ul className="nav-list">
                             <li><a className="nav-link" href="#about" data-i18n="nav.about">About</a></li>
                             <li><a className="nav-link" href="#timeline" data-i18n="nav.timeline">Journey</a></li>
@@ -44,31 +64,42 @@ export default function Home() {
                             <li><a className="nav-link" href="#projects" data-i18n="nav.projects">Projects</a></li>
                             <li><a className="nav-link" href="#repositories" data-i18n="nav.repositories">Repositories</a></li>
                             <li><a className="nav-link" href="#publications" data-i18n="nav.publications">Publications</a></li>
-                            <li><a className="nav-link" href="/blog">Blog</a></li>
-                            <li className="nav-controls">
-                                <button id="lang-toggle" className="control-btn" aria-label="Toggle language">EN</button>
-                                <button id="theme-toggle" className="control-btn" aria-label="Toggle theme">
-                                    <span className="theme-icon">◐</span>
-                                </button>
-                            </li>
+                            <li><a className="nav-link" href="/blog" data-i18n="nav.blog">Blog</a></li>
                         </ul>
+                        <div className="nav-controls" role="toolbar" aria-label="Idioma y tema">
+                            <button type="button" id="lang-toggle" className="control-btn control-btn--lang" aria-label="Toggle language">
+                                EN
+                            </button>
+                            <button type="button" id="theme-toggle" className="control-btn control-btn--theme" aria-label="Toggle theme">
+                                <span className="theme-icon" aria-hidden="true">◐</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </nav>
 
-            <main>
-                <section className="hero">
+            <main id="main-content">
+                <section className="hero" aria-labelledby="hero-heading">
                     <div className="container">
                         <div className="hero-content">
                             <div className="hero-label" data-i18n="hero.label">PhD Student & AI Researcher</div>
-                            <h1 className="hero-title">
+                            <h1 className="hero-title" id="hero-heading">
                                 <span className="hero-name">Emilio</span>
                                 <span className="hero-name">Delgado</span>
                             </h1>
                             <div className="hero-meta">
-                                <span className="meta-item"><a href="https://intia.unex.es/" target="_blank" rel="noreferrer" className="meta-link">INTIA</a> & <a href="https://i3lab.unex.es/" target="_blank" rel="noreferrer" className="meta-link">i3Lab</a>, University of Extremadura</span>
-                                <span className="meta-separator">•</span>
-                                <span className="meta-item"><span data-i18n="hero.specialized">Specialized in</span>: <span className="typing-effect"></span></span>
+                                <p className="hero-meta-line">
+                                    <a href="https://intia.unex.es/" target="_blank" rel="noreferrer" className="meta-link">INTIA</a>
+                                    {' & '}
+                                    <a href="https://i3lab.unex.es/" target="_blank" rel="noreferrer" className="meta-link">i3Lab</a>
+                                    , University of Extremadura
+                                </p>
+                                <p className="hero-meta-line hero-meta-typing">
+                                    <span className="hero-typing-prefix">
+                                        <span data-i18n="hero.specialized">Specialized in</span>:{' '}
+                                    </span>
+                                    <span className="typing-effect" aria-live="polite" />
+                                </p>
                             </div>
                             <div className="hero-actions">
                                 <a href="#publications" className="btn-primary" data-i18n="hero.publications">View Publications</a>
@@ -83,41 +114,64 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="about" className="section">
+                <section id="about" className="section" aria-labelledby="about-heading">
                     <div className="container">
-                        <div className="section-grid">
-                            <h2 className="section-title" data-i18n="about.title">About</h2>
-                            <div className="text-block">
-                                <p className="lead-text" data-i18n="about.p1">
-                                    I'm a PhD student and researcher at <a href="https://intia.unex.es/" target="_blank" rel="noreferrer" className="text-link">INTIA</a> & <a href="https://i3lab.unex.es/" target="_blank" rel="noreferrer" className="text-link">i3Lab</a> (University of Extremadura), working at the intersection of AI and Software Engineering.
-                                </p>
-                                <p data-i18n="about.p2">
-                                    My research focuses on systematically benchmarking LLM-based multi-agent systems for software development. I explore Specification-Driven Development (SDD) as an approach to leverage formal specifications not only for guiding code generation, but for automatically producing evaluation artifacts that ensure quality and correctness.
-                                </p>
-                                <p data-i18n="about.p3">
-                                    The goal: establish rigorous methodologies for trustworthy AI-assisted software development, where generated code can be validated systematically, transparently, and at scale.
-                                </p>
-                            </div>
-                            <div className="info-card">
-                                <h3 className="card-title" data-i18n="about.skills">Expertise</h3>
-                                <div className="skill-list">
-                                    <span className="skill-tag">Multi-Agent Systems</span>
-                                    <span className="skill-tag">LLM Orchestration</span>
-                                    <span className="skill-tag">RAG Architecture</span>
-                                    <span className="skill-tag">Spec-Driven Development</span>
-                                    <span className="skill-tag">AI-Generated Code Validation</span>
-                                    <span className="skill-tag">Python</span>
-                                    <span className="skill-tag">Software Engineering</span>
+                        <div className="section-about-layout">
+                            <div className="section-about-main">
+                                <h2 className="section-title" id="about-heading" data-i18n="about.title">
+                                    About
+                                </h2>
+                                <div className="text-block">
+                                    <p
+                                        className="lead-text"
+                                        data-i18n-html="about.p1"
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                'I\'m a PhD student and researcher at <a href="https://intia.unex.es/" target="_blank" rel="noreferrer" class="text-link">INTIA</a> & <a href="https://i3lab.unex.es/" target="_blank" rel="noreferrer" class="text-link">i3Lab</a> (University of Extremadura), working where AI meets software engineering.',
+                                        }}
+                                    />
+                                    <p
+                                        data-i18n-html="about.p2"
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                'My research focuses on <strong>quality assurance for code produced by large language models</strong>. I work with <strong>Specification-Driven Development (SDD)</strong> so that formal specifications are not just prompts for generation, but a basis for <strong>tests, checks, and evaluation artifacts</strong> that make LLM-generated code easier to validate and trust.',
+                                        }}
+                                    />
+                                    <p
+                                        data-i18n-html="about.p3"
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                'The broader goal is <strong>rigorous, transparent</strong> AI-assisted development: models can draft code quickly, but we still need <strong>systematic ways to measure and improve its correctness</strong>.',
+                                        }}
+                                    />
                                 </div>
                             </div>
+                            <aside className="section-about-aside">
+                                <div className="info-card reveal-on-scroll">
+                                    <h3 className="card-title" data-i18n="about.skills">
+                                        Expertise
+                                    </h3>
+                                    <div className="skill-list">
+                                        <span className="skill-tag">LLM Code Quality</span>
+                                        <span className="skill-tag">Specification-Driven Development</span>
+                                        <span className="skill-tag">Multi-Agent Systems</span>
+                                        <span className="skill-tag">Test &amp; Evaluation</span>
+                                        <span className="skill-tag">RAG Architecture</span>
+                                        <span className="skill-tag">Python</span>
+                                        <span className="skill-tag">Software Engineering</span>
+                                    </div>
+                                </div>
+                            </aside>
                         </div>
                     </div>
                 </section>
 
-                <section id="timeline" className="section">
+                <section id="timeline" className="section" aria-labelledby="timeline-heading">
                     <div className="container">
-                        <h2 className="section-title">Journey</h2>
-                        <div className="timeline-compact">
+                        <h2 className="section-title" id="timeline-heading" data-i18n="nav.timeline">
+                            Journey
+                        </h2>
+                        <div className="timeline-compact reveal-on-scroll">
                             <div className="timeline-item-compact">
                                 <span className="year-label">2022</span>
                                 <div className="item-dot"></div>
@@ -154,11 +208,13 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="research" className="section section-alt">
+                <section id="research" className="section section-alt" aria-labelledby="research-heading">
                     <div className="container">
-                        <h2 className="section-title" data-i18n="interests.title">Research</h2>
+                        <h2 className="section-title" id="research-heading" data-i18n="interests.title">
+                            Research
+                        </h2>
                         <div className="dual-grid">
-                            <div className="info-card">
+                            <div className="info-card reveal-on-scroll">
                                 <h3 className="card-title" data-i18n="education.title">Education</h3>
                                 <div className="timeline">
                                     <div className="timeline-item">
@@ -186,24 +242,34 @@ export default function Home() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="info-card">
-                                <h3 className="card-title">Focus Areas</h3>
+                            <div className="info-card reveal-on-scroll">
+                                <h3 className="card-title" data-i18n="focus.title">
+                                    Focus areas
+                                </h3>
                                 <div className="focus-list">
                                     <div className="focus-item">
                                         <span className="focus-number">01</span>
-                                        <span className="focus-text">Multi-Agent Systems</span>
+                                        <span className="focus-text" data-i18n="focus.f1">
+                                            LLM-generated code quality
+                                        </span>
                                     </div>
                                     <div className="focus-item">
                                         <span className="focus-number">02</span>
-                                        <span className="focus-text">AI-Assisted Software Development</span>
+                                        <span className="focus-text" data-i18n="focus.f2">
+                                            Specification-Driven Development
+                                        </span>
                                     </div>
                                     <div className="focus-item">
                                         <span className="focus-number">03</span>
-                                        <span className="focus-text">Spec-Driven Development</span>
+                                        <span className="focus-text" data-i18n="focus.f3">
+                                            Multi-agent &amp; tool-using systems
+                                        </span>
                                     </div>
                                     <div className="focus-item">
                                         <span className="focus-number">04</span>
-                                        <span className="focus-text">RAG Architectures</span>
+                                        <span className="focus-text" data-i18n="focus.f4">
+                                            RAG &amp; retrieval for engineering workflows
+                                        </span>
                                     </div>
                                 </div>
                             </div>
@@ -211,18 +277,25 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="projects" className="section">
+                <section id="projects" className="section" aria-labelledby="projects-heading">
                     <div className="container">
-                        <h2 className="section-title" data-i18n="projects.title">Projects</h2>
+                        <h2 className="section-title" id="projects-heading" data-i18n="projects.title">
+                            Projects
+                        </h2>
                         <div className="project-grid">
-                            <a href="https://i3lab.unex.es/project/musicgenia/" target="_blank" rel="noreferrer" className="project-card">
+                            <a
+                                href="https://i3lab.unex.es/project/musicgenia/"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="project-card reveal-on-scroll"
+                            >
                                 <div className="project-number">01</div>
                                 <h3 className="project-title">MusicGenia</h3>
                                 <p className="project-desc" data-i18n="projects.music">Innovative project
                                     exploring generative AI in the context of music composition and analysis.</p>
                                 <div className="project-arrow">→</div>
                             </a>
-                            <a href="#" className="project-card">
+                            <a href="#projects" className="project-card reveal-on-scroll">
                                 <div className="project-number">02</div>
                                 <h3 className="project-title">Spec-Driven Development</h3>
                                 <p className="project-desc" data-i18n="projects.spec">Research on specification-driven validation
@@ -233,11 +306,18 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="repositories" className="section section-alt">
+                <section id="repositories" className="section section-alt" aria-labelledby="repos-heading">
                     <div className="container">
-                        <h2 className="section-title" data-i18n="repositories.title">Repositories</h2>
+                        <h2 className="section-title" id="repos-heading" data-i18n="repositories.title">
+                            Repositories
+                        </h2>
                         <div className="repo-grid">
-                            <a href="https://github.com/emi-dm/PubMed-MCP" target="_blank" rel="noreferrer" className="repo-card">
+                            <a
+                                href="https://github.com/emi-dm/PubMed-MCP"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="repo-card reveal-on-scroll"
+                            >
                                 <div className="repo-icon">
                                     <svg viewBox="0 0 16 16" fill="currentColor" width="24" height="24">
                                         <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" /></svg>
@@ -249,7 +329,12 @@ export default function Home() {
                                 </div>
                                 <div className="repo-arrow">→</div>
                             </a>
-                            <a href="https://github.com/emi-dm/Research-MCP" target="_blank" rel="noreferrer" className="repo-card">
+                            <a
+                                href="https://github.com/emi-dm/Research-MCP"
+                                target="_blank"
+                                rel="noreferrer"
+                                className="repo-card reveal-on-scroll"
+                            >
                                 <div className="repo-icon">
                                     <svg viewBox="0 0 16 16" fill="currentColor" width="24" height="24">
                                         <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z" /></svg>
@@ -265,11 +350,18 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section id="publications" className="section">
+                <section id="publications" className="section" aria-labelledby="pub-heading">
                     <div className="container">
-                        <h2 className="section-title" data-i18n="publications.title">Publications</h2>
+                        <h2 className="section-title" id="pub-heading" data-i18n="publications.title">
+                            Publications
+                        </h2>
                         <div className="publications-list">
-                            <a href="https://hdl.handle.net/11705/JISBD/2025/100" className="publication-item" target="_blank" rel="noreferrer">
+                            <a
+                                href="https://hdl.handle.net/11705/JISBD/2025/100"
+                                className="publication-item reveal-on-scroll"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
                                 <div className="publication-year">2025</div>
                                 <div className="publication-content">
                                     <h3 className="publication-title">Systematic Benchmarking of LLM-based Multi-Agent Systems for
@@ -278,7 +370,7 @@ export default function Home() {
                                 </div>
                                 <div className="publication-arrow">↗</div>
                             </a>
-                            <a href="https://i3lab.unex.es/publication/delgadoibpria-2025/" className="publication-item" target="_blank" rel="noreferrer">
+                            <a href="https://i3lab.unex.es/publication/delgadoibpria-2025/" className="publication-item reveal-on-scroll" target="_blank" rel="noreferrer">
                                 <div className="publication-year">2025</div>
                                 <div className="publication-content">
                                     <h3 className="publication-title">AI-Based System for Assistance in Minimally Invasive Renal
@@ -287,21 +379,21 @@ export default function Home() {
                                 </div>
                                 <div className="publication-arrow">↗</div>
                             </a>
-                            <a href="https://i3lab.unex.es/publication/gutierrez-25/" className="publication-item" target="_blank" rel="noreferrer">
+                            <a href="https://i3lab.unex.es/publication/gutierrez-25/" className="publication-item reveal-on-scroll" target="_blank" rel="noreferrer">
                                 <div className="publication-year">2025</div>
                                 <div className="publication-content">
                                     <h3 className="publication-title">Prompt Once, Segment Everything: Leveraging SAM 2</h3>
                                 </div>
                                 <div className="publication-arrow">↗</div>
                             </a>
-                            <a href="https://i3lab.unex.es/publication/advancing-precision/" className="publication-item" target="_blank" rel="noreferrer">
+                            <a href="https://i3lab.unex.es/publication/advancing-precision/" className="publication-item reveal-on-scroll" target="_blank" rel="noreferrer">
                                 <div className="publication-year">2024</div>
                                 <div className="publication-content">
                                     <h3 className="publication-title">Advancing precision in medical image segmentation</h3>
                                 </div>
                                 <div className="publication-arrow">↗</div>
                             </a>
-                            <a href="https://i3lab.unex.es/publication/gutierrez-24/" className="publication-item" target="_blank" rel="noreferrer">
+                            <a href="https://i3lab.unex.es/publication/gutierrez-24/" className="publication-item reveal-on-scroll" target="_blank" rel="noreferrer">
                                 <div className="publication-year">2024</div>
                                 <div className="publication-content">
                                     <h3 className="publication-title">No More Training: SAM's Zero-Shot Transfer Capabilities</h3>
@@ -322,7 +414,9 @@ export default function Home() {
                                 <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn</a>
                             </div>
                             <div className="footer-copy">
-                                <p>&copy; 2025 Emilio Delgado</p>
+                                <p>
+                                    &copy; {new Date().getFullYear()} Emilio Delgado
+                                </p>
                             </div>
                         </div>
                     </div>
