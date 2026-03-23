@@ -44,6 +44,127 @@ function initializeApp() {
         });
     }
 
+    function normalizePathname() {
+        let p = (window.location.pathname.replace(/\/$/, '') || '/').toLowerCase();
+        if (p.endsWith('/index.html')) p = '/';
+        return p;
+    }
+
+    const pathNorm = normalizePathname();
+    const isHomePage = pathNorm === '/';
+
+    const sectionNavIds = ['about', 'timeline', 'research', 'projects', 'repositories', 'publications'];
+
+    function headerOffsetPx() {
+        const raw = getComputedStyle(document.documentElement).getPropertyValue('--site-header-offset').trim();
+        const remMatch = raw.match(/^([\d.]+)rem$/i);
+        if (remMatch) {
+            const rootFont = parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+            return parseFloat(remMatch[1]) * rootFont;
+        }
+        const pxMatch = raw.match(/^([\d.]+)px$/i);
+        if (pxMatch) return parseFloat(pxMatch[1]);
+        return 72;
+    }
+
+    function syncSectionNavHighlight() {
+        if (!isHomePage) return;
+        const navMenu = document.getElementById('nav-menu');
+        const navHashLinks = navMenu
+            ? navMenu.querySelectorAll('.nav-link[href^="#"]')
+            : document.querySelectorAll('.nav-link[href^="#"]');
+        const headerH = headerOffsetPx();
+        const vh = window.innerHeight;
+        const activationLine = headerH + Math.min(180, Math.max(56, Math.round(vh * 0.22)));
+        const y = activationLine;
+        const docEl = document.documentElement;
+        const scrollBottom = window.scrollY + vh;
+        const docBottom = docEl.scrollHeight;
+        const atDocEnd = docBottom > vh + 48 && scrollBottom >= docBottom - 8;
+
+        const tops = sectionNavIds.map((sid) => {
+            const el = document.getElementById(sid);
+            return el ? el.getBoundingClientRect().top : null;
+        });
+
+        let activeId = null;
+        if (atDocEnd) {
+            activeId = sectionNavIds[sectionNavIds.length - 1];
+        } else {
+            for (let i = 0; i < sectionNavIds.length; i++) {
+                if (tops[i] === null) continue;
+                const top = tops[i];
+                const nextTop =
+                    i + 1 < tops.length && tops[i + 1] !== null
+                        ? tops[i + 1]
+                        : Number.POSITIVE_INFINITY;
+                if (top <= y && y < nextTop) {
+                    activeId = sectionNavIds[i];
+                    break;
+                }
+            }
+            const pubsTop = tops[sectionNavIds.length - 1];
+            if (activeId === 'repositories' && typeof pubsTop === 'number' && pubsTop <= y + 24) {
+                activeId = 'publications';
+            }
+        }
+
+        navHashLinks.forEach((link) => {
+            const href = link.getAttribute('href');
+            if (!href || !href.startsWith('#')) return;
+            const id = decodeURIComponent(href.slice(1).split('&')[0]);
+            if (!id) return;
+            if (id === activeId) {
+                link.setAttribute('aria-current', 'location');
+            } else {
+                link.removeAttribute('aria-current');
+            }
+        });
+    }
+
+    const headerEl = document.querySelector('.site-header');
+    if (headerEl) {
+        let scrollTicking = false;
+        const onScrollFrame = () => {
+            headerEl.classList.toggle('is-scrolled', window.scrollY > 10);
+            syncSectionNavHighlight();
+            scrollTicking = false;
+        };
+        window.addEventListener(
+            'scroll',
+            () => {
+                if (!scrollTicking) {
+                    requestAnimationFrame(onScrollFrame);
+                    scrollTicking = true;
+                }
+            },
+            { passive: true },
+        );
+        onScrollFrame();
+    } else {
+        syncSectionNavHighlight();
+    }
+
+    if (isHomePage) {
+        window.addEventListener('hashchange', syncSectionNavHighlight);
+        window.addEventListener('load', syncSectionNavHighlight, { once: true });
+        window.addEventListener(
+            'resize',
+            () => {
+                requestAnimationFrame(syncSectionNavHighlight);
+            },
+            { passive: true },
+        );
+    }
+
+    document.querySelectorAll('.nav-link[href]').forEach((link) => {
+        let pathHref = (link.getAttribute('href') || '').split('#')[0];
+        pathHref = pathHref.replace(/\/$/, '') || '/';
+        if (pathHref === '/blog' && (pathNorm === '/blog' || pathNorm.startsWith('/blog/'))) {
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+
     const linkIntia = 'https://intia.unex.es/';
     const linkI3 = 'https://i3lab.unex.es/';
 
@@ -205,6 +326,7 @@ function initializeApp() {
         charIndex = 0;
         isDeleting = false;
         if (typingElement) typingElement.textContent = '';
+        syncSectionNavHighlight();
     }
 
     if (langToggle) {
