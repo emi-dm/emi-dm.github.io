@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://emi-dm.github.io/blog</id>
-    <title>MiDoc Blog</title>
+    <title>Emilio Delgado Blog</title>
     <updated>2026-02-04T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://emi-dm.github.io/blog"/>
-    <subtitle>MiDoc Blog</subtitle>
-    <icon>https://emi-dm.github.io/img/favicon.ico</icon>
+    <subtitle>Emilio Delgado Blog</subtitle>
+    <icon>https://emi-dm.github.io/https://intia.unex.es/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Specification Driven-Development: What SDD is and understanding its role]]></title>
         <id>https://emi-dm.github.io/blog/2026/02/04/sdd-didactico</id>
