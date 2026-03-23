@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog | Emilio Delgado</title>
-    <meta name="description" content="Articles on AI, software engineering, Specification-Driven Development, and developer tooling." />
+    <title>Introduction | Emilio Delgado</title>
+    <meta name="description" content="Research notes and writing on AI, software engineering, and Specification-Driven Development." />
     <link rel="icon" type="image/x-icon" href="https://intia.unex.es/favicon.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,22 +41,17 @@
     </nav>
 
     <main class="post-page" id="main-content">
-        <div class="post-page__inner">
-            <h1 class="post-title" style="margin-bottom: 0.25rem;">Blog</h1>
-            <p class="post-description" style="margin-top: 0;">Notes and tutorials at the intersection of AI and software engineering.</p>
-            <ul class="blog-list">
-                <li>
-                    <a href="/blog/2026-02-04-sdd-didactico/">Specification Driven-Development: What SDD is and understanding its role</a>
-                    <span class="blog-list__meta">2026-02-04 · Emi</span>
-                    <span class="blog-list__desc">A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.</span>
-                </li>
-                <li>
-                    <a href="/blog/2026-02-04-skills-find-skills/">Skills: Using <code>find-skills</code> from VS Code</a>
-                    <span class="blog-list__meta">2026-02-04 · Emi</span>
-                    <span class="blog-list__desc">How to use the skills CLI and discover or install skills from Visual Studio Code.</span>
-                </li>
-            </ul>
-        </div>
+        <article class="post-page__inner">
+            <a class="post-back" href="/">← Home</a>
+            <header class="post-header">
+                <h1 class="post-title">Introduction</h1>
+            </header>
+            <div class="post-prose">
+                <p>This site brings together my <strong>research notes</strong> and <strong>longer-form writing</strong> on topics at the intersection of artificial intelligence and software engineering.</p>
+                <p>My work focuses on <strong>quality assurance for code produced by large language models</strong> and on <strong>Specification-Driven Development (SDD)</strong>—using formal specifications not only to steer generation, but to derive tests, checks, and evaluation artifacts that make LLM-generated software easier to validate and trust.</p>
+                <p>Visit the <a href="/blog/">blog</a> for articles and tutorials.</p>
+            </div>
+        </article>
     </main>
 
     <footer class="footer">
@@ -64,7 +59,7 @@
             <div class="footer-content">
                 <div class="footer-links">
                     <a href="/">Home</a>
-                    <a href="https://github.com/emi-dm" target="_blank" rel="noreferrer">GitHub</a>
+                    <a href="/blog/">Blog</a>
                 </div>
                 <div class="footer-copy">
                     <p>© <span id="footer-year"></span> Emilio Delgado</p>

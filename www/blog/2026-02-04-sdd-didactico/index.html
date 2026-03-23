@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Specification Driven-Development: What SDD is and understanding its role | Emilio Delgado</title>
+    <meta name="description" content="A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development." />
+    <link rel="icon" type="image/x-icon" href="https://intia.unex.es/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Serif:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/personal/style.css" />
+</head>
+<body>
+    <div class="math-bg" id="math-bg" aria-hidden="true"></div>
+    <div class="grain-overlay"></div>
+
+    <nav class="site-header" aria-label="Principal">
+        <div class="container site-header__inner">
+            <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                <span></span><span></span>
+            </button>
+            <div class="site-header__panel nav-menu" id="nav-menu" role="navigation">
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="/#about" data-i18n="nav.about">About</a></li>
+                    <li><a class="nav-link" href="/#timeline" data-i18n="nav.timeline">Journey</a></li>
+                    <li><a class="nav-link" href="/#research" data-i18n="nav.interests">Research</a></li>
+                    <li><a class="nav-link" href="/#projects" data-i18n="nav.projects">Projects</a></li>
+                    <li><a class="nav-link" href="/#repositories" data-i18n="nav.repositories">Repositories</a></li>
+                    <li><a class="nav-link" href="/#publications" data-i18n="nav.publications">Publications</a></li>
+                    <li><a class="nav-link" href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                </ul>
+                <div class="nav-controls" role="toolbar" aria-label="Idioma y tema">
+                    <button type="button" id="lang-toggle" class="control-btn control-btn--lang" aria-label="Toggle language">EN</button>
+                    <button type="button" id="theme-toggle" class="control-btn control-btn--theme" aria-label="Toggle theme">
+                        <span class="theme-icon" aria-hidden="true">◐</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="post-page" id="main-content">
+        <article class="post-page__inner">
+            <a class="post-back" href="/blog/">← Back to blog</a>
+            <header class="post-header">
+                <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
+                <h1 class="post-title">Specification Driven-Development: What SDD is and understanding its role</h1>
+                <p class="post-description">A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.</p>
+                <div class="post-tags">
+                    <span class="post-tag">sdd</span>
+                    <span class="post-tag">specification</span>
+                    <span class="post-tag">development</span>
+                    <span class="post-tag">ai</span>
+                    <span class="post-tag">didactic</span>
+                </div>
+            </header>
+            <div class="post-prose">
+                <p><strong>TL;DR:</strong> SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.</p>
+
+                <h2>Definition of the concept</h2>
+                <p>Imagine the specification is the recipe and the code is the final dish. In <strong>Specification Driven Development (SDD)</strong>, the recipe is not a poor note in the margin; it's the manual that the chefs (including robot chefs—LLMs) use to cook the application.</p>
+                <p>SDD emerges as a philosophy in response to LLM-based agents and <em>vibe coding</em>: instead of writing code first and then documentation, well-written and executable documentation becomes the &quot;source of truth&quot; and guides code generation.</p>
+                <blockquote>
+                    <p>Quick example: you write a specification: &quot;When button X is pressed, send notification Y to the user with conditions Z&quot;. An agent can transform that specification into endpoints, tests, and minimum viable deployment. Simple, repeatable, and traceable.</p>
+                </blockquote>
+
+                <h2>Source of truth</h2>
+                <ul>
+                    <li><strong>Agile / Waterfall</strong>: Code rules. Specs often become outdated notes.</li>
+                    <li><strong>SDD</strong>: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.</li>
+                </ul>
+                <p>In SDD, the specification functions as a contract: when the spec and code differ, the spec is the truth until we decide otherwise (and document it).</p>
+
+                <h2>Change management (by analogy)</h2>
+                <p>Think of changes as updating a recipe, not re-making the dish by hand every time:</p>
+                <ul>
+                    <li><strong>Before</strong>: a change in requirements causes chaos: code editing, PRs, hotfixes.</li>
+                    <li><strong>With SDD</strong>: change the spec, regenerate implementations and tests. Experiment <em>what-if</em> at low cost.</li>
+                </ul>
+
+                <hr />
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Traditional Methodologies (Agile / Waterfall)</th>
+                            <th>Spec-Driven Development (SDD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>The Source of Truth</th>
+                            <td><strong>Code is King.</strong> Specs fall behind.</td>
+                            <td><strong>The Specification is King.</strong> The PRD generates the implementation.</td>
+                        </tr>
+                        <tr>
+                            <th>Spec-Code Relationship</th>
+                            <td>The specification is usually static and deviates from the code.</td>
+                            <td>The specification is an <strong>executable</strong> artifact; code is its expression.</td>
+                        </tr>
+                        <tr>
+                            <th>The Gap</th>
+                            <td>Ambiguities and misunderstandings are inevitable.</td>
+                            <td>Automatic transformation reduces or eliminates the interpretation gap.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Why now? (trends pushing SDD)</h2>
+                <ol>
+                    <li>More capable AI: natural language specs generate functional code reliably.</li>
+                    <li>More complex software: maintaining consistency manually is increasingly expensive.</li>
+                    <li>Accelerated pace of change: pivots are the norm and you need to iterate quickly and safely.</li>
+                </ol>
+                <p>This also enables an interesting game: generate multiple implementations from the same spec and compare advantages (performance vs. cost vs. maintainability).</p>
+
+                <h2>Fundamental principles (one sentence each)</h2>
+                <ol>
+                    <li><strong>Specifications as lingua franca</strong> — the spec is the central artifact.</li>
+                    <li><strong>Executable specifications</strong> — precise, complete, and unambiguous.</li>
+                    <li><strong>Continuous refinement</strong> — validation and ambiguity detection all the time.</li>
+                    <li><strong>Research-driven context</strong> — agents collect context and technical options.</li>
+                    <li><strong>Bidirectional feedback</strong> — production feeds back into the specification.</li>
+                    <li><strong>Branching for exploration</strong> — generate alternatives to optimize different objectives.</li>
+                </ol>
+
+                <h2>Small exercise (try it!)</h2>
+                <p>Take a user story and turn it into a minimal spec (3–5 lines) that's clear and unambiguous. Then ask yourself:</p>
+                <ul>
+                    <li>Can an agent generate endpoints and tests from this?</li>
+                    <li>What ambiguities remain?</li>
+                </ul>
+                <p>If you answered yes and there's little ambiguity, you've taken a big step toward SDD.</p>
+
+                <h2>Final reflection</h2>
+                <p>SDD doesn't come to replace the developer: it comes to turn them into a specification architect, orchestra conductor, and curious critic. It's a powerful way to accelerate iterations, improve traceability, and minimize technical debt when properly implemented.</p>
+
+                <hr />
+
+                <h2>Sources and references</h2>
+                <ul>
+                    <li>SDD definition provided by GitHub Spec Kit: <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noreferrer">github.com/github/spec-kit</a></li>
+                </ul>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                </div>
+                <div class="footer-copy">
+                    <p>© <span id="footer-year"></span> Emilio Delgado</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/personal/script.js" defer></script>
+    <script>document.getElementById('footer-year').textContent = String(new Date().getFullYear());</script>
+</body>
+</html>
