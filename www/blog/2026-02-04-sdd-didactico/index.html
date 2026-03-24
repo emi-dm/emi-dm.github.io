@@ -45,109 +45,216 @@
     </nav>
 
     <main class="post-page" id="main-content">
-        <article class="post-page__inner">
-            <a class="post-back" href="/blog/">← Back to blog</a>
-            <header class="post-header">
-                <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
-                <h1 class="post-title">Specification Driven-Development: What SDD is and understanding its role</h1>
-                <p class="post-description">A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.</p>
-                <div class="post-tags">
-                    <span class="post-tag">sdd</span>
-                    <span class="post-tag">specification</span>
-                    <span class="post-tag">development</span>
-                    <span class="post-tag">ai</span>
-                    <span class="post-tag">didactic</span>
+        <article class="post-page__inner" data-page-title-en="Specification Driven-Development: What SDD is and understanding its role" data-page-title-es="Desarrollo guiado por especificaciones: qué es SDD y por qué importa" data-page-description-en="A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development." data-page-description-es="Una introducción cercana al Desarrollo Guiado por Especificaciones (SDD) y su papel en el desarrollo asistido por IA.">
+            <section data-lang="en">
+                <a class="post-back" href="/blog/">← Back to blog</a>
+                <header class="post-header">
+                    <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
+                    <h1 class="post-title">Specification Driven-Development: What SDD is and understanding its role</h1>
+                    <p class="post-description">A friendly introduction to Specification Driven Development (SDD) and its role in AI-assisted development.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">sdd</span>
+                        <span class="post-tag">specification</span>
+                        <span class="post-tag">development</span>
+                        <span class="post-tag">ai</span>
+                        <span class="post-tag">didactic</span>
+                    </div>
+                </header>
+                <div class="post-prose">
+                    <p><strong>TL;DR:</strong> SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.</p>
+
+                    <h2>Definition of the concept</h2>
+                    <p>Imagine the specification is the recipe and the code is the final dish. In <strong>Specification Driven Development (SDD)</strong>, the recipe is not a poor note in the margin; it's the manual that the chefs (including robot chefs—LLMs) use to cook the application.</p>
+                    <p>SDD emerges as a philosophy in response to LLM-based agents and <em>vibe coding</em>: instead of writing code first and then documentation, well-written and executable documentation becomes the &quot;source of truth&quot; and guides code generation.</p>
+                    <blockquote>
+                        <p>Quick example: you write a specification: &quot;When button X is pressed, send notification Y to the user with conditions Z&quot;. An agent can transform that specification into endpoints, tests, and minimum viable deployment. Simple, repeatable, and traceable.</p>
+                    </blockquote>
+
+                    <h2>Source of truth</h2>
+                    <ul>
+                        <li><strong>Agile / Waterfall</strong>: Code rules. Specs often become outdated notes.</li>
+                        <li><strong>SDD</strong>: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.</li>
+                    </ul>
+                    <p>In SDD, the specification functions as a contract: when the spec and code differ, the spec is the truth until we decide otherwise (and document it).</p>
+
+                    <h2>Change management (by analogy)</h2>
+                    <p>Think of changes as updating a recipe, not re-making the dish by hand every time:</p>
+                    <ul>
+                        <li><strong>Before</strong>: a change in requirements causes chaos: code editing, PRs, hotfixes.</li>
+                        <li><strong>With SDD</strong>: change the spec, regenerate implementations and tests. Experiment <em>what-if</em> at low cost.</li>
+                    </ul>
+
+                    <hr />
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Traditional Methodologies (Agile / Waterfall)</th>
+                                <th>Spec-Driven Development (SDD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>The Source of Truth</th>
+                                <td><strong>Code is King.</strong> Specs fall behind.</td>
+                                <td><strong>The Specification is King.</strong> The PRD generates the implementation.</td>
+                            </tr>
+                            <tr>
+                                <th>Spec-Code Relationship</th>
+                                <td>The specification is usually static and deviates from the code.</td>
+                                <td>The specification is an <strong>executable</strong> artifact; code is its expression.</td>
+                            </tr>
+                            <tr>
+                                <th>The Gap</th>
+                                <td>Ambiguities and misunderstandings are inevitable.</td>
+                                <td>Automatic transformation reduces or eliminates the interpretation gap.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2>Why now? (trends pushing SDD)</h2>
+                    <ol>
+                        <li>More capable AI: natural language specs generate functional code reliably.</li>
+                        <li>More complex software: maintaining consistency manually is increasingly expensive.</li>
+                        <li>Accelerated pace of change: pivots are the norm and you need to iterate quickly and safely.</li>
+                    </ol>
+                    <p>This also enables an interesting game: generate multiple implementations from the same spec and compare advantages (performance vs. cost vs. maintainability).</p>
+
+                    <h2>Fundamental principles (one sentence each)</h2>
+                    <ol>
+                        <li><strong>Specifications as lingua franca</strong> — the spec is the central artifact.</li>
+                        <li><strong>Executable specifications</strong> — precise, complete, and unambiguous.</li>
+                        <li><strong>Continuous refinement</strong> — validation and ambiguity detection all the time.</li>
+                        <li><strong>Research-driven context</strong> — agents collect context and technical options.</li>
+                        <li><strong>Bidirectional feedback</strong> — production feeds back into the specification.</li>
+                        <li><strong>Branching for exploration</strong> — generate alternatives to optimize different objectives.</li>
+                    </ol>
+
+                    <h2>Small exercise (try it!)</h2>
+                    <p>Take a user story and turn it into a minimal spec (3–5 lines) that's clear and unambiguous. Then ask yourself:</p>
+                    <ul>
+                        <li>Can an agent generate endpoints and tests from this?</li>
+                        <li>What ambiguities remain?</li>
+                    </ul>
+                    <p>If you answered yes and there's little ambiguity, you've taken a big step toward SDD.</p>
+
+                    <h2>Final reflection</h2>
+                    <p>SDD doesn't come to replace the developer: it comes to turn them into a specification architect, orchestra conductor, and curious critic. It's a powerful way to accelerate iterations, improve traceability, and minimize technical debt when properly implemented.</p>
+
+                    <hr />
+
+                    <h2>Sources and references</h2>
+                    <ul>
+                        <li>SDD definition provided by GitHub Spec Kit: <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noreferrer">github.com/github/spec-kit</a></li>
+                    </ul>
                 </div>
-            </header>
-            <div class="post-prose">
-                <p><strong>TL;DR:</strong> SDD puts the specification at the center: well-written specifications can be used to generate code via AI agents. Fewer misunderstandings, faster iteration.</p>
+            </section>
 
-                <h2>Definition of the concept</h2>
-                <p>Imagine the specification is the recipe and the code is the final dish. In <strong>Specification Driven Development (SDD)</strong>, the recipe is not a poor note in the margin; it's the manual that the chefs (including robot chefs—LLMs) use to cook the application.</p>
-                <p>SDD emerges as a philosophy in response to LLM-based agents and <em>vibe coding</em>: instead of writing code first and then documentation, well-written and executable documentation becomes the &quot;source of truth&quot; and guides code generation.</p>
-                <blockquote>
-                    <p>Quick example: you write a specification: &quot;When button X is pressed, send notification Y to the user with conditions Z&quot;. An agent can transform that specification into endpoints, tests, and minimum viable deployment. Simple, repeatable, and traceable.</p>
-                </blockquote>
+            <section data-lang="es">
+                <a class="post-back" href="/blog/">← Volver al blog</a>
+                <header class="post-header">
+                    <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
+                    <h1 class="post-title">Desarrollo guiado por especificaciones: qué es SDD y por qué importa</h1>
+                    <p class="post-description">Una introducción cercana al Desarrollo Guiado por Especificaciones (SDD) y su papel en el desarrollo asistido por IA.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">sdd</span>
+                        <span class="post-tag">specification</span>
+                        <span class="post-tag">development</span>
+                        <span class="post-tag">ai</span>
+                        <span class="post-tag">didactic</span>
+                    </div>
+                </header>
+                <div class="post-prose">
+                    <p><strong>TL;DR:</strong> SDD pone la especificación en el centro: unas buenas especificaciones pueden usarse para generar código mediante agentes de IA. Menos malentendidos, iteración más rápida.</p>
 
-                <h2>Source of truth</h2>
-                <ul>
-                    <li><strong>Agile / Waterfall</strong>: Code rules. Specs often become outdated notes.</li>
-                    <li><strong>SDD</strong>: The specification rules. Code is a temporal expression of that specification: if something is off, the spec is the source to correct.</li>
-                </ul>
-                <p>In SDD, the specification functions as a contract: when the spec and code differ, the spec is the truth until we decide otherwise (and document it).</p>
+                    <h2>Definición del concepto</h2>
+                    <p>Imagina que la especificación es la receta y el código es el plato final. En <strong>Specification Driven Development (SDD)</strong>, la receta no es una nota perdida en el margen: es el manual que usan los chefs (incluidos los chefs robot — los LLMs) para cocinar la aplicación.</p>
+                    <p>SDD surge como filosofía en respuesta a los agentes basados en LLM y al <em>vibe coding</em>: en lugar de escribir primero código y luego documentación, una documentación bien escrita y ejecutable se convierte en la &quot;fuente de verdad&quot; y guía la generación de código.</p>
+                    <blockquote>
+                        <p>Ejemplo rápido: escribes una especificación: &quot;Cuando se pulse el botón X, enviar la notificación Y al usuario con las condiciones Z&quot;. Un agente puede transformar esa especificación en endpoints, pruebas y un despliegue mínimo viable. Sencillo, repetible y trazable.</p>
+                    </blockquote>
 
-                <h2>Change management (by analogy)</h2>
-                <p>Think of changes as updating a recipe, not re-making the dish by hand every time:</p>
-                <ul>
-                    <li><strong>Before</strong>: a change in requirements causes chaos: code editing, PRs, hotfixes.</li>
-                    <li><strong>With SDD</strong>: change the spec, regenerate implementations and tests. Experiment <em>what-if</em> at low cost.</li>
-                </ul>
+                    <h2>Fuente de verdad</h2>
+                    <ul>
+                        <li><strong>Agile / Waterfall</strong>: manda el código. Las especificaciones suelen quedarse como notas desactualizadas.</li>
+                        <li><strong>SDD</strong>: manda la especificación. El código es una expresión temporal de esa especificación: si algo no cuadra, la fuente a corregir es la spec.</li>
+                    </ul>
+                    <p>En SDD, la especificación funciona como un contrato: cuando la spec y el código difieren, la spec es la verdad hasta que decidamos lo contrario (y lo documentemos).</p>
 
-                <hr />
+                    <h2>Gestión del cambio (por analogía)</h2>
+                    <p>Piensa en los cambios como actualizar una receta, no como rehacer el plato a mano cada vez:</p>
+                    <ul>
+                        <li><strong>Antes</strong>: un cambio de requisitos genera caos: editar código, PRs, hotfixes.</li>
+                        <li><strong>Con SDD</strong>: cambias la spec, regeneras implementaciones y pruebas. Experimentas <em>what-if</em> con bajo coste.</li>
+                    </ul>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Traditional Methodologies (Agile / Waterfall)</th>
-                            <th>Spec-Driven Development (SDD)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>The Source of Truth</th>
-                            <td><strong>Code is King.</strong> Specs fall behind.</td>
-                            <td><strong>The Specification is King.</strong> The PRD generates the implementation.</td>
-                        </tr>
-                        <tr>
-                            <th>Spec-Code Relationship</th>
-                            <td>The specification is usually static and deviates from the code.</td>
-                            <td>The specification is an <strong>executable</strong> artifact; code is its expression.</td>
-                        </tr>
-                        <tr>
-                            <th>The Gap</th>
-                            <td>Ambiguities and misunderstandings are inevitable.</td>
-                            <td>Automatic transformation reduces or eliminates the interpretation gap.</td>
-                        </tr>
-                    </tbody>
-                </table>
+                    <hr />
 
-                <h2>Why now? (trends pushing SDD)</h2>
-                <ol>
-                    <li>More capable AI: natural language specs generate functional code reliably.</li>
-                    <li>More complex software: maintaining consistency manually is increasingly expensive.</li>
-                    <li>Accelerated pace of change: pivots are the norm and you need to iterate quickly and safely.</li>
-                </ol>
-                <p>This also enables an interesting game: generate multiple implementations from the same spec and compare advantages (performance vs. cost vs. maintainability).</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Metodologías tradicionales (Agile / Waterfall)</th>
+                                <th>Specification Driven Development (SDD)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Fuente de verdad</th>
+                                <td><strong>El código manda.</strong> Las especificaciones se quedan atrás.</td>
+                                <td><strong>La especificación manda.</strong> El PRD genera la implementación.</td>
+                            </tr>
+                            <tr>
+                                <th>Relación spec-código</th>
+                                <td>La especificación suele ser estática y acaba desviándose del código.</td>
+                                <td>La especificación es un artefacto <strong>ejecutable</strong>; el código es su expresión.</td>
+                            </tr>
+                            <tr>
+                                <th>La brecha</th>
+                                <td>Las ambigüedades y los malentendidos son inevitables.</td>
+                                <td>La transformación automática reduce o elimina la brecha de interpretación.</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-                <h2>Fundamental principles (one sentence each)</h2>
-                <ol>
-                    <li><strong>Specifications as lingua franca</strong> — the spec is the central artifact.</li>
-                    <li><strong>Executable specifications</strong> — precise, complete, and unambiguous.</li>
-                    <li><strong>Continuous refinement</strong> — validation and ambiguity detection all the time.</li>
-                    <li><strong>Research-driven context</strong> — agents collect context and technical options.</li>
-                    <li><strong>Bidirectional feedback</strong> — production feeds back into the specification.</li>
-                    <li><strong>Branching for exploration</strong> — generate alternatives to optimize different objectives.</li>
-                </ol>
+                    <h2>¿Por qué ahora? (tendencias que empujan SDD)</h2>
+                    <ol>
+                        <li>IA más capaz: las especificaciones en lenguaje natural generan código funcional de forma fiable.</li>
+                        <li>Software más complejo: mantener la consistencia manualmente es cada vez más caro.</li>
+                        <li>Ritmo de cambio acelerado: los giros son la norma y hay que iterar rápido y con seguridad.</li>
+                    </ol>
+                    <p>Esto también abre un juego interesante: generar varias implementaciones a partir de la misma spec y comparar ventajas (rendimiento vs. coste vs. mantenibilidad).</p>
 
-                <h2>Small exercise (try it!)</h2>
-                <p>Take a user story and turn it into a minimal spec (3–5 lines) that's clear and unambiguous. Then ask yourself:</p>
-                <ul>
-                    <li>Can an agent generate endpoints and tests from this?</li>
-                    <li>What ambiguities remain?</li>
-                </ul>
-                <p>If you answered yes and there's little ambiguity, you've taken a big step toward SDD.</p>
+                    <h2>Principios fundamentales (una frase cada uno)</h2>
+                    <ol>
+                        <li><strong>Las especificaciones como lengua franca</strong> — la spec es el artefacto central.</li>
+                        <li><strong>Especificaciones ejecutables</strong> — precisas, completas y sin ambigüedades.</li>
+                        <li><strong>Refinamiento continuo</strong> — validación y detección de ambigüedades todo el tiempo.</li>
+                        <li><strong>Contexto guiado por investigación</strong> — los agentes recopilan contexto y opciones técnicas.</li>
+                        <li><strong>Retroalimentación bidireccional</strong> — la producción vuelve a alimentar la especificación.</li>
+                        <li><strong>Ramificación para explorar</strong> — generar alternativas para optimizar distintos objetivos.</li>
+                    </ol>
 
-                <h2>Final reflection</h2>
-                <p>SDD doesn't come to replace the developer: it comes to turn them into a specification architect, orchestra conductor, and curious critic. It's a powerful way to accelerate iterations, improve traceability, and minimize technical debt when properly implemented.</p>
+                    <h2>Pequeño ejercicio (¡pruébalo!)</h2>
+                    <p>Toma una historia de usuario y conviértela en una spec mínima (3–5 líneas) que sea clara y sin ambigüedades. Después pregúntate:</p>
+                    <ul>
+                        <li>¿Puede un agente generar endpoints y pruebas a partir de esto?</li>
+                        <li>¿Qué ambigüedades siguen ahí?</li>
+                    </ul>
+                    <p>Si la respuesta es sí y apenas hay ambigüedad, ya has dado un paso importante hacia SDD.</p>
 
-                <hr />
+                    <h2>Reflexión final</h2>
+                    <p>SDD no viene a reemplazar al desarrollador: viene a convertirlo en arquitecto de especificaciones, director de orquesta y crítico curioso. Es una forma potente de acelerar iteraciones, mejorar la trazabilidad y minimizar deuda técnica cuando se implementa bien.</p>
 
-                <h2>Sources and references</h2>
-                <ul>
-                    <li>SDD definition provided by GitHub Spec Kit: <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noreferrer">github.com/github/spec-kit</a></li>
-                </ul>
-            </div>
+                    <hr />
+
+                    <h2>Fuentes y referencias</h2>
+                    <ul>
+                        <li>Definición de SDD proporcionada por GitHub Spec Kit: <a href="https://github.com/github/spec-kit/blob/main/spec-driven.md" target="_blank" rel="noreferrer">github.com/github/spec-kit</a></li>
+                    </ul>
+                </div>
+            </section>
         </article>
     </main>
 

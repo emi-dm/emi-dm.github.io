@@ -45,69 +45,136 @@
     </nav>
 
     <main class="post-page" id="main-content">
-        <article class="post-page__inner">
-            <a class="post-back" href="/blog/">← Back to blog</a>
-            <header class="post-header">
-                <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
-                <h1 class="post-title">Skills: Using <code>find-skills</code> from VS Code</h1>
-                <p class="post-description">How to use the <code>npx skills</code> CLI and discover or install skills from Visual Studio Code.</p>
-                <div class="post-tags">
-                    <span class="post-tag">skills</span>
-                    <span class="post-tag">find-skills</span>
-                    <span class="post-tag">vscode</span>
-                </div>
-            </header>
-            <div class="post-prose">
-                <h2>Skills and using <code>find-skills</code> in VS Code</h2>
-                <p>This post explains how to use the <code>npx skills</code> command (the skills manager) and how to integrate it into your workflow in Visual Studio Code.</p>
+        <article class="post-page__inner" data-page-title-en="Skills: Using find-skills from VS Code" data-page-title-es="Skills: usar find-skills desde VS Code" data-page-description-en="How to use the skills CLI and discover or install skills from Visual Studio Code." data-page-description-es="Cómo usar la CLI de skills para descubrir o instalar skills desde Visual Studio Code.">
+            <section data-lang="en">
+                <a class="post-back" href="/blog/">← Back to blog</a>
+                <header class="post-header">
+                    <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
+                    <h1 class="post-title">Skills: Using <code>find-skills</code> from VS Code</h1>
+                    <p class="post-description">How to use the <code>npx skills</code> CLI and discover or install skills from Visual Studio Code.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">skills</span>
+                        <span class="post-tag">find-skills</span>
+                        <span class="post-tag">vscode</span>
+                    </div>
+                </header>
+                <div class="post-prose">
+                    <h2>Skills and using <code>find-skills</code> in VS Code</h2>
+                    <p>This post explains how to use the <code>npx skills</code> command (the skills manager) and how to integrate it into your workflow in Visual Studio Code.</p>
 
-                <h2>What is <code>npx skills</code>?</h2>
-                <p><code>npx skills</code> is the CLI for the skills ecosystem: it helps you search, install, and update packages called <em>skills</em> that extend the agent's capabilities.</p>
-                <p>Key commands:</p>
-                <ul>
-                    <li>Search: <code>npx skills find [query]</code></li>
-                    <li>Install: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
-                    <li>Update: <code>npx skills update</code></li>
-                </ul>
+                    <h2>What is <code>npx skills</code>?</h2>
+                    <p><code>npx skills</code> is the CLI for the skills ecosystem: it helps you search, install, and update packages called <em>skills</em> that extend the agent's capabilities.</p>
+                    <p>Key commands:</p>
+                    <ul>
+                        <li>Search: <code>npx skills find [query]</code></li>
+                        <li>Install: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
+                        <li>Update: <code>npx skills update</code></li>
+                    </ul>
 
-                <h2>Quick usage from VS Code</h2>
-                <ol>
-                    <li>Open the integrated terminal (View → Terminal or <code>Ctrl+`</code>).</li>
-                    <li>Search for relevant skills:</li>
-                </ol>
-                <pre><code># search for skills by keywords
+                    <h2>Quick usage from VS Code</h2>
+                    <ol>
+                        <li>Open the integrated terminal (View → Terminal or <code>Ctrl+`</code>).</li>
+                        <li>Search for relevant skills:</li>
+                    </ol>
+                    <pre><code># search for skills by keywords
 npx skills find react performance</code></pre>
-                <ol start="3">
-                    <li>Review the output and, if interested, install one:</li>
-                </ol>
-                <pre><code># install a skill (global installation is optional, you can use npx directly)
+                    <ol start="3">
+                        <li>Review the output and, if interested, install one:</li>
+                    </ol>
+                    <pre><code># install a skill (global installation is optional, you can use npx directly)
 npx skills add vercel-labs/agent-skills@vercel-react-best-practices</code></pre>
-                <ol start="4">
-                    <li>Optional: install globally and avoid typing <code>npx</code>:</li>
-                </ol>
-                <pre><code>npm i -g @skills/cli
+                    <ol start="4">
+                        <li>Optional: install globally and avoid typing <code>npx</code>:</li>
+                    </ol>
+                    <pre><code>npm i -g @skills/cli
 skills find "react testing"</code></pre>
 
-                <h3>Practical tip</h3>
-                <p>If you want to work with skills frequently from VS Code, keep the terminal pinned and use searches with specific words (e.g., <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
+                    <h3>Practical tip</h3>
+                    <p>If you want to work with skills frequently from VS Code, keep the terminal pinned and use searches with specific words (e.g., <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
 
-                <h2>Example flow</h2>
-                <ul>
-                    <li>Search: <code>npx skills find changelog</code></li>
-                    <li>Install: <code>npx skills add composio/changelog-skill</code></li>
-                    <li>Execute the task the skill provides: depends on the installed skill (check the documentation at skills.sh).</li>
-                </ul>
+                    <h2>Example flow</h2>
+                    <ul>
+                        <li>Search: <code>npx skills find changelog</code></li>
+                        <li>Install: <code>npx skills add composio/changelog-skill</code></li>
+                        <li>Execute the task the skill provides: depends on the installed skill (check the documentation at skills.sh).</li>
+                    </ul>
 
-                <h2>Resources</h2>
-                <ul>
-                    <li>Website: <a href="https://skills.sh/" target="_blank" rel="noreferrer">skills.sh</a></li>
-                    <li>Documentation and examples (use <code>npx skills find</code> to discover specific skills)</li>
-                </ul>
+                    <h2>Resources</h2>
+                    <ul>
+                        <li>Website: <a href="https://skills.sh/" target="_blank" rel="noreferrer">skills.sh</a></li>
+                        <li>Documentation and examples (use <code>npx skills find</code> to discover specific skills)</li>
+                    </ul>
 
-                <hr />
+                    <hr />
 
-                <p>If you want, I can install a sample skill here and show step-by-step how to use it. Which category interests you (tests, docs, deploy, productivity)?</p>
-            </div>
+                    <p>If you want, I can install a sample skill here and show step-by-step how to use it. Which category interests you (tests, docs, deploy, productivity)?</p>
+                </div>
+            </section>
+
+            <section data-lang="es">
+                <a class="post-back" href="/blog/">← Volver al blog</a>
+                <header class="post-header">
+                    <p class="post-meta">2026-02-04 · <a href="https://emi-dm.github.io">Emi</a></p>
+                    <h1 class="post-title">Skills: usar <code>find-skills</code> desde VS Code</h1>
+                    <p class="post-description">Cómo usar la CLI de <code>npx skills</code> para descubrir o instalar skills desde Visual Studio Code.</p>
+                    <div class="post-tags">
+                        <span class="post-tag">skills</span>
+                        <span class="post-tag">find-skills</span>
+                        <span class="post-tag">vscode</span>
+                    </div>
+                </header>
+                <div class="post-prose">
+                    <h2>Skills y uso de <code>find-skills</code> en VS Code</h2>
+                    <p>Esta entrada explica cómo usar el comando <code>npx skills</code> (el gestor de skills) y cómo integrarlo en tu flujo de trabajo en Visual Studio Code.</p>
+
+                    <h2>¿Qué es <code>npx skills</code>?</h2>
+                    <p><code>npx skills</code> es la CLI del ecosistema de skills: te ayuda a buscar, instalar y actualizar paquetes llamados <em>skills</em> que amplían las capacidades del agente.</p>
+                    <p>Comandos clave:</p>
+                    <ul>
+                        <li>Buscar: <code>npx skills find [consulta]</code></li>
+                        <li>Instalar: <code>npx skills add &lt;owner/repo@skill&gt;</code></li>
+                        <li>Actualizar: <code>npx skills update</code></li>
+                    </ul>
+
+                    <h2>Uso rápido desde VS Code</h2>
+                    <ol>
+                        <li>Abre el terminal integrado (View → Terminal o <code>Ctrl+`</code>).</li>
+                        <li>Busca skills relevantes:</li>
+                    </ol>
+                    <pre><code># buscar skills por palabras clave
+npx skills find react performance</code></pre>
+                    <ol start="3">
+                        <li>Revisa el resultado y, si te interesa, instala uno:</li>
+                    </ol>
+                    <pre><code># instalar una skill (la instalación global es opcional, también puedes usar npx directamente)
+npx skills add vercel-labs/agent-skills@vercel-react-best-practices</code></pre>
+                    <ol start="4">
+                        <li>Opcional: instálalo globalmente y evita escribir <code>npx</code>:</li>
+                    </ol>
+                    <pre><code>npm i -g @skills/cli
+skills find "react testing"</code></pre>
+
+                    <h3>Consejo práctico</h3>
+                    <p>Si vas a trabajar con skills con frecuencia desde VS Code, deja el terminal fijado y usa búsquedas con palabras concretas (por ejemplo, <code>react testing</code>, <code>docs</code>, <code>deploy</code>).</p>
+
+                    <h2>Flujo de ejemplo</h2>
+                    <ul>
+                        <li>Buscar: <code>npx skills find changelog</code></li>
+                        <li>Instalar: <code>npx skills add composio/changelog-skill</code></li>
+                        <li>Ejecutar la tarea que propone la skill: depende de la skill instalada (consulta la documentación en skills.sh).</li>
+                    </ul>
+
+                    <h2>Recursos</h2>
+                    <ul>
+                        <li>Sitio web: <a href="https://skills.sh/" target="_blank" rel="noreferrer">skills.sh</a></li>
+                        <li>Documentación y ejemplos (usa <code>npx skills find</code> para descubrir skills concretas)</li>
+                    </ul>
+
+                    <hr />
+
+                    <p>Si quieres, puedo instalar aquí una skill de ejemplo y mostrar paso a paso cómo usarla. ¿Qué categoría te interesa (tests, docs, deploy, productividad)?</p>
+                </div>
+            </section>
         </article>
     </main>
 
