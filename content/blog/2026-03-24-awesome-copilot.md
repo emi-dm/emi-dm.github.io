@@ -37,7 +37,7 @@ Ahora: entras a Awesome Copilot, buscas por categoría, ves ratings comunitarios
 
 Es organización. Es fricción reducida. Es diferencia entre "¿por dónde empiezo?" y "voy directo a probar esto".
 
-## Qué encontrás ahí
+## Qué encontrarás ahí
 
 Si quieres:
 
@@ -55,4 +55,4 @@ Copilot ya no es una herramienta solitaria. Es un ecosistema. Y como todo ecosis
 
 **Awesome Copilot** es esa organización. Un catálogo comunitario que dice: "Aquí están los mejores recursos, pruébalos, contribuye, comparte lo que descubriste".
 
-Si usás Copilot regularmente y querés ir más allá de autocomplete, es un lugar al que volver constantemente.
+Si usas Copilot regularmente y quieres ir más allá del autocompletado, es un lugar al que volver con frecuencia.
