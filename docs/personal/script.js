@@ -193,11 +193,11 @@ function initializeApp() {
             about: {
                 title: 'About',
                 p1:
-                    `I'm a PhD student at <a href="${linkIntia}" target="_blank" rel="noreferrer" class="text-link">INTIA</a> (University of Extremadura), working where AI meets software engineering.`,
+                    `I'm a PhD student at <a href="${linkIntia}" target="_blank" rel="noreferrer" class="text-link">INTIA</a> (University of Extremadura), focused on making AI-assisted software development more reliable and useful in practice.`,
                 p2:
-                    'My research focuses on <strong>quality assurance for code produced by large language models</strong>. I work with <strong>specification-driven development (SDD)</strong> so that formal specifications are not just prompts for generation, but a basis for <strong>tests, checks, and evaluation artifacts</strong> that make LLM-generated code easier to validate and trust.',
+                    'My research focuses on <strong>quality assurance for code produced by large language models</strong>. I use <strong>specification-driven development (SDD)</strong> to turn formal specifications into <strong>tests, checks, and evaluation artifacts</strong> that help surface mistakes earlier and make generated code easier to trust.',
                 p3:
-                    'The broader goal is <strong>rigorous, transparent</strong> AI-assisted development: models can draft code quickly, but we still need <strong>systematic ways to measure and improve its correctness</strong>.',
+                    'The broader goal is <strong>transparent, reproducible</strong> AI-assisted development: models can help us move faster, but we still need <strong>systematic ways to measure and improve correctness</strong> without losing confidence in the result.',
                 skills: 'Expertise',
             },
             focus: {
@@ -252,11 +252,11 @@ function initializeApp() {
             about: {
                 title: 'Sobre mí',
                 p1:
-                    `Soy doctorando en <a href="${linkIntia}" target="_blank" rel="noreferrer" class="text-link">INTIA</a> (Universidad de Extremadura), en el cruce entre IA e ingeniería del software.`,
+                    `Soy doctorando en <a href="${linkIntia}" target="_blank" rel="noreferrer" class="text-link">INTIA</a> (Universidad de Extremadura), centrado en hacer que el desarrollo de software asistido por IA sea más fiable y útil en la práctica.`,
                 p2:
-                    'Mi trabajo se centra en el <strong>aseguramiento de la calidad del código generado por modelos de lenguaje</strong>. Trabajo con el <strong>desarrollo dirigido por especificaciones (SDD)</strong> para que las especificaciones formales no sirvan solo de guía a la generación, sino como base de <strong>pruebas, comprobaciones y artefactos de evaluación</strong> que hagan ese código más fácil de validar y de confiar.',
+                    'Mi trabajo se centra en el <strong>aseguramiento de la calidad del código generado por modelos de lenguaje</strong>. Utilizo el <strong>desarrollo dirigido por especificaciones (SDD)</strong> para convertir las especificaciones formales en <strong>pruebas, comprobaciones y artefactos de evaluación</strong> que ayuden a detectar errores antes y a confiar más en el código generado.',
                 p3:
-                    'El objetivo general es un desarrollo asistido por IA <strong>riguroso y transparente</strong>: los modelos pueden proponer código muy rápido, pero hace falta <strong>formas sistemáticas de medir y mejorar su corrección</strong>.',
+                    'El objetivo general es un desarrollo asistido por IA <strong>transparente y reproducible</strong>: los modelos pueden ayudarnos a avanzar más rápido, pero seguimos necesitando <strong>formas sistemáticas de medir y mejorar la corrección</strong> sin perder confianza en el resultado.',
                 skills: 'Experiencia',
             },
             focus: {
