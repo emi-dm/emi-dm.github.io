@@ -308,6 +308,7 @@ function initializeApp() {
         currentLang = lang;
         localStorage.setItem('language', lang);
         if (langToggle) langToggle.textContent = lang === 'en' ? 'EN' : 'ES';
+        htmlElement.setAttribute('lang', lang);
 
         document.querySelectorAll('[data-i18n]').forEach((el) => {
             const key = el.getAttribute('data-i18n');
@@ -320,6 +321,30 @@ function initializeApp() {
             const value = getByPath(translations[lang], key);
             if (value) el.innerHTML = value;
         });
+
+        document.querySelectorAll('[data-lang]').forEach((el) => {
+            const rawLang = (el.getAttribute('data-lang') || '').toLowerCase().trim();
+            const supportedLangs = rawLang.split(/\s+/).filter(Boolean);
+            const shouldShow = supportedLangs.length === 0 || supportedLangs.includes(lang);
+            el.hidden = !shouldShow;
+            el.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
+        });
+
+        const pageMeta = document.querySelector('[data-page-title-en][data-page-title-es]');
+        if (pageMeta) {
+            const pageTitle = lang === 'en' ? pageMeta.dataset.pageTitleEn : pageMeta.dataset.pageTitleEs;
+            const pageDescription =
+                lang === 'en' ? pageMeta.dataset.pageDescriptionEn : pageMeta.dataset.pageDescriptionEs;
+            if (pageTitle) {
+                document.title = pageTitle;
+            }
+            if (pageDescription) {
+                const metaDescription = document.querySelector('meta[name="description"]');
+                if (metaDescription) {
+                    metaDescription.setAttribute('content', pageDescription);
+                }
+            }
+        }
 
         textOptions = translations[lang].hero.typing;
         textIndex = 0;
