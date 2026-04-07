@@ -181,6 +181,8 @@ function initializeApp() {
             },
             hero: {
                 label: 'PhD Student at INTIA',
+                tagline:
+                    'Making LLM-generated code measurable, testable, and trustworthy through specifications.',
                 affiliation: `PhD Student at <a href="${linkIntia}" target="_blank" rel="noreferrer" class="meta-link">INTIA</a>, University of Extremadura`,
                 publications: 'View Publications',
                 specialized: 'Specialized in',
@@ -240,6 +242,8 @@ function initializeApp() {
             },
             hero: {
                 label: 'Doctorando en INTIA',
+                tagline:
+                    'Hacer medible, comprobable y fiable el código generado por LLM mediante especificaciones.',
                 affiliation: `Doctorando en <a href="${linkIntia}" target="_blank" rel="noreferrer" class="meta-link">INTIA</a>, Universidad de Extremadura`,
                 publications: 'Ver publicaciones',
                 specialized: 'Especializado en',
