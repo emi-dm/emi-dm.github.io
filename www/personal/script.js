@@ -191,6 +191,8 @@ function initializeApp() {
                     'Specification-Driven Development',
                     'AI-assisted software engineering',
                 ],
+                contactQuestion: 'Researching with AI?',
+                contactAction: "Let's talk →",
             },
             about: {
                 title: 'About',
@@ -201,6 +203,7 @@ function initializeApp() {
                 p3:
                     'The broader goal is <strong>transparent, reproducible</strong> AI-assisted development: models can help us move faster, but we still need <strong>systematic ways to measure and improve correctness</strong> without losing confidence in the result.',
                 skills: 'Expertise',
+                stack: 'Languages & tools',
             },
             focus: {
                 title: 'Focus areas',
@@ -252,6 +255,8 @@ function initializeApp() {
                     'Desarrollo dirigido por especificaciones',
                     'Ingeniería de software asistida por IA',
                 ],
+                contactQuestion: '¿Investigas con IA?',
+                contactAction: 'Contáctame →',
             },
             about: {
                 title: 'Sobre mí',
@@ -262,6 +267,7 @@ function initializeApp() {
                 p3:
                     'El objetivo general es un desarrollo asistido por IA <strong>transparente y reproducible</strong>: los modelos pueden ayudarnos a avanzar más rápido, pero seguimos necesitando <strong>formas sistemáticas de medir y mejorar la corrección</strong> sin perder confianza en el resultado.',
                 skills: 'Experiencia',
+                stack: 'Lenguajes y herramientas',
             },
             focus: {
                 title: 'Áreas de foco',
@@ -410,36 +416,6 @@ function initializeApp() {
         typingElement.textContent = textOptions[0];
     }
 
-    const formulaContainer = document.getElementById('formula-container');
-    const formulas = [
-        'f(x) = Σ wᵢxᵢ + b',
-        '∇L = ∂L/∂θ',
-        'P(A|B) = P(B|A)P(A)/P(B)',
-        'E[X] = Σ xᵢp(xᵢ)',
-        'σ(z) = 1/(1+e⁻ᶻ)',
-        'J(θ) = -Σ ylog(ŷ)',
-    ];
-    let formulaIndex = 0;
-    let formulaIntervalId = null;
-
-    function animateFormulas() {
-        if (!formulaContainer) return;
-        formulaContainer.style.opacity = '0';
-        setTimeout(() => {
-            formulaContainer.textContent = formulas[formulaIndex];
-            formulaContainer.style.opacity = '0.15';
-            formulaIndex = (formulaIndex + 1) % formulas.length;
-        }, 500);
-    }
-
-    if (!prefersReducedMotion) {
-        formulaIntervalId = setInterval(animateFormulas, 4000);
-        animateFormulas();
-    } else if (formulaContainer) {
-        formulaContainer.textContent = formulas[0];
-        formulaContainer.style.opacity = '0.12';
-    }
-
     const mathBg = document.getElementById('math-bg');
 
     if (mathBg && !prefersReducedMotion) {
@@ -482,7 +458,7 @@ function initializeApp() {
 
     document
         .querySelectorAll(
-            '.fade-in, .info-card, .project-card, .repo-card, .publication-item, .reveal-on-scroll, .timeline-item-compact',
+            '.fade-in, .section-title, .text-block, .info-card, .project-card, .repo-card, .publication-item, .reveal-on-scroll, .timeline-item-compact',
         )
         .forEach((el) => observer.observe(el));
 
