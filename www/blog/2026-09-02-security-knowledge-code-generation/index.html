@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Assessing the Proper Abstraction Level of Security Knowledge for Code Generation | Emilio Delgado</title>
+    <meta name="description" content="Our paper on the abstraction level of security knowledge for LLM-based code generation has been accepted at ReSAISE 2026." />
+    <link rel="icon" type="image/png" href="/personal/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,opsz,wght@0,8..60,300..900;1,8..60,300..900&amp;family=Source+Serif+4:opsz,wght@8..60,400..700&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/personal/style.css" />
+</head>
+<body>
+    <div class="math-bg" id="math-bg" aria-hidden="true"></div>
+    <div class="grain-overlay"></div>
+
+    <nav class="site-header" aria-label="Principal">
+        <div class="container site-header__inner">
+            <a class="site-brand" href="/" aria-label="Emilio Delgado — Home">
+                <span class="site-brand__mark">ED</span>
+                <span class="site-brand__text"><strong>Emilio Delgado</strong><span>AI · Software Research</span></span>
+            </a>
+            <div class="site-header__cluster">
+                <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="site-header__panel nav-menu" id="nav-menu" role="navigation">
+                    <ul class="nav-list">
+                        <li><a class="nav-link" href="/#about" data-i18n="nav.about">About</a></li>
+                        <li><a class="nav-link" href="/#timeline" data-i18n="nav.timeline">Journey</a></li>
+                        <li><a class="nav-link" href="/#research" data-i18n="nav.interests">Research</a></li>
+                        <li><a class="nav-link" href="/#projects" data-i18n="nav.projects">Projects</a></li>
+                        <li><a class="nav-link" href="/#repositories" data-i18n="nav.repositories">Repositories</a></li>
+                        <li><a class="nav-link" href="/#publications" data-i18n="nav.publications">Publications</a></li>
+                        <li><a class="nav-link" href="/blog/" data-i18n="nav.blog">Blog</a></li>
+                    </ul>
+                    <div class="nav-controls" role="toolbar" aria-label="Idioma y tema">
+                        <button type="button" id="lang-toggle" class="control-btn control-btn--lang" aria-label="Toggle language">EN</button>
+                        <button type="button" id="theme-toggle" class="control-btn control-btn--theme" aria-label="Toggle theme">
+                            <span class="theme-icon" aria-hidden="true">◐</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="post-page" id="main-content">
+        <article
+            class="post-page__inner"
+            data-page-title-en="Assessing the Proper Abstraction Level of Security Knowledge for Code Generation"
+            data-page-title-es="Nuestro artículo sobre conocimiento de seguridad y generación de código, aceptado en ReSAISE 2026"
+            data-page-description-en="Our paper on the abstraction level of security knowledge for LLM-based code generation has been accepted at ReSAISE 2026."
+            data-page-description-es="Nuestro artículo sobre el nivel de abstracción del conocimiento de seguridad para generar código con LLM ha sido aceptado en ReSAISE 2026."
+        >
+            <section data-lang="en">
+                <a class="post-back" href="/blog/">← Back to blog</a>
+                <header class="post-header">
+                    <p class="post-meta">2026-09-02 · <a href="https://emi-dm.github.io">Emi</a></p>
+                    <h1 class="post-title">Assessing the Proper Abstraction Level of Security Knowledge for Code Generation</h1>
+                    <p class="post-description">Our paper has been accepted for presentation at the 4th IEEE International Workshop on Reliable and Secure AI for Software Engineering (ReSAISE 2026).</p>
+                    <div class="post-tags">
+                        <span class="post-tag">research</span>
+                        <span class="post-tag">security</span>
+                        <span class="post-tag">llm</span>
+                        <span class="post-tag">code-generation</span>
+                        <span class="post-tag">resaise-2026</span>
+                    </div>
+                </header>
+
+                <div class="post-prose">
+                    <p><strong>TL;DR:</strong> I’m very happy to share that our paper, <em>“Assessing the Proper Abstraction Level of Security Knowledge for Code Generation,”</em> has been accepted for presentation at <a href="https://resaise.github.io/2026/index.html" target="_blank" rel="noreferrer">ReSAISE 2026</a>, co-located with ISSRE 2026.</p>
+
+                    <h2>What we investigate</h2>
+                    <p>In this work, we study how the level of abstraction of security knowledge affects LLM-based code generation. We use the <strong>Common Weakness Enumeration (CWE) hierarchy</strong> to represent guidance at different levels of specificity.</p>
+                    <blockquote>
+                        <p>Does more specific security guidance necessarily lead to more secure generated code?</p>
+                    </blockquote>
+                    <p>This question matters because security instructions can range from broad principles to concrete weakness-level guidance. Choosing the right level may affect how well a model understands and applies that knowledge when generating code.</p>
+
+                    <h2>Why abstraction level matters</h2>
+                    <p>More detail is often assumed to be better, but models must also connect that detail with the broader context of a programming task. Our paper explores that trade-off systematically instead of assuming that the most specific guidance will always produce the safest result.</p>
+                    <p>The aim is to better understand how security knowledge should be represented and supplied to code-generation systems, so that guidance is both actionable and appropriately scoped.</p>
+
+                    <h2>A collaborative effort</h2>
+                    <p>This acceptance is especially meaningful because the research was carried out with my colleagues at <a href="https://i3lab.unex.es/" target="_blank" rel="noreferrer">i3 lab</a>, managed by the Quercus Software Engineering Group (QSEG), and within the Instituto Universitario de Investigación en Tecnologías Informáticas Aplicadas (INTIA) at the Universidad de Extremadura.</p>
+                    <p>A big thank you to all my co-authors and collaborators for the discussions, revisions, experiments, and many iterations that made this work possible.</p>
+
+                    <h2>See you at ReSAISE 2026</h2>
+                    <p><a href="https://resaise.github.io/2026/index.html" target="_blank" rel="noreferrer">ReSAISE 2026</a> is the fourth edition of the IEEE International Workshop on Reliable and Secure AI for Software Engineering and is co-located with the <a href="https://cyprusconferences.org/issre2026/" target="_blank" rel="noreferrer">37th IEEE International Symposium on Software Reliability Engineering (ISSRE 2026)</a> in Limassol, Cyprus.</p>
+                    <p>I’m looking forward to presenting the work and discussing the results with the community.</p>
+
+                    <h2>Links</h2>
+                    <ul>
+                        <li><a href="https://resaise.github.io/2026/index.html" target="_blank" rel="noreferrer">ReSAISE 2026</a></li>
+                        <li><a href="https://cyprusconferences.org/issre2026/" target="_blank" rel="noreferrer">ISSRE 2026</a></li>
+                        <li><a href="https://i3lab.unex.es/" target="_blank" rel="noreferrer">i3 lab by QSEG</a></li>
+                        <li><a href="https://www.unex.es/investigacion-y-transferencia/nuestra-investigacion/institutos-de-investigacion/" target="_blank" rel="noreferrer">Research institutes at the Universidad de Extremadura</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section data-lang="es">
+                <a class="post-back" href="/blog/">← Volver al blog</a>
+                <header class="post-header">
+                    <p class="post-meta">2026-09-02 · <a href="https://emi-dm.github.io">Emi</a></p>
+                    <h1 class="post-title">Nuestro artículo sobre conocimiento de seguridad y generación de código, aceptado en ReSAISE 2026</h1>
+                    <p class="post-description"><em>“Assessing the Proper Abstraction Level of Security Knowledge for Code Generation”</em> ha sido aceptado para su presentación en el 4.º IEEE International Workshop on Reliable and Secure AI for Software Engineering (ReSAISE 2026).</p>
+                    <div class="post-tags">
+                        <span class="post-tag">research</span>
+                        <span class="post-tag">security</span>
+                        <span class="post-tag">llm</span>
+                        <span class="post-tag">code-generation</span>
+                        <span class="post-tag">resaise-2026</span>
+                    </div>
+                </header>
+
+                <div class="post-prose">
+                    <p><strong>TL;DR:</strong> Me hace mucha ilusión compartir que nuestro artículo, <em>“Assessing the Proper Abstraction Level of Security Knowledge for Code Generation,”</em> ha sido aceptado para su presentación en <a href="https://resaise.github.io/2026/index.html" target="_blank" rel="noreferrer">ReSAISE 2026</a>, celebrado junto a ISSRE 2026.</p>
+
+                    <h2>Qué investigamos</h2>
+                    <p>En este trabajo estudiamos cómo el nivel de abstracción del conocimiento de seguridad afecta a la generación de código basada en LLM. Utilizamos la jerarquía <strong>Common Weakness Enumeration (CWE)</strong> para representar indicaciones con distintos niveles de especificidad.</p>
+                    <blockquote>
+                        <p>¿Una guía de seguridad más específica conduce necesariamente a código generado más seguro?</p>
+                    </blockquote>
+                    <p>La pregunta es relevante porque las instrucciones de seguridad pueden ir desde principios generales hasta indicaciones sobre debilidades concretas. Elegir el nivel adecuado puede influir en cómo el modelo comprende y aplica ese conocimiento al generar código.</p>
+
+                    <h2>Por qué importa el nivel de abstracción</h2>
+                    <p>A menudo se asume que más detalle siempre es mejor, pero el modelo también debe relacionar ese detalle con el contexto general de la tarea de programación. Nuestro artículo estudia este equilibrio de forma sistemática, sin dar por hecho que la guía más específica producirá siempre el resultado más seguro.</p>
+                    <p>El objetivo es comprender mejor cómo representar y proporcionar conocimiento de seguridad a los sistemas de generación de código, para que las indicaciones sean aplicables y tengan el alcance adecuado.</p>
+
+                    <h2>Un trabajo colaborativo</h2>
+                    <p>Esta aceptación tiene un significado especial porque la investigación se ha realizado junto a mis compañeros de <a href="https://i3lab.unex.es/es/" target="_blank" rel="noreferrer">i3 lab</a>, gestionado por el Quercus Software Engineering Group (QSEG), y en el Instituto Universitario de Investigación en Tecnologías Informáticas Aplicadas (INTIA) de la Universidad de Extremadura.</p>
+                    <p>Muchas gracias a todos mis coautores y colaboradores por las conversaciones, revisiones, experimentos y todas las iteraciones que han hecho posible este trabajo.</p>
+
+                    <h2>Nos vemos en ReSAISE 2026</h2>
+                    <p><a href="https://resaise.github.io/2026/index.html" target="_blank" rel="noreferrer">ReSAISE 2026</a> es la cuarta edición del IEEE International Workshop on Reliable and Secure AI for Software Engineering y se celebra junto al <a href="https://cyprusconferences.org/issre2026/" target="_blank" rel="noreferrer">37th IEEE International Symposium on Software Reliability Engineering (ISSRE 2026)</a> en Limassol, Chipre.</p>
+                    <p>Estoy deseando presentar el trabajo y debatir sus resultados con la comunidad.</p>
+
+                    <h2>Enlaces</h2>
+                    <ul>
+                        <li><a href="https://resaise.github.io/2026/index.html" target="_blank" rel="noreferrer">ReSAISE 2026</a></li>
+                        <li><a href="https://cyprusconferences.org/issre2026/" target="_blank" rel="noreferrer">ISSRE 2026</a></li>
+                        <li><a href="https://i3lab.unex.es/es/" target="_blank" rel="noreferrer">i3 lab de QSEG</a></li>
+                        <li><a href="https://www.unex.es/investigacion-y-transferencia/nuestra-investigacion/institutos-de-investigacion/" target="_blank" rel="noreferrer">Institutos de investigación de la Universidad de Extremadura</a></li>
+                    </ul>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="/">Home</a>
+                    <a href="/blog/">Blog</a>
+                    <a href="https://huggingface.co/spaces/tfrere/research-article-template" target="_blank" rel="noreferrer">Design reference</a>
+                </div>
+                <div class="footer-copy">
+                    <p>© <span id="footer-year"></span> Emilio Delgado</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/personal/script.js" defer></script>
+    <script>document.getElementById('footer-year').textContent = String(new Date().getFullYear());</script>
+</body>
+</html>

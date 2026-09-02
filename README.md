@@ -21,3 +21,5 @@ Then open `http://localhost:8080/`.
 ## New blog posts
 
 Add a folder under `www/blog/<slug>/` with `index.html`, link it from `www/blog/index.html`, and keep a `.md` copy in `content/blog/` if you want a simple text source alongside.
+
+See [BLOG_AUTHORING.md](BLOG_AUTHORING.md) for the complete bilingual authoring guide, reusable HTML patterns, editorial conventions, validation checklist, and publishing flow.
