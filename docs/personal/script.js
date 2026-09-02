@@ -8,11 +8,20 @@ function initializeApp() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const htmlElement = document.documentElement;
     const themeToggle = document.getElementById('theme-toggle');
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme =
+        localStorage.getItem('theme') ||
+        (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
     function setTheme(theme) {
         htmlElement.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
+        if (themeToggle) {
+            const nextTheme = theme === 'dark' ? 'light' : 'dark';
+            themeToggle.setAttribute('aria-label', `Switch to ${nextTheme} theme`);
+            themeToggle.setAttribute('title', `Switch to ${nextTheme} theme`);
+            const icon = themeToggle.querySelector('.theme-icon');
+            if (icon) icon.textContent = theme === 'dark' ? '☀' : '◐';
+        }
     }
 
     setTheme(savedTheme);
@@ -178,14 +187,20 @@ function initializeApp() {
                 publications: 'Publications',
                 repositories: 'Repositories',
                 blog: 'Blog',
+                onThisPage: 'On this page',
             },
             hero: {
                 label: 'PhD Student at INTIA',
                 tagline:
                     'Making LLM-generated code measurable, testable, and trustworthy through specifications.',
                 affiliation: `PhD Student at <a href="${linkIntia}" target="_blank" rel="noreferrer" class="meta-link">INTIA</a>, University of Extremadura`,
+                affiliationShort: `<a href="${linkIntia}" target="_blank" rel="noreferrer" class="meta-link">INTIA</a> · University of Extremadura`,
                 publications: 'View Publications',
                 specialized: 'Specialized in',
+                metaRole: 'Role',
+                metaAffiliation: 'Affiliation',
+                metaFocus: 'Current focus',
+                metaProfiles: 'Profiles',
                 typing: [
                     'LLM code quality',
                     'Specification-Driven Development',
@@ -242,14 +257,20 @@ function initializeApp() {
                 publications: 'Publicaciones',
                 repositories: 'Repositorios',
                 blog: 'Blog',
+                onThisPage: 'En esta página',
             },
             hero: {
                 label: 'Doctorando en INTIA',
                 tagline:
                     'Hacer medible, comprobable y fiable el código generado por LLM mediante especificaciones.',
                 affiliation: `Doctorando en <a href="${linkIntia}" target="_blank" rel="noreferrer" class="meta-link">INTIA</a>, Universidad de Extremadura`,
+                affiliationShort: `<a href="${linkIntia}" target="_blank" rel="noreferrer" class="meta-link">INTIA</a> · Universidad de Extremadura`,
                 publications: 'Ver publicaciones',
                 specialized: 'Especializado en',
+                metaRole: 'Rol',
+                metaAffiliation: 'Afiliación',
+                metaFocus: 'Foco actual',
+                metaProfiles: 'Perfiles',
                 typing: [
                     'Calidad del código LLM',
                     'Desarrollo dirigido por especificaciones',
@@ -314,6 +335,87 @@ function initializeApp() {
         return path.split('.').reduce((acc, k) => (acc && acc[k] !== undefined ? acc[k] : null), obj);
     }
 
+    let postTocObserver = null;
+
+    function buildPostTableOfContents(lang) {
+        const articlePage = document.querySelector('article.post-page__inner');
+        if (!articlePage) return;
+
+        articlePage.querySelector(':scope > .post-toc')?.remove();
+        articlePage.classList.remove('has-toc');
+        if (postTocObserver) postTocObserver.disconnect();
+
+        const activeSection = articlePage.querySelector(`[data-lang="${lang}"]:not([hidden])`);
+        const headings = activeSection
+            ? Array.from(activeSection.querySelectorAll('.post-prose h2, .post-prose h3'))
+            : [];
+        if (headings.length < 2) return;
+
+        const aside = document.createElement('aside');
+        aside.className = 'post-toc';
+        aside.setAttribute('aria-label', translations[lang].nav.onThisPage);
+
+        const title = document.createElement('span');
+        title.className = 'post-toc__title';
+        title.textContent = translations[lang].nav.onThisPage;
+        aside.appendChild(title);
+
+        const list = document.createElement('ol');
+        headings.forEach((heading, index) => {
+            if (!heading.id) {
+                const slug = heading.textContent
+                    .trim()
+                    .normalize('NFD')
+                    .replace(/[\u0300-\u036f]/g, '')
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, '-')
+                    .replace(/^-|-$/g, '');
+                heading.id = `toc-${lang}-${slug || index + 1}`;
+            }
+
+            const item = document.createElement('li');
+            item.className = `post-toc__item post-toc__item--${heading.tagName.toLowerCase()}`;
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent.trim();
+            item.appendChild(link);
+            list.appendChild(item);
+        });
+        aside.appendChild(list);
+        articlePage.insertBefore(aside, activeSection);
+        articlePage.classList.add('has-toc');
+
+        if (!articlePage.dataset.tocBound) {
+            articlePage.addEventListener('click', (event) => {
+                const link = event.target.closest('.post-toc a[href^="#"]');
+                if (!link) return;
+                const target = document.getElementById(decodeURIComponent(link.hash.slice(1)));
+                if (!target) return;
+                event.preventDefault();
+                target.scrollIntoView({
+                    behavior: prefersReducedMotion ? 'auto' : 'smooth',
+                    block: 'start',
+                });
+                history.replaceState(null, '', link.hash);
+            });
+            articlePage.dataset.tocBound = 'true';
+        }
+
+        const tocLinks = Array.from(aside.querySelectorAll('a'));
+        postTocObserver = new IntersectionObserver(
+            (entries) => {
+                const visible = entries.filter((entry) => entry.isIntersecting);
+                if (!visible.length) return;
+                const activeId = visible[visible.length - 1].target.id;
+                tocLinks.forEach((link) => {
+                    link.classList.toggle('active', link.hash === `#${activeId}`);
+                });
+            },
+            { rootMargin: '-18% 0px -68% 0px', threshold: 0 },
+        );
+        headings.forEach((heading) => postTocObserver.observe(heading));
+    }
+
     function updateLanguage(lang) {
         currentLang = lang;
         localStorage.setItem('language', lang);
@@ -339,6 +441,8 @@ function initializeApp() {
             el.hidden = !shouldShow;
             el.setAttribute('aria-hidden', shouldShow ? 'false' : 'true');
         });
+
+        buildPostTableOfContents(lang);
 
         const pageMeta = document.querySelector('[data-page-title-en][data-page-title-es]');
         if (pageMeta) {
@@ -395,12 +499,12 @@ function initializeApp() {
         } else {
             typingElement.textContent = currentText.substring(0, charIndex + 1);
             charIndex++;
-            typeSpeed = 100;
+            typeSpeed = 75;
         }
 
         if (!isDeleting && charIndex === currentText.length) {
             isDeleting = true;
-            typeSpeed = 2000;
+            typeSpeed = 2400;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % textOptions.length;
@@ -438,11 +542,11 @@ function initializeApp() {
             setTimeout(() => symbol.remove(), 10000);
         }
 
-        for (let i = 0; i < 12; i++) {
-            setTimeout(createMathSymbol, i * 400);
+        for (let i = 0; i < 6; i++) {
+            setTimeout(createMathSymbol, i * 600);
         }
 
-        setInterval(createMathSymbol, 3500);
+        setInterval(createMathSymbol, 6000);
     }
 
     const observer = new IntersectionObserver(
@@ -464,6 +568,7 @@ function initializeApp() {
 
     document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
         anchor.addEventListener('click', function (e) {
+            if (this.closest('.post-toc')) return;
             const href = this.getAttribute('href');
             if (!href || href === '#') return;
             const target = document.querySelector(href);
